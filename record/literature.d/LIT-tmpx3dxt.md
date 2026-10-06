@@ -33,8 +33,9 @@ compared_against:
 - LIT-tmpucn4v
 - LIT-619
 - LIT-620
+- LIT-tmpe78xc
 summary: >-
-  Li, Li et al., NVIDIA (2026), ARXIV-2607.24027. Training-free block-sparse
+  Li, Li et al., NVIDIA (2026), [ARXIV-2607.24027](https://arxiv.org/abs/2607.24027). Training-free block-sparse
   attention for video DiTs. Each query block keeps the key blocks whose
   pooled score exceeds its own mean plus β standard deviations. The test runs
   inside the online-softmax loop, so no score map is written out, and dropped
@@ -48,7 +49,7 @@ summary: >-
 # LIT-tmpx3dxt: Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification
 
 Li, Li, Chen, Ye, Liu, Yu, Wang, Zhang, Xie, Xie and Han, NVIDIA (2026) —
-ARXIV-2607.24027. Read at v1 (27 Jul 2026), the only version, main text and
+[ARXIV-2607.24027](https://arxiv.org/abs/2607.24027). Read at v1 (27 Jul 2026), the only version, main text and
 Appendices A–C.
 
 ## Key takeaways
@@ -110,13 +111,13 @@ Appendices A–C.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **The routing rule is never tested on output quality.** Fig. 8 shows that
   thresholding gives tighter per-query densities than top-p, and Fig. 5b
   that it routes faster. No table runs Sol-Attn with top-k or top-p selection
   and reports VBench or PSNR. The paper also does not show that tight density
-  per query is desirable. Prism LIT-tmpe78xc and SpargeAttention2 LIT-tmpbgw07
+  per query is desirable. Prism [LIT-tmpe78xc](LIT-tmpe78xc.md) and SpargeAttention2 [LIT-tmpbgw07](LIT-tmpbgw07.md)
   both argue that the budget should vary with how concentrated a query's
   attention is, which is what top-p does.
 - **The correction is ablated only on attention outputs.** Fig. 9 measures
@@ -161,14 +162,14 @@ Per DP-010:
 ## Standing in the anthology
 
 It is a kernel paper. The video model, block layout and training are all
-left alone. It extends FlashAttention (LIT-074) directly: it keeps the tiled
+left alone. It extends FlashAttention ([LIT-074](LIT-074.md)) directly: it keeps the tiled
 online-softmax loop and does two more things inside it. It decides block by
 block which tiles to compute exactly, and it folds the skipped tiles in as
 one pooled term each. Its blocks are FlashAttention's 64×64 tiles over the
 sequence as given. The paper never says whether video tokens are reordered
 into 3D tiles first.
 
-Against Sparse VideoGen2 (LIT-tmpucn4v) the comparison is on accuracy and
+Against Sparse VideoGen2 ([LIT-tmpucn4v](LIT-tmpucn4v.md)) the comparison is on accuracy and
 cost. SVG2's k-means permutation needs about 8× the attention-processor
 memory (Fig. 5c). At slightly lower sparsity it is slower than Sol-Attn on
 every video task and lower on VBench in every row. Its PSNR against dense is
@@ -178,12 +179,12 @@ evidence does not show fixed blocks plus correction matching semantic
 grouping on fidelity. It shows them reaching about the same fidelity more
 cheaply.
 
-The dense backbones in Table 1 are Wan 2.1 (LIT-619) and HunyuanVideo
-(LIT-620). Sol-Attn's Wan 2.1-14B output scores VBench 76.13 against the
+The dense backbones in Table 1 are Wan 2.1 ([LIT-619](LIT-619.md)) and HunyuanVideo
+([LIT-620](LIT-620.md)). Sol-Attn's Wan 2.1-14B output scores VBench 76.13 against the
 dense model's 75.90, and its HunyuanVideo output 76.81 against 77.06, both
 at about 85% sparsity. For practice in the record it is evidence on the
-inference side only. SOTA-138 is about training sparse attention, and
-Sol-Attn is forward-only (§6). Prism LIT-tmpe78xc applied it to a
+inference side only. [SOTA-138](../practices.d/SOTA-138.md) is about training sparse attention, and
+Sol-Attn is forward-only (§6). Prism [LIT-tmpe78xc](LIT-tmpe78xc.md) applied it to a
 full-attention model at 85% and labelled that budget a top-k budget, but
 Sol-Attn has no top-k. Its budget comes from β.
 

@@ -26,8 +26,12 @@ extends:
 - LIT-619 # video tower is Wan2.2 5B and the audio tower copies its architecture
 compared_against:
 - LIT-619 # human preference on video quality against the Wan2.2 5B base (Fig. 4)
+- LIT-tmpe78xc
+- LIT-tmpkvsya
+- LIT-tmpmipjh
+- LIT-tmpngzke
 summary: >-
-  Low, Wang and Katyal, Character AI and Yale (2025), ARXIV-2510.01284. Pairs
+  Low, Wang and Katyal, Character AI and Yale (2025), [ARXIV-2510.01284](https://arxiv.org/abs/2510.01284). Pairs
   Wan2.2 5B with an audio tower of identical architecture trained from
   scratch, joined by bidirectional cross-attention in all 30 blocks and with
   audio RoPE frequencies scaled by 31/157 so the two token streams share a
@@ -41,7 +45,7 @@ summary: >-
 # LIT-tmpouvmz: Ovi: Twin Backbone Cross-Modal Fusion for Audio-Video Generation
 
 Chetwin Low, Weimin Wang (project lead) and Calder Katyal, Character AI and
-Yale University (2025) — ARXIV-2510.01284. Read at v1 (30 Sep 2025), the
+Yale University (2025) — [ARXIV-2510.01284](https://arxiv.org/abs/2510.01284). Read at v1 (30 Sep 2025), the
 only version, main text in full; the paper has no appendix.
 
 ## Key takeaways
@@ -93,7 +97,7 @@ only version, main text in full; the paper has no appendix.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Achieves natural synchronization"** (abstract). Synchronization is
   measured only by human preference against two baselines. There is no
@@ -134,7 +138,7 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It extends Wan (LIT-619). The video tower is Wan2.2 5B and the audio tower
+It extends Wan ([LIT-619](LIT-619.md)). The video tower is Wan2.2 5B and the audio tower
 reuses its architecture block for block, which is what lets the two
 exchange hidden states without projections. Wan2.2 5B and its 16×16×4 VAE
 (§2.1) are cited to the Wan report, which describes Wan 2.1. Its comparison
@@ -142,19 +146,19 @@ against Wan is on video quality only, where raters prefer the Wan2.2 base
 to Ovi 53.5% to 46.5%, the cost of joint training.
 
 Every later joint model in the record measures itself against Ovi, and
-every one beats it. LTX-2 (LIT-tmpkvsya) reports that its internal human
+every one beats it. LTX-2 ([LIT-tmpkvsya](LIT-tmpkvsya.md)) reports that its internal human
 studies favour it over Ovi and that it runs faster, with no counts, win rates
 or timings. LTX-2's alternative is an audio stream narrower than its video
 stream, where Ovi duplicates the video architecture. daVinci-MagiHuman
-(LIT-tmpngzke) evaluates "Ovi 1.1", a later release than this paper
+([LIT-tmpngzke](LIT-tmpngzke.md)) evaluates "Ovi 1.1", a later release than this paper
 describes. On VerseBench's VideoScore2 Ovi 1.1 scores 4.73 / 4.10 / 4.41
 (visual quality, text alignment, physical consistency) against MagiHuman's
 4.80 / 4.18 / 4.52. Its WER on TalkVid-Bench is 40.45% against 14.60%, and
 raters prefer MagiHuman in 80.0% of pairs, 11.8% for Ovi. MOVA
-(LIT-tmpmipjh) adopts Ovi's RoPE alignment, credits it, and on Verse-Bench
+([LIT-tmpmipjh](LIT-tmpmipjh.md)) adopts Ovi's RoPE alignment, credits it, and on Verse-Bench
 measures Ovi at DeSync 0.515, IB-Score 0.190, LSE-C 6.378 and multi-speaker
 cpCER 0.436, the weakest of the joint models it tests. MOVA wins 70.3% of
-arena pairs against Ovi and loses 15.8%. Prism (LIT-tmpe78xc) fine-tunes Ovi
+arena pairs against Ovi and loses 15.8%. Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) fine-tunes Ovi
 on its 2K data and scores it lowest among the open joint models in its
 Table 1.
 
@@ -165,8 +169,8 @@ smallest of the dual-stream models in this batch.
 
 It uses dense attention throughout: full self-attention within each tower,
 dense cross-attention between them. It has no sparse or tiled attention.
-Its objective is rectified-flow velocity matching (LIT-636). It names DMD2
-(LIT-646) as a route to fewer sampling steps but does not try it.
+Its objective is rectified-flow velocity matching ([LIT-636](LIT-636.md)). It names DMD2
+([LIT-646](LIT-646.md)) as a route to fewer sampling steps but does not try it.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and references. Fig. 3 is attention heatmaps, and Fig. 4's percentages

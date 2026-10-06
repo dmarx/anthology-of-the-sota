@@ -30,9 +30,10 @@ compared_against:
 - LIT-619 # cascaded baseline: Wan2.1 for video, then MMAudio for audio (Table 4, Fig. 8)
 - LIT-tmpkvsya # LTX-2 on Verse-Bench metrics and in the human arena
 - LIT-tmpouvmz # Ovi on Verse-Bench metrics and in the human arena
+- LIT-tmpe78xc
 summary: >-
   OpenMOSS Team, Shanghai Innovation Institute, MOSI, Fudan, SJTU and others
-  (2026), ARXIV-2602.08794. Couples Wan2.2's 14B-active video MoE to a 1.3B
+  (2026), [ARXIV-2602.08794](https://arxiv.org/abs/2602.08794). Couples Wan2.2's 14B-active video MoE to a 1.3B
   audio DiT through a 2.6B bidirectional cross-attention bridge (32B total,
   18B active), trained 42 days on 1,024 GPUs. On Verse-Bench it leads LTX-2
   and Ovi on lip sync (LSE-C 7.800 against 6.109 and 6.378) and semantic
@@ -40,6 +41,8 @@ summary: >-
   best rows use a guidance scale tuned on the same benchmark, the cascaded
   Wan2.1 + MMAudio baseline keeps the best DeSync (0.260 against 0.351), and
   no architectural or training choice is ablated.
+extended_by:
+- LIT-tmpe78xc
 ---
 
 # LIT-tmpmipjh: MOVA: Towards Scalable and Synchronized Video-Audio Generation
@@ -48,7 +51,7 @@ SII-OpenMOSS Team (core contributors listed alphabetically; project leads
 Qinyuan Cheng and Tianyi Liang; corresponding authors Xie Chen and Xipeng
 Qiu), Shanghai Innovation Institute, MOSI Intelligence, Fudan University,
 Shanghai Jiao Tong University and five other universities (2026) —
-ARXIV-2602.08794. Read at v2 (10 Feb 2026), main text and Appendices
+[ARXIV-2602.08794](https://arxiv.org/abs/2602.08794). Read at v2 (10 Feb 2026), main text and Appendices
 A.1–A.6; v1 is 9 Feb 2026.
 
 ## Key takeaways
@@ -114,7 +117,7 @@ A.1–A.6; v1 is 9 Feb 2026.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Through controlled scaling studies, we find that increasing video model
   capacity … substantially improves lip synchronization, where smaller
@@ -161,9 +164,9 @@ Per DP-010:
   for training, while Phase 1 data (§4.3) and the audio tower (§4.2) include
   non-speech, music and cartoons.
 - **The cited Wan report does not describe the video tower.** Wan2.2's MoE
-  is cited to the Wan report (LIT-619), which describes Wan 2.1.
+  is cited to the Wan report ([LIT-619](LIT-619.md)), which describes Wan 2.1.
 - **Dual CFG has a precedent the paper does not credit.** LTX-2
-  (LIT-tmpkvsya), which MOVA cites and evaluates, already guides each stream
+  ([LIT-tmpkvsya](LIT-tmpkvsya.md)), which MOVA cites and evaluates, already guides each stream
   with a text term and a cross-modal term (its §4.1). MOVA derives its
   version from InstructPix2Pix. The nesting differs, the idea does not.
 
@@ -182,7 +185,7 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It is the backbone of Prism (LIT-tmpe78xc). Prism replaces MOVA's dense
+It is the backbone of Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)). Prism replaces MOVA's dense
 video self-attention with content-shaped block-sparse attention and
 fine-tunes at 2K. MOVA itself has no sparse attention: video self-attention
 is dense (it cites FlashAttention for efficiency), audio self-attention is
@@ -192,7 +195,7 @@ and it proposes "hierarchical or blockwise generation" as future work. It
 contains no 3D tiling of attention, no block selection and no
 trainable-against-training-free comparison.
 
-It extends Wan (LIT-619). The video tower and video VAE are Wan weights, and
+It extends Wan ([LIT-619](LIT-619.md)). The video tower and video VAE are Wan weights, and
 the audio tower copies Wan2.1-1.3B's architecture "to maximally reuse
 engineering and training practices" (§4.2). The context-parallel VAE trick
 also comes from Wan (§4.5). It also compares against Wan, as the video half
@@ -200,21 +203,21 @@ of the Wan2.1 + MMAudio cascade. That cascade has the best DeSync and
 IB-Score in Table 4 but the lowest arena ELO, 886.9, and MOVA wins 71.9% of
 pairs against it. Speech is what the cascade cannot do.
 
-Against LTX-2 (LIT-tmpkvsya), the other large dual-stream open model, MOVA
+Against LTX-2 ([LIT-tmpkvsya](LIT-tmpkvsya.md)), the other large dual-stream open model, MOVA
 leads on IB-Score (0.315 against 0.213), lip sync with dual CFG and
 multi-speaker cpCER at 720p (0.149 against 0.220). It trails without dual
 CFG on DeSync and LSE-D. The arena margin is the narrowest of the three:
 51.5% wins against 37.1% losses, ELO 1113.8 against 1074.1. Against Ovi
-(LIT-tmpouvmz), whose RoPE alignment MOVA adopts, the gaps are wider: DeSync
+([LIT-tmpouvmz](LIT-tmpouvmz.md)), whose RoPE alignment MOVA adopts, the gaps are wider: DeSync
 0.351 against 0.515, IB-Score 0.315 against 0.190, cpCER 0.149 against
 0.436, and 70.3% arena wins. Ovi pairs two matched 5B towers; MOVA pairs a
 14B-active video MoE with a 1.3B audio tower and a 2.6B bridge. No
 experiment here separates that design choice from the larger video model
 and data.
 
-Its timestep shift is Stable Diffusion 3's (LIT-449), applied with a
+Its timestep shift is Stable Diffusion 3's ([LIT-449](LIT-449.md)), applied with a
 different value per modality, and its objective is rectified-flow velocity
-matching (LIT-636). daVinci-MagiHuman (LIT-tmpngzke) cites MOVA but does not
+matching ([LIT-636](LIT-636.md)). daVinci-MagiHuman ([LIT-tmpngzke](LIT-tmpngzke.md)) cites MOVA but does not
 evaluate it.
 
 Filed without a NOTE: the takeaways come from one full reading of v2, main

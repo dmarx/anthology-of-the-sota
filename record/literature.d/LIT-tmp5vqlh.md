@@ -33,9 +33,11 @@ extends:
 compared_against:
 - LIT-619
 - LIT-646
+- LIT-tmpbgw07
+- LIT-tmpe78xc
 summary: >-
   Zhang, Chen, Huang et al., UC San Diego, MBZUAI and UC Berkeley (2025),
-  ARXIV-2505.13389. Video self-attention in two stages over (4,4,4) token
+  [ARXIV-2505.13389](https://arxiv.org/abs/2505.13389). Video self-attention in two stages over (4,4,4) token
   cubes: dense attention between mean-pooled cubes, whose output is gated in,
   and token attention inside the top-K key cubes per query cube. Pretraining
   Wan-style DiTs from 60M to 1.4B at 16K tokens, VSA at 87.5% sparsity
@@ -48,7 +50,7 @@ summary: >-
 # LIT-tmp5vqlh: VSA: Faster Video Diffusion with Trainable Sparse Attention
 
 Zhang, Chen, Huang, Lin, Liu, Stoica, Xing and Zhang, UC San Diego, MBZUAI
-and UC Berkeley (2025), NeurIPS 2025 — ARXIV-2505.13389. Read at v5 (28 Oct
+and UC Berkeley (2025), NeurIPS 2025 — [ARXIV-2505.13389](https://arxiv.org/abs/2505.13389). Read at v5 (28 Oct
 2025), main text and Appendices A–F; v1 is 19 May 2025. The arXiv listing
 carries the "VSA:" prefix and the v5 PDF title does not.
 
@@ -115,7 +117,7 @@ carries the "VSA:" prefix and the v5 PDF title does not.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Better scaling than full attention" rests on very small loss gaps.** In
   the extended-training row VSA leads full attention by 0.00016 in loss. In
@@ -170,18 +172,18 @@ Per DP-010:
 It is the record's clearest from-scratch evidence that trainable
 block-sparse attention can match dense attention in a video DiT under a
 controlled compute budget. The from-scratch analogue in language models is
-Native Sparse Attention (LIT-143), and the paper names it as an inspiration
+Native Sparse Attention ([LIT-143](LIT-143.md)), and the paper names it as an inspiration
 along with MoBA (App. E). VSA keeps NSA's compress-and-select pair, drops
 NSA's sliding-window branch because Table 1b found local modules add nothing,
 and pools queries as well as keys because video attention is bidirectional.
-It bears on SOTA-138, which recommends training sparse attention natively
+It bears on [SOTA-138](../practices.d/SOTA-138.md), which recommends training sparse attention natively
 and warming it up under dense attention. VSA's retrofit recipe is that
 warm-up in another form: it starts at K = L/B, which is dense attention, and
-anneals K down, because a direct swap was unstable. Unlike SOTA-138's source,
+anneals K down, because a direct swap was unstable. Unlike [SOTA-138](../practices.d/SOTA-138.md)'s source,
 it selects with the mean-pooled scores of a coarse attention stage and has
 no separate indexer.
 
-VSA extends Sliding Tile Attention (LIT-tmp1yfvi), from the same group.
+VSA extends Sliding Tile Attention ([LIT-tmp1yfvi](LIT-tmp1yfvi.md)), from the same group.
 STA's contribution was the tile layout: tokens re-indexed so that a 3D cube
 is one FlashAttention block, which makes every block either dense or skipped.
 VSA keeps that layout and replaces STA's fixed, profile-chosen local window
@@ -189,18 +191,18 @@ with a learned top-K choice of cubes anywhere in the volume. Its §3.5
 visualizations show some heads that look like STA's local window and others
 that STA's window could not express.
 
-Against Wan (LIT-619), the retrofit of Wan2.1-1.3B scores 82.77 on VBench
+Against Wan ([LIT-619](LIT-619.md)), the retrofit of Wan2.1-1.3B scores 82.77 on VBench
 against 82.56 for the released model. That edge comes from fine-tuning on
 Wan-14B outputs, since a dense fine-tune on the same clips scores 83.63.
-Against DMD2 (LIT-646), the sparse-distillation run uses DMD2's recipe and
+Against DMD2 ([LIT-646](LIT-646.md)), the sparse-distillation run uses DMD2's recipe and
 hyperparameters unchanged and swaps only the student's attention to VSA. The
 paper reports human preference against a dense DMD2 student without a
 quality loss, in a figure only.
 
 Later sparse-attention papers in this batch use VSA as a trained baseline.
-SpargeAttention2 (LIT-tmpbgw07) retrains it on Wan2.1 at 90% sparsity, where
+SpargeAttention2 ([LIT-tmpbgw07](LIT-tmpbgw07.md)) retrains it on Wan2.1 at 90% sparsity, where
 it loses heavily on text alignment at 1.3B (VQA-a 33.35). Prism
-(LIT-tmpe78xc) retrains it at 2K at 90% sparsity (aesthetic 0.39, MotionQ
+([LIT-tmpe78xc](LIT-tmpe78xc.md)) retrains it at 2K at 90% sparsity (aesthetic 0.39, MotionQ
 0.46). Prism's fixed isotropic 4×4×4 ablation uses VSA's own cube, so the gap
 between that ablation (0.55, 0.77) and the VSA row comes from things other
 than block shape: top-K against Prism's top-k ∪ top-p union, VSA's gated

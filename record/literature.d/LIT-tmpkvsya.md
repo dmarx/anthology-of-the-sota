@@ -27,8 +27,11 @@ extends:
 compared_against:
 - LIT-619 # per-step H100 timing against Wan 2.2-14B, cited to the Wan report
 - LIT-tmpouvmz # human preference and speed against Ovi, reported without numbers
+- LIT-tmpe78xc
+- LIT-tmpmipjh
+- LIT-tmpngzke
 summary: >-
-  HaCohen et al., Lightricks (2026), ARXIV-2601.03233. Extends LTX-Video into
+  HaCohen et al., Lightricks (2026), [ARXIV-2601.03233](https://arxiv.org/abs/2601.03233). Extends LTX-Video into
   joint audio and video generation: a 14B video stream and a 5B audio stream
   exchange information through bidirectional cross-attention at every layer,
   using only the temporal part of RoPE. The one number is speed: 1.22 s per
@@ -41,7 +44,7 @@ summary: >-
 # LIT-tmpkvsya: LTX-2: Efficient Joint Audio-Visual Foundation Model
 
 HaCohen, Brazowski, Chiprut, Bitterman and 25 others, Lightricks (2026) —
-ARXIV-2601.03233. Read at v1 (6 Jan 2026), the only version, main text and
+[ARXIV-2601.03233](https://arxiv.org/abs/2601.03233). Read at v1 (6 Jan 2026), the only version, main text and
 Supplementary A.1 (two figures).
 
 ## Key takeaways
@@ -82,7 +85,7 @@ Supplementary A.1 (two figures).
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"State-of-the-art audiovisual quality … among open-source systems"**
   (abstract). The evidence is §6.1: "Our internal benchmarks indicate" LTX-2
@@ -119,31 +122,31 @@ Per DP-010:
   resolution and solver settings. It compares a joint audio-video model with
   a video-only one, which favours Wan on workload.
 - **The Wan model timed is Wan 2.2-14B**, cited to the Wan report
-  (LIT-619), which describes Wan 2.1. The report does not describe the
+  ([LIT-619](LIT-619.md)), which describes Wan 2.1. The report does not describe the
   model in the table.
 - **Nothing else is like for like.** The human studies and the leaderboard
   ranking have no stated protocol.
 
 ## Standing in the anthology
 
-It extends LTX-Video (LIT-618). LTX-2 keeps LTX-Video's "spatiotemporal
+It extends LTX-Video ([LIT-618](LIT-618.md)). LTX-2 keeps LTX-Video's "spatiotemporal
 latent space" and design principles (§1), trains on a subset of LTX-Video's
 dataset (§5), and copies LTX-Video's compact-latent idea for audio (§3.3).
-LIT-618's speed came from compressing the latent 1:8192, and Table 1 here
+[LIT-618](LIT-618.md)'s speed came from compressing the latent 1:8192, and Table 1 here
 is that bet extended to a model with sound. The paper does not say whether
-the video VAE or LTX-Video's denoising decoder is unchanged. LIT-618's
+the video VAE or LTX-Video's denoising decoder is unchanged. [LIT-618](LIT-618.md)'s
 cross-attention-for-text choice carries over, now with an LLM encoder.
 
-It compares against Wan (LIT-619) on speed only: 1.22 against 22.30 s per
-step at 121 frames of 720p (Table 1). Against Ovi (LIT-tmpouvmz), the paper's
+It compares against Wan ([LIT-619](LIT-619.md)) on speed only: 1.22 against 22.30 s per
+step at 121 frames of 720p (Table 1). Against Ovi ([LIT-tmpouvmz](LIT-tmpouvmz.md)), the paper's
 closest open joint audio-video rival, it claims better human preference and
 higher speed. It reports neither with a number. It describes Ovi as
 duplicating and combining existing T2V and T2A backbones (§2.1). LTX-2's
 stated alternative is an audio stream narrower than the video stream.
 
 **Which LTX it is.** This paper describes LTX-2 only. "2.3" does not appear
-in it, and there is one arXiv version. Prism (LIT-tmpe78xc) and
-daVinci-MagiHuman (LIT-tmpngzke) both compare against "LTX-2.3" and cite
+in it, and there is one arXiv version. Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) and
+daVinci-MagiHuman ([LIT-tmpngzke](LIT-tmpngzke.md)) both compare against "LTX-2.3" and cite
 this paper for it. Nothing in this paper says what changed in 2.3. What it
 does fix is the shape of the LTX pipeline: a base at about 0.5 MP, a latent
 upscaler, then tiled refinement to 1080p (§4.2). That supports Prism's
@@ -155,8 +158,15 @@ stream, and audio-video cross-attention is dense with temporal RoPE. The
 only spatiotemporal tiling is the inference-time latent tiling of §4.2,
 which splits the generation into separate passes and does not restrict
 attention inside one. Its gated cross-attention output is AdaLN-based and
-is not the per-head sigmoid gate of SOTA-134.
+is not the per-head sigmoid gate of [SOTA-134](../practices.d/SOTA-134.md).
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and the supplementary figures. Figs. 1–5, A1 and A2 are diagrams and
 attention maps, and only values stated in the text and Table 1 are quoted.
+
+MOVA ([LIT-tmpmipjh](LIT-tmpmipjh.md)) evaluates against LTX-2 on Verse-Bench and in a human
+arena. LTX-2 scores LSE-C 6.109 and IB-Score 0.213 against MOVA's 7.800 and
+0.315 at 360p, and cpCER 0.220 against 0.149 at 720p. In the arena of 732
+prompts LTX-2 has ELO 1074.1 against MOVA's 1113.8, and MOVA wins 51.5% of
+pairs against 37.1%. MOVA's best rows use a guidance setting swept on the
+same benchmark.

@@ -34,9 +34,10 @@ compared_against:
 - LIT-619
 - LIT-620
 - LIT-723
+- LIT-tmpe78xc
 summary: >-
   Zhang, Zhu et al., Zhejiang University and Tencent Youtu (2025),
-  ARXIV-2512.13492. Wan's full self-attention is replaced, with no new
+  [ARXIV-2512.13492](https://arxiv.org/abs/2512.13492). Wan's full self-attention is replaced, with no new
   parameters, by the mean of two window attentions using the same weights. One
   attends a contiguous 3D window and the other a strided grid of the same size
   covering the whole video. Window shapes change from layer to layer in a
@@ -50,7 +51,7 @@ summary: >-
 # LIT-tmpva88i: Transform Trained Transformer for Accelerating Native 4K Video Generation
 
 Zhang, Zhu, Hu, Wang, Luo, Cao, Gan, Hu, Xue, Li, Wang and Liu, APRIL Lab
-Zhejiang University, Tencent Youtu, NUS and PKU (2025) — ARXIV-2512.13492.
+Zhejiang University, Tencent Youtu, NUS and PKU (2025) — [ARXIV-2512.13492](https://arxiv.org/abs/2512.13492).
 Read at v2 (5 October 2026; v1 15 December 2025), main text, impact statement
 and references. v2 has no appendix: the metric definitions it points to
 ("see ??") are missing. The released `wan_video_dit.py` was read for the
@@ -103,7 +104,7 @@ window configuration, which the paper does not print.
   evaluators, T3 is preferred to UltraGen on all four axes, 71.25% on video
   quality (Table 9).
 - **The configuration matters** (Table 7, 720P, 5K iterations). Replacing T3
-  with Swin's shifted windows (LIT-723) under the same recipe gives 67.34 /
+  with Swin's shifted windows ([LIT-723](LIT-723.md)) under the same recipe gives 67.34 /
   0.87 against 69.37 / 0.90. This is the paper's only comparison of window
   schemes. A layer schedule with only large block ratios (3 < ratio < 6) gives
   67.14, and one with only small ratios (1 < ratio < 3) gives 68.69, against
@@ -111,7 +112,7 @@ window configuration, which the paper does not print.
 - **The transformation is reversible** (§3.3, Table 7a, Fig. 4). Switching the
   720P T3 weights back to full attention and fine-tuning for 500 iterations
   gives 69.51 VQA, against 69.37 for T3 and 70.56 for official Wan.
-- **Deployment add-ons** (§3.5, Tables 2, 4, 7e). DMD2-style (LIT-646) 8-step
+- **Deployment add-ons** (§3.5, Tables 2, 4, 7e). DMD2-style ([LIT-646](LIT-646.md)) 8-step
   plus CFG distillation without the GAN loss cuts DiT time 12.5×. A 9.84M
   decoder ("eVAE") replaces Wan2.1's 73.3M one (LPIPS 0.0251 → 0.04). The
   combined deployment model renders 4K in 166.8 s, with 720P VQA falling from
@@ -119,11 +120,11 @@ window configuration, which the paper does not print.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **The 4K baselines are untuned or from the same group.** Table 5 compares a
   model fine-tuned at 4K with official Wan and HunyuanVideo run zero-shot at
-  4K, and with UltraGen (LIT-tmp8ew94), whose first and corresponding authors
+  4K, and with UltraGen ([LIT-tmp8ew94](LIT-tmp8ew94.md)), whose first and corresponding authors
   are authors here. No full-attention Wan fine-tuned at 4K on the same data
   appears in Table 5. UltraWan, the one such model, is compared only in
   Table 8, with VBench videos downsampled to 1K.
@@ -176,14 +177,14 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It is a retrofit of Wan (LIT-619): the 1.3B and 5B Wan checkpoints are the
+It is a retrofit of Wan ([LIT-619](LIT-619.md)): the 1.3B and 5B Wan checkpoints are the
 whole model, and only the self-attention forward pass changes. Official Wan
 also serves as the baseline at 720P and 4K. At 720P, where the comparison is
 fair, the transformed model stays within about 1 VQA point of the original.
-HunyuanVideo (LIT-620) is the other untuned dense baseline at 4K, scoring
+HunyuanVideo ([LIT-620](LIT-620.md)) is the other untuned dense baseline at 4K, scoring
 61.92 VQA against T3's 71.72.
 
-Its nearest neighbour is UltraGen (LIT-tmp8ew94), from an overlapping team,
+Its nearest neighbour is UltraGen ([LIT-tmp8ew94](LIT-tmp8ew94.md)), from an overlapping team,
 which also turns a pretrained Wan-1.3B into a 4K model with local plus global
 attention. The designs differ in two ways. UltraGen uses 2D spatial windows
 that span all frames, plus a separate compressed global branch with its own
@@ -192,12 +193,12 @@ path that shares weights. Against UltraGen's released 29-frame model, T3
 reports +4.29 VQA and a 71% human preference on video quality, with the
 frame-count caveat above.
 
-Both papers ablate against Swin's shifted windows (LIT-723) and both find
+Both papers ablate against Swin's shifted windows ([LIT-723](LIT-723.md)) and both find
 them worse: here by 2.03 VQA at 720P. Multi-scale window attention with
 shared weights is a third route to high resolution, besides cascades and the
-learned, content-selected sparse attention of SOTA-138. Unlike that, it
+learned, content-selected sparse attention of [SOTA-138](../practices.d/SOTA-138.md). Unlike that, it
 chooses nothing from content: every token's neighbours are fixed by its
-position and its layer. Prism (LIT-tmpe78xc) retrained it at 2K as a baseline.
+position and its layer. Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) retrained it at 2K as a baseline.
 
 Filed without a NOTE: the takeaways come from one full reading of v2. The
 window shapes come from the released `wan_video_dit.py`, read as data and not

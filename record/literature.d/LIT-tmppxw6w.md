@@ -24,9 +24,10 @@ extends:
 - LIT-619 # every stage runs on Wan2.1-1.3B and its VAE latent
 compared_against:
 - LIT-619 # Wan2.1-720p and Wan2.1-1K are rows of Table 1
+- LIT-tmpe78xc
 summary: >-
   Zhao, Chen et al., Nanjing University and Meituan (2026), ICML 2026,
-  ARXIV-2602.11564. A 2K/4K cascade on Wan2.1-1.3B: generate at 720p, upsample
+  [ARXIV-2602.11564](https://arxiv.org/abs/2602.11564). A 2K/4K cascade on Wan2.1-1.3B: generate at 720p, upsample
   the latent with a 22M-parameter learned upsampler, renoise, then refine at
   full resolution with two LoRA experts, low-pass inputs into attention for
   high-noise steps and high-pass into the FFN for low-noise steps. Against
@@ -40,7 +41,7 @@ summary: >-
 
 Zhao, Chen, Li, Kang, Lu, Wei, Zhang, Yang and Tai, Nanjing University,
 Meituan and Nanyang Technological University (2026), ICML 2026 —
-ARXIV-2602.11564. Read at v2 (27 May 2026), main text and Appendices A–I;
+[ARXIV-2602.11564](https://arxiv.org/abs/2602.11564). Read at v2 (27 May 2026), main text and Appendices A–I;
 v1 is 12 Feb 2026.
 
 ## Key takeaways
@@ -87,7 +88,7 @@ v1 is 12 Feb 2026.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"A substantial improvement in generative capability"** (Table 1
   caption). The VBench average leads by 0.59 over UltraWan-4K, and LUVE is
@@ -147,17 +148,17 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It extends Wan (LIT-619) and compares against it. Every stage is
+It extends Wan ([LIT-619](LIT-619.md)) and compares against it. Every stage is
 Wan2.1-1.3B: the 720p generator, the 16-channel VAE latent the upsampler
 maps, and the frozen backbone the experts adapt. Table 1 shows what the
 base model does when simply run larger. Wan2.1 at 1K scores VBench 79.79
 against 82.98 at 720p, with imaging quality falling from 68.28 to 58.26 and
 aesthetic quality from 56.46 to 49.89. LUVE's 2K output scores 84.34. Fig.
 2 shows the failures behind that drop: static motion, repeated content and
-blur. The experts are LoRA (LIT-046) adapters placed by module and fed
+blur. The experts are LoRA ([LIT-046](LIT-046.md)) adapters placed by module and fed
 filtered inputs, not a new adaptation method.
 
-It is one of the high-resolution routes Prism (LIT-tmpe78xc) reran as a
+It is one of the high-resolution routes Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) reran as a
 baseline. Prism argues for
 native 2K training and treats a low-resolution-then-upscale pipeline as
 the weaker baseline. LUVE's Table 6 points the other way at 1.3B scale: the

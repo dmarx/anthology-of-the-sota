@@ -34,8 +34,9 @@ extends:
 # Tables 3-6: ratings and GSB against Wan2.2, cited to the Wan report.
 compared_against:
 - LIT-619
+- LIT-tmpe78xc
 summary: >-
-  Tencent Hunyuan Foundation Model Team (2025), ARXIV-2511.18870. An 8.3B
+  Tencent Hunyuan Foundation Model Team (2025), [ARXIV-2511.18870](https://arxiv.org/abs/2511.18870). An 8.3B
   dual-stream video DiT on a 16×16×4 causal VAE, with a cascaded
   super-resolution DiT to 1080p. Its sparse attention, SSTA, scores 3D
   key tiles by pooled query-key similarity minus key-key redundancy, keeps
@@ -49,7 +50,7 @@ summary: >-
 # LIT-tmp1ecle: HunyuanVideo 1.5 Technical Report
 
 Tencent Hunyuan Foundation Model Team (project leader Zhao Zhong; arXiv
-lists Bing Wu first), Tencent (2025) — ARXIV-2511.18870. Read at v2 (25 Nov
+lists Bing Wu first), Tencent (2025) — [ARXIV-2511.18870](https://arxiv.org/abs/2511.18870). Read at v2 (25 Nov
 2025; v1 24 Nov 2025), the whole report: §§1–7, contributor list and
 references. There are no appendices.
 
@@ -90,7 +91,7 @@ references. There are no appendices.
   on 1B), then four mixed stages at a T2I:T2V:I2V ratio of 1:6:3, from 256p
   at 16 fps on 800M clips through 480p and 720p to 720p at 24 fps on 100M.
   The flow-matching shift is scheduled by token length, in the manner of SD3
-  (LIT-449). Then come continued training on 1M clips per task, SFT, and
+  ([LIT-449](LIT-449.md)). Then come continued training on 1M clips per task, SFT, and
   RLHF. I2V uses online RL with MixGRPO and a VLM reward model. T2V uses
   offline DPO on human-annotated pairs and then the same online RL. Muon
   with weight decay 0.01 is used throughout.
@@ -107,7 +108,7 @@ references. There are no appendices.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"End-to-end speedup of 1.87×"** (abstract, §1) is a per-diffusion-step
   ratio from Table 7, at 241 frames, without acceleration. It excludes the
@@ -152,30 +153,30 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It extends HunyuanVideo (LIT-620), whose team wrote it. The video data
+It extends HunyuanVideo ([LIT-620](LIT-620.md)), whose team wrote it. The video data
 pipeline is described as built "upon the pipeline in" that report, and the
 multimodal LLM text encoder with token refiner and the dual-stream block
 carry over. Three things are new. The model is smaller (8.3B against 13B).
-LIT-620's 8×8×4 VAE is replaced by a 16×16×4 one. LIT-620 used full
-attention throughout, and this report adds a sparse path. Like LIT-620, it
+[LIT-620](LIT-620.md)'s 8×8×4 VAE is replaced by a 16×16×4 one. [LIT-620](LIT-620.md) used full
+attention throughout, and this report adds a sparse path. Like [LIT-620](LIT-620.md), it
 justifies its design choices by citation and reports no controlled
 ablation of the model.
 
-SSTA extends Sliding Tile Attention (LIT-tmp1yfvi), whose window mask it
+SSTA extends Sliding Tile Attention ([LIT-tmp1yfvi](LIT-tmp1yfvi.md)), whose window mask it
 uses unchanged. What it adds is a dynamic top-k over 3D tiles, scored by
 pooled similarity, with a penalty on key tiles that resemble the rest.
 The tiles are 3D and spatiotemporal, but the paper does not measure the
 difference against 1D runs. The tile shape is fixed and not reported. Its
-comparison with Wan (LIT-619) is against Wan2.2, cited to the Wan report,
+comparison with Wan ([LIT-619](LIT-619.md)) is against Wan2.2, cited to the Wan report,
 which describes Wan 2.1. It is a net GSB win of 17.12% for T2V and 12.65%
 for I2V on the authors' 300-prompt sets.
 
-For Prism (LIT-tmpe78xc), from the same organization, SSTA is a baseline.
+For Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)), from the same organization, SSTA is a baseline.
 Retrained by Prism at 2K at 85% sparsity, it scores AQ 0.43 and MotionQ
 0.54, against full attention's 0.42 and 0.53. Prism's related-work section
 describes this report as one that "scale[s] the training data". That is a
 loose description of a report whose sparse attention is a published
-algorithm. Nothing here bears on SOTA-138's indexer or warm-up. SSTA is
+algorithm. Nothing here bears on [SOTA-138](../practices.d/SOTA-138.md)'s indexer or warm-up. SSTA is
 switched on during distillation, after dense training, but the paper
 reports no evidence for that ordering.
 

@@ -25,8 +25,9 @@ implementations:
 compared_against:
 - LIT-tmpkvsya # quality, WER and human preference against LTX 2.3, cited to the LTX-2 paper
 - LIT-tmpouvmz # quality, WER and human preference against Ovi 1.1
+- LIT-tmpe78xc
 summary: >-
-  SII-GAIR and Sand.ai (2026), ARXIV-2603.21986. A 15B, 40-layer transformer
+  SII-GAIR and Sand.ai (2026), [ARXIV-2603.21986](https://arxiv.org/abs/2603.21986). A 15B, 40-layer transformer
   denoises text, video and audio tokens in one sequence with self-attention
   only, sharing weights in the middle 32 layers. It has no timestep
   embedding, and gates each attention head. Distilled to 8 steps, it makes 5 s
@@ -39,7 +40,7 @@ summary: >-
 # LIT-tmpngzke: Speed by Simplicity: A Single-Stream Architecture for Fast Audio-Video Generative Foundation Model
 
 Chern, Teng, Sun and 40 others, project leads Cao and Liu, SII-GAIR and
-Sand.ai (2026) — ARXIV-2603.21986. Read at v1 (23 Mar 2026), the only
+Sand.ai (2026) — [ARXIV-2603.21986](https://arxiv.org/abs/2603.21986). Read at v1 (23 Mar 2026), the only
 version, main text and Appendix A (author list). The report is five pages of
 text.
 
@@ -57,7 +58,7 @@ text.
   There is no AdaLN and no timestep embedding.
 - **Per-head sigmoid gate** (§2). Each head's output is multiplied by
   σ(g_h) before the output projection, citing the gated-attention work of
-  LIT-138. It is "introduced to improve numerical stability during training
+  [LIT-138](LIT-138.md). It is "introduced to improve numerical stability during training
   and to enhance model representability".
 - **The inference stack** (§2). The base model generates at 256p. A
   dedicated super-resolution checkpoint upsamples the video latent
@@ -65,7 +66,7 @@ text.
   audio latent reused, noised, as input. At 1080p that checkpoint "enables
   local attention in many layers". Encoding uses the Wan2.2 VAE and decoding
   a retrained Turbo-VAED decoder. A full-graph compiler gives about 1.2× on
-  H100. DMD-2 (LIT-646) distils the base model to 8 steps without CFG.
+  H100. DMD-2 ([LIT-646](LIT-646.md)) distils the base model to 8 steps without CFG.
 - **Latency** (Table 2, one H100, 5 s clip). 256p: 1.6 s base and 0.4 s
   decode, 2.0 s total. 540p: 8.0 s. 1080p: 1.6 s base, 31.0 s
   super-resolution, 5.8 s decode, 38.4 s total.
@@ -80,7 +81,7 @@ text.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Speed by simplicity" is not measured.** Table 2 times only MagiHuman,
   and only the distilled model. No competitor is timed on the same
@@ -116,7 +117,7 @@ Per DP-010:
 - **None in full.** Table 1 and Fig. 3 compare released models under their
   own pipelines. No retraining on shared data, no matched resolution or step
   count is stated.
-- **The LTX baseline is LTX 2.3**, cited to the LTX-2 paper (LIT-tmpkvsya),
+- **The LTX baseline is LTX 2.3**, cited to the LTX-2 paper ([LIT-tmpkvsya](LIT-tmpkvsya.md)),
   which describes only LTX-2. The baseline is a later release than the
   cited document.
 - **Table 2 is internally consistent.** The base stage is fixed at 256p, so
@@ -126,11 +127,11 @@ Per DP-010:
 
 It is the record's single-stream counterpoint to the dual-stream joint
 audio-video models in this batch. Against LTX 2.3, which descends from the
-LTX-2 design (LIT-tmpkvsya), it reports 60.9% human wins against 21.9%,
+LTX-2 design ([LIT-tmpkvsya](LIT-tmpkvsya.md)), it reports 60.9% human wins against 21.9%,
 better WER (14.60% against 19.23%) and VideoScore2 within 0.06. LTX 2.3
 leads on physical consistency, 4.56 against 4.52. LTX-2 puts video and
 audio in separate streams of 14B and 5B joined by cross-attention. Here
-both share one set of middle-layer weights. Against Ovi 1.1 (LIT-tmpouvmz)
+both share one set of middle-layer weights. Against Ovi 1.1 ([LIT-tmpouvmz](LIT-tmpouvmz.md))
 the gaps are wider: 80.0% wins against 11.8%, and WER 14.60% against
 40.45%. Neither comparison isolates the architecture, because the models
 also differ in data, scale and inference pipeline.
@@ -138,17 +139,17 @@ also differ in data, scale and inference pipeline.
 Its attention is dense full self-attention over the joint sequence at the
 256p base. The only restriction is the unspecified "local attention" in the
 1080p super-resolution checkpoint. It therefore takes the opposite route to
-Prism (LIT-tmpe78xc), which keeps audio separate and makes video attention
+Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)), which keeps audio separate and makes video attention
 block-sparse at native 2K. MagiHuman avoids the long sequence by generating
 at 256p and refining in latent space. It is a second instance, after
 LTX-2's cascade, of an open joint model that reaches 1080p by latent
 upscaling rather than native high-resolution training. That supports
 Prism's framing of the alternative.
 
-The per-head gate is the practice of SOTA-134, from LIT-138, applied here to
+The per-head gate is the practice of [SOTA-134](../practices.d/SOTA-134.md), from [LIT-138](LIT-138.md), applied here to
 a diffusion transformer. This paper is adoption, not evidence for it in
-that setting, since no arm removes the gate (DP-005). The 8-step student is
-DMD-2 (LIT-646) used off the shelf.
+that setting, since no arm removes the gate ([DP-005](../../docs/design-principles.md#dp-5)). The 8-step student is
+DMD-2 ([LIT-646](LIT-646.md)) used off the shelf.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and author appendix. Figs. 1–2 are samples and a diagram, and Fig. 3's

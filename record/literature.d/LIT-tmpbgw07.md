@@ -24,8 +24,9 @@ implementations: []
 compared_against:
 - LIT-tmp5vqlh
 - LIT-tmpmuiol
+- LIT-tmpe78xc
 summary: >-
-  Zhang, Jiang, Xiang et al., Tsinghua and UC Berkeley (2026), ARXIV-2602.13515.
+  Zhang, Jiang, Xiang et al., Tsinghua and UC Berkeley (2026), [ARXIV-2602.13515](https://arxiv.org/abs/2602.13515).
   Block-sparse attention for video diffusion. Each query block keeps the union
   of the top k% key blocks and the smallest set reaching p cumulative weight on
   a mean-pooled block attention map (k = 0.03, p = 0.2 or 0.16). It is then
@@ -39,7 +40,7 @@ summary: >-
 # LIT-tmpbgw07: SpargeAttention2: Trainable Sparse Attention via Hybrid Top-k+Top-p Masking and Distillation Fine-Tuning
 
 Zhang, Jiang, Xiang, Feng, Hu, Xi, Chen and Zhu, Tsinghua University and UC
-Berkeley (2026) — ARXIV-2602.13515. Read at v1 (13 Feb 2026), the only
+Berkeley (2026) — [ARXIV-2602.13515](https://arxiv.org/abs/2602.13515). Read at v1 (13 Feb 2026), the only
 version, main text and Appendices A–B.
 
 ## Key takeaways
@@ -107,7 +108,7 @@ version, main text and Appendices A–B.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Consistently achieves the best" (§5.4) is not what Table 6 shows in
   every cell.** At 1.3B, Top-k alone has the higher combined VQA (86.90
@@ -153,7 +154,7 @@ Per DP-010:
   model fixed. It is a controlled answer to "does fine-tuning matter at 95%
   sparsity": yes, by a wide margin.
 - **Tables 4–5** are not like for like, for the sparsity and training
-  reasons above. VSA (LIT-tmp5vqlh) and VMoBA (LIT-tmpmuiol) are the trained
+  reasons above. VSA ([LIT-tmp5vqlh](LIT-tmp5vqlh.md)) and VMoBA ([LIT-tmpmuiol](LIT-tmpmuiol.md)) are the trained
   baselines. At 1.3B, VMoBA is close to full attention (VQA-t 86.69, above
   it) at 90% sparsity, and VSA loses badly on alignment (VQA-a 33.35). At
   14B both are within a few points of full attention, and SpargeAttention2
@@ -163,7 +164,7 @@ Per DP-010:
 
 It is the record's clearest source for **hybrid Top-k ∪ Top-p block
 selection**. Its title names it, its Eq. 9 defines it, and it ran a roughly
-sparsity-matched ablation of it. Prism (LIT-tmpe78xc) uses the same rule
+sparsity-matched ablation of it. Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) uses the same rule
 eight months later: Top-k(Pᵢ, k) ∪ Top-p(Pᵢ, p) over a mean-pooled block
 softmax, with p = 0.2 as here at 1.3B. Prism presents it as part of its own
 method. Its related work describes SpargeAttention2 only as using "a
@@ -173,21 +174,21 @@ claim that "the union is far better than either rule alone" should be read
 against this paper, which got there first and found the union's margin over
 Top-k small at 1.3B.
 
-It bears on SOTA-138 without moving it. That practice trains sparsity
+It bears on [SOTA-138](../practices.d/SOTA-138.md) without moving it. That practice trains sparsity
 natively with a dense warm-up, following DeepSeek's language-model work
-(LIT-142, LIT-143). This paper retrofits sparsity onto a dense
+([LIT-142](LIT-142.md), [LIT-143](LIT-143.md)). This paper retrofits sparsity onto a dense
 video model and supervises it with a frozen dense teacher rather than the
 data loss. Its trained-against-training-free row is direct evidence that
 adapting the weights to the mask matters at 95% sparsity. Its selector is
 pooled dot products with no learned indexer. The teacher-student framing is
-Hinton-style distillation (LIT-680), applied to the velocity field. The
+Hinton-style distillation ([LIT-680](LIT-680.md)), applied to the velocity field. The
 Top-p failure it guards against is the attention-sink effect described for
-language models in LIT-191.
+language models in [LIT-191](LIT-191.md).
 
 Blocks are runs of consecutive tokens in the flattened sequence (bq = 128,
 bkv = 64). The paper does not tile in 3D, does not choose block shape or
 size from content, and does not discuss either. The backbones are Wan2.1
-(LIT-619) at 1.3B and 14B, unmodified apart from attention.
+([LIT-619](LIT-619.md)) at 1.3B and 14B, unmodified apart from attention.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and Appendices A–B. Figures 1–4 are images and only text and table

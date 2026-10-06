@@ -87,7 +87,7 @@ Appendices A.1–A.19.
   the smallest set reaching 0.2 cumulative weight. On MotionQ, top-k alone
   scores 0.61, top-p alone 0.37, and the union 0.89, at 10.6 against 9.8
   minutes per step. The rule is not Prism's. SpargeAttention2
-  (LIT-tmpbgw07) defined the same union over a mean-pooled block softmax,
+  ([LIT-tmpbgw07](LIT-tmpbgw07.md)) defined the same union over a mean-pooled block softmax,
   with the same p = 0.2, eight months earlier. Prism's related work credits
   that paper only with "a distillation objective".
 - **Against other attention schemes at 2K** (Table 2). Every trainable
@@ -131,9 +131,24 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
 - **The selection ablation does not hold sparsity fixed, and the earlier one
   did.** Table 7's union adds blocks to top-k alone (9.8 against 10.6
   minutes per step), so its margin mixes the rule with the budget.
-  SpargeAttention2 (LIT-tmpbgw07) calibrated its single-rule arms to near
+  SpargeAttention2 ([LIT-tmpbgw07](LIT-tmpbgw07.md)) calibrated its single-rule arms to near
   the union's sparsity. On a 1.3B Wan model it found the union only slightly
   ahead of top-k alone, and behind it on one metric.
+- **Most of what Prism presents as new has precedents among its own
+  baselines.** Sparse VideoGen2 ([LIT-tmpucn4v](LIT-tmpucn4v.md)) made the diagnosis first,
+  that fixed blocks mix dissimilar tokens and corrupt pooled
+  representatives, and answered it with content-defined k-means clusters.
+  VMoBA ([LIT-tmpmuiol](LIT-tmpmuiol.md)) already varied block shape, cycling temporal slabs,
+  spatial columns and 3D cubes by layer. Sliding Tile Attention
+  ([LIT-tmp1yfvi](LIT-tmp1yfvi.md)) and VSA ([LIT-tmp5vqlh](LIT-tmp5vqlh.md)) already used fixed 4×4×4 cubes laid
+  out as kernel tiles, the same cube as Prism's "Fixed 4³" ablation.
+  LongCat-Video ([LIT-tmpid6gf](LIT-tmpid6gf.md)) tried a top-p rule before dropping it for
+  load imbalance. What remains Prism's own is choosing each zone's shape
+  from feature variance and audio coupling.
+- **Two baselines' budgets are mislabelled.** Table 2 calls its "Base
+  Sparsity" column "the Top-k budget", but Sparse VideoGen2 selects by top-p
+  and Sol-Attn ([LIT-tmpx3dxt](LIT-tmpx3dxt.md)) by a mean-plus-deviation threshold. Neither
+  uses top-k.
 - **No variance anywhere.** More than forty ablation rows, and every one is
   below the full method on nearly every metric. Small changes move MotionQ a
   lot. α = 1 against the derived α = 1/2 gives 0.82 against 0.89, and top-p
@@ -167,37 +182,37 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
 All numbers are Prism's, on its 2K-Bench unless marked, as aesthetic quality
 (AQ, higher is better), DeSync (lower is better) and MotionQ.
 
-- **Its backbone.** MOVA (LIT-tmpmipjh) is the dual-stream video-audio DiT
+- **Its backbone.** MOVA ([LIT-tmpmipjh](LIT-tmpmipjh.md)) is the dual-stream video-audio DiT
   that Prism initializes from and modifies. Fine-tuned at 2K with full
   attention, it is the "Full Attn" row everywhere: 0.42 / 1.05 / 0.53, at
   26.5 minutes per training step and 1,091 s per clip at inference.
 - **The block-sparse mechanism it builds on.** LongCat-Video's block sparse
-  attention (LIT-tmpid6gf) uses fixed-shape blocks, mean-pooled
+  attention ([LIT-tmpid6gf](LIT-tmpid6gf.md)) uses fixed-shape blocks, mean-pooled
   representatives and top-k selection. Retrained at 90% sparsity it scores
   0.33 / 1.36 / 0.34, the worst trainable row. Prism's fixed 4×4×4 variant
   scores 0.55 / 0.72 / 0.77, which is where most of the gap closes.
 - **Other trainable sparse attention** (Table 2), each retrained on the same
-  data: VSA (LIT-tmp5vqlh) at 90% sparsity, 0.39 / 1.08 / 0.46.
-  HunyuanVideo 1.5's selective and sliding tile attention (LIT-tmp1ecle) at
-  85%, 0.43 / 0.97 / 0.54. VMoBA (LIT-tmpmuiol) at 90%, 0.46 / 0.91 / 0.59.
-  SpargeAttention2 (LIT-tmpbgw07) at 95%, 0.47 / 0.90 / 0.61, the closest
+  data: VSA ([LIT-tmp5vqlh](LIT-tmp5vqlh.md)) at 90% sparsity, 0.39 / 1.08 / 0.46.
+  HunyuanVideo 1.5's selective and sliding tile attention ([LIT-tmp1ecle](LIT-tmp1ecle.md)) at
+  85%, 0.43 / 0.97 / 0.54. VMoBA ([LIT-tmpmuiol](LIT-tmpmuiol.md)) at 90%, 0.46 / 0.91 / 0.59.
+  SpargeAttention2 ([LIT-tmpbgw07](LIT-tmpbgw07.md)) at 95%, 0.47 / 0.90 / 0.61, the closest
   rival and the source of Prism's selection rule.
 - **Training-free sparse attention** applied at inference to the
-  full-attention model (Table 2): Sparse VideoGen2 (LIT-tmpucn4v) at 71%,
-  0.35 / 1.28 / 0.38. Sol-Attn (LIT-tmpx3dxt) at 85%, 0.40 / 1.11 / 0.47.
+  full-attention model (Table 2): Sparse VideoGen2 ([LIT-tmpucn4v](LIT-tmpucn4v.md)) at 71%,
+  0.35 / 1.28 / 0.38. Sol-Attn ([LIT-tmpx3dxt](LIT-tmpx3dxt.md)) at 85%, 0.40 / 1.11 / 0.47.
   Both are below the dense model they sparsify.
-- **Other routes to high resolution** (Table 5). UltraGen (LIT-tmp8ew94)
+- **Other routes to high resolution** (Table 5). UltraGen ([LIT-tmp8ew94](LIT-tmp8ew94.md))
   scores 0.43 / 1.06 / 0.46. Prism lists it as training-free on the 720p
   model, but the published method is a 50-epoch fine-tune whose fusion
   layers and LoRA branches do not exist untrained. That row therefore does
   not measure UltraGen as published. LUVE
-  (LIT-tmppxw6w), a cascade with frequency experts, scores 0.50 / 0.85 /
-  0.62 at 18.7 minutes per step. Pyramidal Flow Matching (LIT-tmpqhnq9)
-  scores 0.51 / 0.84 / 0.70 at 18.3 minutes. T3 (LIT-tmpva88i), native 2K
+  ([LIT-tmppxw6w](LIT-tmppxw6w.md)), a cascade with frequency experts, scores 0.50 / 0.85 /
+  0.62 at 18.7 minutes per step. Pyramidal Flow Matching ([LIT-tmpqhnq9](LIT-tmpqhnq9.md))
+  scores 0.51 / 0.84 / 0.70 at 18.3 minutes. T3 ([LIT-tmpva88i](LIT-tmpva88i.md)), native 2K
   with multi-scale windows, scores 0.53 / 0.79 / 0.71 at 16.9 minutes.
 - **Other open joint models** (Table 1), fine-tuned on the same 2K data
-  except LTX: Ovi (LIT-tmpouvmz) 0.38 / 1.12 / 0.42, daVinci-MagiHuman
-  (LIT-tmpngzke) 0.40 / 1.08 / 0.58, and LTX-2 (LIT-tmpkvsya), run as
+  except LTX: Ovi ([LIT-tmpouvmz](LIT-tmpouvmz.md)) 0.38 / 1.12 / 0.42, daVinci-MagiHuman
+  ([LIT-tmpngzke](LIT-tmpngzke.md)) 0.40 / 1.08 / 0.58, and LTX-2 ([LIT-tmpkvsya](LIT-tmpkvsya.md)), run as
   "LTX-2.3" through its own low-resolution-then-upscale pipeline, 0.48 /
   0.95 / 0.66.
 
@@ -225,7 +240,10 @@ Native Sparse Attention ([LIT-143](LIT-143.md)) and the Sparse Transformer's fac
 patterns ([LIT-225](LIT-225.md)) attend over blocks or strides of a fixed shape. Here the shape of the
 block is the variable, chosen per zone, head and layer from the content. The
 Table 9 comparison above suggests the shape matters less than the selection
-rule wrapped around it.
+rule wrapped around it. Prism's fixed 4×4×4 arm uses VSA's exact cube, and
+it scores 0.55 / 0.72 / 0.77 against VSA's row at 0.39 / 1.08 / 0.46. So
+that gap is selection rule, gated coarse output and sparsity, not block
+shape. Prism does not separate them.
 
 The backbone descends from Wan ([LIT-619](LIT-619.md)) through MOVA's high-noise and
 low-noise experts. The objective is rectified-flow velocity matching

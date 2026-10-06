@@ -33,8 +33,9 @@ extends:
 compared_against:
 - LIT-619
 - LIT-620
+- LIT-tmpe78xc
 summary: >-
-  Meituan LongCat Team (2025), ARXIV-2510.22200. A 13.6B single-stream video
+  Meituan LongCat Team (2025), [ARXIV-2510.22200](https://arxiv.org/abs/2510.22200). A 13.6B single-stream video
   DiT that treats T2V, I2V and continuation as one task. Its block sparse
   attention (BSA) cuts the latent into non-overlapping 4×4×4 token blocks,
   mean-pools each block's queries and keys, and lets each query block attend
@@ -43,12 +44,14 @@ summary: >-
   dense ones, it takes refinement from 302.9 to 142.0 s at 189 frames.
   "Near-lossless" quality, the block-size sweep and top-r over top-p
   are asserted without numbers.
+extended_by:
+- LIT-tmpe78xc
 ---
 
 # LIT-tmpid6gf: LongCat-Video Technical Report
 
 Meituan LongCat Team (contributors listed alphabetically, Xunliang Cai
-first), Meituan (2025) — ARXIV-2510.22200. Read at v2 (28 Oct 2025; v1 25
+first), Meituan (2025) — [ARXIV-2510.22200](https://arxiv.org/abs/2510.22200). Read at v2 (28 Oct 2025; v1 25
 Oct 2025), main text and Appendices A.1–A.3.
 
 ## Key takeaways
@@ -118,7 +121,7 @@ Oct 2025), main text and Appendices A.1–A.3.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Near-lossless" sparse attention has no number behind it.** The only
   BSA measurements are latencies (Table 2). No table or curve compares
@@ -163,7 +166,7 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It extends Flow-GRPO (LIT-779). Its SDE, transition density and KL term
+It extends Flow-GRPO ([LIT-779](LIT-779.md)). Its SDE, transition density and KL term
 (Eqs. 23–25) are Flow-GRPO's. Its changes respond to problems it reads off
 that formulation. Injecting noise at every step spreads the reward across
 all timesteps. The gradient scale κ(t, Δt) vanishes at high noise and with
@@ -172,14 +175,14 @@ deviations inflate advantages in groups where the reward model is
 uncertain. The fix of sharing initial noise and injecting it at a single
 step is credited as concurrent with TempFlow-GRPO.
 
-It compares against Wan (LIT-619) and HunyuanVideo (LIT-620) twice. In
+It compares against Wan ([LIT-619](LIT-619.md)) and HunyuanVideo ([LIT-620](LIT-620.md)) twice. In
 the internal human studies, it is preferred to Wan2.2-T2V-A14B on overall
 quality, on the strength of text alignment and motion (Fig. 15, counts in
 the chart only). In VBench 2.0 (Table 8), its total of 62.11 is above
 Wan2.1's 60.20 and HunyuanVideo's 55.30, while it trails both on Physics.
 It uses Wan2.1's VAE unchanged.
 
-**It is the BSA that Prism (LIT-tmpe78xc) builds on**, and the paper Prism
+**It is the BSA that Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) builds on**, and the paper Prism
 cites for it. As described here, BSA is the fixed-shape, mean-pooled,
 top-r block attention that Prism's introduction attributes to it. Two
 things here bear on Prism's claims. LongCat-Video already reports
@@ -197,7 +200,7 @@ BSA is the worst trainable method (AQ 0.33 against full attention's 0.42).
 That is not the "near-lossless" result claimed here, but the two papers
 use BSA in very different settings.
 
-For SOTA-138 it is an independent video example of the same ordering:
+For [SOTA-138](../practices.d/SOTA-138.md) it is an independent video example of the same ordering:
 dense attention first, then sparse training from the dense weights. The
 evidence is thin. The dense phase is 500 iterations of a LoRA, the
 selection is a pooled score rather than a learned indexer, and nothing is

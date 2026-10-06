@@ -23,7 +23,7 @@ implementations:
 - 'VMoBA (KwaiVGI, github.com/KwaiVGI/VMoBA)'
 summary: >-
   Wu, Hou, Yang et al., Peking University and Kuaishou Kling (2025),
-  ARXIV-2506.23858. Adapts MoBA's trainable block-sparse attention to video
+  [ARXIV-2506.23858](https://arxiv.org/abs/2506.23858). Adapts MoBA's trainable block-sparse attention to video
   DiTs. Key blocks are cut along time, space or both in a fixed 1D-2D-3D
   cycle over layers. Each head keeps the highest query-block scores from
   its whole score map until their cumulative share reaches τ = 0.25.
@@ -33,17 +33,20 @@ summary: >-
   motion, and VMoBA's Dynamic Degree is lower than full attention's. The
   pretrained model scores 68.27 untouched. Every number is one run, and
   the partition ablation never tests a single shape alone.
+compared_against:
+- LIT-tmpbgw07
+- LIT-tmpe78xc
 ---
 
 # LIT-tmpmuiol: VMoBA: Mixture-of-Block Attention for Video Diffusion Models
 
 Wu, Hou, Yang, Tao, Tian, Wan, Zhang and Tong, Peking University and Kling
-Team, Kuaishou Technology (2025) — ARXIV-2506.23858. Read at v1 (30 Jun
+Team, Kuaishou Technology (2025) — [ARXIV-2506.23858](https://arxiv.org/abs/2506.23858). Read at v1 (30 Jun
 2025), the only version, main text and Appendices A–D.
 
 ## Key takeaways
 
-- **What it starts from** (§1, Fig. 1a). MoBA (ARXIV-2502.13189, not in the
+- **What it starts from** (§1, Fig. 1a). MoBA ([ARXIV-2502.13189](https://arxiv.org/abs/2502.13189), not in the
   record) flattens the sequence, cuts it into uniform 1D blocks,
   mean-pools each key block, and lets each query attend to its own block
   plus its top-k scoring blocks. Applied directly to fine-tuning Wan 2.1,
@@ -133,7 +136,7 @@ Team, Kuaishou Technology (2025) — ARXIV-2506.23858. Read at v1 (30 Jun
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Comparable or superior to full attention" is a five-metric mean that
   favours less motion.** At 55K tokens VMoBA is below full attention on
@@ -193,17 +196,17 @@ Per DP-010:
 
 The record's first adaptation of MoBA to video, and one of its earliest
 trainable sparse attention papers for video diffusion. MoBA itself is not
-in the record. It sits beside SOTA-138, which recommends training sparse
+in the record. It sits beside [SOTA-138](../practices.d/SOTA-138.md), which recommends training sparse
 attention natively from DeepSeek's language-model work. VMoBA takes the
 same route for video: it fine-tunes a dense checkpoint with sparsity on and
 reports training savings. It does not warm up a learned indexer, and
 selection uses mean-pooled block scores. Its pre-training curves (App. C)
 are small-scale evidence that a sparse model trained from scratch tracks
 dense loss at long sequence lengths, similar to what Native Sparse Attention
-(LIT-143) reports for text.
+([LIT-143](LIT-143.md)) reports for text.
 
 Two later papers in the record pick up its parts. SpargeAttention2
-(LIT-tmpbgw07) retrains VMoBA as a baseline on Wan 2.1 at 90% sparsity
+([LIT-tmpbgw07](LIT-tmpbgw07.md)) retrains VMoBA as a baseline on Wan 2.1 at 90% sparsity
 and uses a per-query union of top-k and top-p. On Wan 2.1-1.3B at 480p,
 SpargeAttention2's tables put VMoBA at Imaging Quality 65.31 against
 63.67 for full attention, VQA-a 78.99 against 81.28, and attention time
@@ -212,14 +215,14 @@ stays near full attention once trained. VMoBA's per-head threshold
 is an earlier cumulative-mass rule of that family. SpargeAttention2 argues
 that a cumulative-mass rule alone fails on rows dominated by attention
 sinks, which VMoBA's Table 3b does not test, since its threshold arms are
-never compared with a top-k floor added. Prism (LIT-tmpe78xc) varies block shape by content, per zone,
+never compared with a top-k floor added. Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) varies block shape by content, per zone,
 head and layer. VMoBA already used three anisotropic block shapes (whole
 frame slabs, full-length spatial columns and cubes), fixed by layer index.
 Prism's dynamic shape is therefore new in being content-chosen, not in
 being anisotropic.
 
-The base model is Wan 2.1-1.3B (LIT-619), unchanged except for the
-attention. The kernel is built on FlashAttention (LIT-074).
+The base model is Wan 2.1-1.3B ([LIT-619](LIT-619.md)), unchanged except for the
+attention. The kernel is built on FlashAttention ([LIT-074](LIT-074.md)).
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and Appendices A–D. Figs. 1, 3–7 are images and curves, and only

@@ -28,9 +28,10 @@ extends:
 - LIT-449 # architecture and initial weights are SD3 Medium's MM-DiT
 compared_against:
 - LIT-622 # CogVideoX-2B and 5B rows in Table 1, Table 5 and the user study
+- LIT-tmpe78xc
 summary: >-
   Jin, Sun et al., Peking University and Kuaishou (2024), ICLR 2025,
-  ARXIV-2410.05954. One 2B DiT runs a flow whose early, noisy segments sit
+  [ARXIV-2410.05954](https://arxiv.org/abs/2410.05954). One 2B DiT runs a flow whose early, noisy segments sit
   at 1/4 and 1/16 of the spatial tokens, and conditions each new latent
   frame on progressively downsampled history. A 10 s, 241-frame clip costs
   at most 15,360 training tokens against 119,040 at full sequence, and the
@@ -44,7 +45,7 @@ summary: >-
 
 Jin, Sun, Li, Xu, Xu, Jiang, Zhuang, Huang, Song, Mu and Lin, Peking
 University, Kuaishou Technology and Beijing University of Posts and
-Telecommunications (2024), ICLR 2025 — ARXIV-2410.05954. Read at v2
+Telecommunications (2024), ICLR 2025 — [ARXIV-2410.05954](https://arxiv.org/abs/2410.05954). Read at v2
 (15 Mar 2025), main text and Appendices A–D; v1 is 8 Oct 2024.
 
 ## Key takeaways
@@ -74,7 +75,7 @@ Telecommunications (2024), ICLR 2025 — ARXIV-2410.05954. Read at v2
   autoregressive over latent frames. Older frames enter as condition at
   lower resolution, so most history sits at the coarsest scale. History
   latents get noise of strength U[0, 1/3] in training (§4.1), following
-  Diffusion Forcing (LIT-554) and GameNGen. The paper puts the token saving
+  Diffusion Forcing ([LIT-554](LIT-554.md)) and GameNGen. The paper puts the token saving
   at up to 1/4^K (§3.3).
 - **The attention is dense, not sparse** (§3.4). The pyramids cut tokens
   enough that full-sequence attention is used, not factorized
@@ -97,7 +98,7 @@ Telecommunications (2024), ICLR 2025 — ARXIV-2410.05954. Read at v2
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Almost three times the convergence speed"** (Fig. 7 caption) is read
   off one FID curve, 3K MS-COCO prompts, 20k–60k steps of an early
@@ -152,11 +153,11 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It extends Flow Matching (LIT-630). Flow matching regresses a velocity onto
+It extends Flow Matching ([LIT-630](LIT-630.md)). Flow matching regresses a velocity onto
 a conditional path, and this paper's §3.1 points out that the path need not
 end at a standard Gaussian. Pyramidal flow uses that to make each window's
 path run between two resolutions, with Eq. 11 the same regression on a
-piecewise target. It extends Rectified Flow (LIT-636) in two ways. The path
+piecewise target. It extends Rectified Flow ([LIT-636](LIT-636.md)) in two ways. The path
 inside each window is rectified flow's straight interpolation x_t = t·x1 +
 (1 − t)·x0 with u = x1 − x0 (Eq. 3). The shared noise draw is justified by
 rectified flow's argument that crossing trajectories are what bend a flow
@@ -164,29 +165,29 @@ rectified flow's argument that crossing trajectories are what bend a flow
 rectified flow. It does not reflow, and it measures straightness only in
 the toy of Fig. 13.
 
-It stands on SD3 (LIT-449) more directly than the abstract says. The 2B
+It stands on SD3 ([LIT-449](LIT-449.md)) more directly than the abstract says. The 2B
 MM-DiT is SD3 Medium's architecture, initialized from its weights, with T5
 and CLIP text encoders (App. B). The authors blame the same initialization
 for the low human-action score (App. C.1).
 
-It compares against CogVideoX (LIT-622) on VBench and in the user study.
+It compares against CogVideoX ([LIT-622](LIT-622.md)) on VBench and in the user study.
 At the same 2B size, its total is 81.72 against CogVideoX-2B's 80.91, and
 its quality score 84.74 against 82.18. CogVideoX-2B leads on semantic score
 (75.83 against 69.62) and in the user study's semantic column (57.9% to
 42.1%). Against the 5B model it is ahead on total by 0.11 and behind on
 semantics by 7.42.
 
-It bears on SOTA-187, which recommends training in a compressed latent
+It bears on [SOTA-187](../practices.d/SOTA-187.md), which recommends training in a compressed latent
 rather than at full resolution. This paper takes the same economy one step
 further inside the latent: the noisy part of the trajectory runs at 1/4
-and 1/16 of the latent tokens. It also bears on SOTA-263, which says that
+and 1/16 of the latent tokens. It also bears on [SOTA-263](../practices.d/SOTA-263.md), which says that
 more pixels need more noise. Here that relationship sets the design. The
 low-noise end of each window is at higher resolution, and Eq. 26 rolls the
 timestep back at each jump to keep the marginal Gaussian consistent. LTX-Video
-(LIT-618) counts it among the 1:2048 compression models, against its own
+([LIT-618](LIT-618.md)) counts it among the 1:2048 compression models, against its own
 1:8192.
 
-For Prism (LIT-tmpe78xc), which reran it as a baseline at 2K, it is not an
+For Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)), which reran it as a baseline at 2K, it is not an
 attention method. It is a training recipe that reduces tokens, with dense
 attention and a causal mask over frames. It does not group tokens into
 spatiotemporal blocks for attention, choose a block shape, select blocks,

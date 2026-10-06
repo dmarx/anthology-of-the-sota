@@ -32,7 +32,7 @@ compared_against:
 - LIT-620
 summary: >-
   Zhang, Chen, Su et al., UC San Diego, Michigan, Tsinghua, UC Berkeley and
-  MBZUAI (2025), ARXIV-2502.04507. 3D sliding-window attention for video DiTs
+  MBZUAI (2025), [ARXIV-2502.04507](https://arxiv.org/abs/2502.04507). 3D sliding-window attention for video DiTs
   that slides by tiles, not tokens. Each tile is one FlashAttention block, so
   every block is dense or skipped. At about 90% sparsity the kernel is 10.45×
   faster than FA3, where token-wise Tiled NATTEN is 1.27×. On HunyuanVideo at
@@ -41,13 +41,16 @@ summary: >-
   VBench quality (82.69 against 82.46): the tile buys speed, not quality. The
   fine-tune is 1,600 steps on 2,000 self-generated clips, and every score is
   one run.
+extended_by:
+- LIT-tmp1ecle
+- LIT-tmp5vqlh
 ---
 
 # LIT-tmp1yfvi: Fast Video Generation with Sliding Tile Attention
 
 Zhang, Chen, Su, Ding, Stoica, Liu and Zhang, UC San Diego, University of
 Michigan, Tsinghua University, UC Berkeley and MBZUAI (2025), ICML 2025 —
-ARXIV-2502.04507. Read at v3 (4 Jun 2025), main text and Appendices A–G; v1
+[ARXIV-2502.04507](https://arxiv.org/abs/2502.04507). Read at v3 (4 Jun 2025), main text and Appendices A–G; v1
 is 6 Feb 2025.
 
 ## Key takeaways
@@ -111,7 +114,7 @@ is 6 Feb 2025.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **The tile buys speed, not quality.** The only quality comparison between
   tile-wise and token-wise sliding at matched sparsity is Table 4's
@@ -175,7 +178,7 @@ across prompts. It is a fixed-pattern, mostly training-free method. The
 pattern is a window whose size is chosen per head offline. Nothing is
 selected per input.
 
-Swin (LIT-723) is the comparison that bears on locality. Its non-overlapping
+Swin ([LIT-723](LIT-723.md)) is the comparison that bears on locality. Its non-overlapping
 shifted windows run about as fast as STA in FlexAttention (5.54× against
 7.30× at about 90% sparsity, Table 2). Dropped into HunyuanVideo, they cost
 VBench 3.7 points at about 56% sparsity, and fine-tuning with them lowers the
@@ -186,20 +189,20 @@ from scratch, so a retrofit into a dense-trained DiT is not a fair test of
 Swin as an architecture. It is a test of whether a dense model tolerates
 losing its cross-boundary neighbours.
 
-FlashAttention-2 (LIT-106) appears only as the slow end-to-end baseline. With
+FlashAttention-2 ([LIT-106](LIT-106.md)) appears only as the slow end-to-end baseline. With
 FA2, HunyuanVideo takes 1,496 s for a 5 s 720p clip, against 945 s with FA3
 and 501 s with training-free STA. The dense quality reference throughout is
-HunyuanVideo (LIT-620). Every similarity metric in Table 3 is measured
+HunyuanVideo ([LIT-620](LIT-620.md)). Every similarity metric in Table 3 is measured
 against its outputs. Its VBench total of 82.71 is the bar in Table 4, and
 human raters in Fig. 7 judge training-free STA at 1.89× a tie with it in 83%
 of pairs.
 
-The same group's VSA (LIT-tmp5vqlh) extends it. VSA keeps STA's re-indexing
+The same group's VSA ([LIT-tmp5vqlh](LIT-tmp5vqlh.md)) extends it. VSA keeps STA's re-indexing
 of a 3D cube into one GPU tile and replaces the fixed local window with a
 learned top-K choice of cubes, trained from scratch or by an annealed retrofit.
 VSA's own framing treats STA as the post-hoc baseline it improves on.
-HunyuanVideo 1.5 (LIT-tmp1ecle) ships a "selective and sliding tile
-attention" whose name and tile layout follow this paper. Prism (LIT-tmpe78xc) cites STA among "training-free"
+HunyuanVideo 1.5 ([LIT-tmp1ecle](LIT-tmp1ecle.md)) ships a "selective and sliding tile
+attention" whose name and tile layout follow this paper. Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) cites STA among "training-free"
 video methods. That is true of STA's headline configuration but not of its
 fine-tuned one, which is the faster of the two and is tuned with an
 attention-distillation loss.

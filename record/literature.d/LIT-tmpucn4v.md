@@ -27,9 +27,11 @@ implementations:
 compared_against:
 - LIT-619
 - LIT-620
+- LIT-tmpe78xc
+- LIT-tmpx3dxt
 summary: >-
   Yang, Xi et al., UC Berkeley, MIT, NVIDIA and Stanford (2025), NeurIPS
-  2025, ARXIV-2505.18875. Training-free sparse attention for video DiTs that
+  2025, [ARXIV-2505.18875](https://arxiv.org/abs/2505.18875). Training-free sparse attention for video DiTs that
   replaces blocks of consecutive tokens with k-means clusters of queries and
   of keys, run separately per head and layer, permutes each cluster into a
   contiguous run, and keeps key clusters by top-p on centroid scores. At
@@ -43,7 +45,7 @@ summary: >-
 
 Yang, Xi, Zhao, Li, Zhang, Cai, Lin, Li, Xu, Chen, Han, Keutzer and Stoica,
 UC Berkeley, MIT, NVIDIA and Stanford University (2025), NeurIPS 2025 —
-ARXIV-2505.18875. Read at v5 (6 May 2026), main text and Appendices A–E; v1
+[ARXIV-2505.18875](https://arxiv.org/abs/2505.18875). Read at v5 (6 May 2026), main text and Appendices A–E; v1
 is 24 May 2025.
 
 ## Key takeaways
@@ -108,7 +110,7 @@ is 24 May 2025.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **The abstract pairs a speed and a quality from different rows.** "Up to
   2.30× and 1.89× speedup while maintaining a PSNR of up to 30 and 26". On
@@ -163,11 +165,11 @@ Per DP-010:
 ## Standing in the anthology
 
 It is the record's training-free, inference-only answer to the question the
-2026 trainable sparse attention papers (Prism LIT-tmpe78xc, SpargeAttention2
-LIT-tmpbgw07, VMoBA LIT-tmpmuiol, VSA LIT-tmp5vqlh) take up during training:
+2026 trainable sparse attention papers (Prism [LIT-tmpe78xc](LIT-tmpe78xc.md), SpargeAttention2
+[LIT-tmpbgw07](LIT-tmpbgw07.md), VMoBA [LIT-tmpmuiol](LIT-tmpmuiol.md), VSA [LIT-tmp5vqlh](LIT-tmp5vqlh.md)) take up during training:
 what should a block be. SVG2 drops spatial blocks altogether. A cluster is
 whatever set of tokens k-means groups by Q or K activation, it has no shape
-in the (T, H, W) grid, and its size varies. Prism LIT-tmpe78xc reuses SVG2's
+in the (T, H, W) grid, and its size varies. Prism [LIT-tmpe78xc](LIT-tmpe78xc.md) reuses SVG2's
 diagnosis from a year earlier, that fixed blocks mix dissimilar tokens and
 so give unreliable mean-pooled representatives. Prism keeps spatial 3D
 blocks and varies their shape per zone. Prism cites SVG2 and runs it only as
@@ -182,12 +184,12 @@ budget per query. SVG2 already selected by top-p. Neither point shows Prism
 wrong, since Prism trains and SVG2 does not, but both are prior art for
 choices Prism presents as its own.
 
-The dense models it accelerates are Wan 2.1 (LIT-619) and HunyuanVideo
-(LIT-620). Table 1 measures SVG2's output against theirs, and the two
+The dense models it accelerates are Wan 2.1 ([LIT-619](LIT-619.md)) and HunyuanVideo
+([LIT-620](LIT-620.md)). Table 1 measures SVG2's output against theirs, and the two
 backbones respond differently: App. E shows HunyuanVideo tolerating kernel
 numerics far better than Wan, which is why every method scores 4.6–7.4 dB
 higher PSNR on it. The Sparse VideoGen predecessor it beats is not in the record.
-Native Sparse Attention (LIT-143) also scores blocks through a pooled
+Native Sparse Attention ([LIT-143](LIT-143.md)) also scores blocks through a pooled
 representative, but over fixed contiguous blocks in a trained model, so it
 is the language-model counterpart of the design SVG2 argues against.
 
@@ -195,3 +197,11 @@ Filed without a NOTE: the takeaways come from one full reading of v5, main
 text and Appendices A–E. Figs. 2, 3, 7, 8, 11 and 12 are curves, and only
 values stated in the text or tables are quoted. Figs. 9–10 are video stills
 and were not assessed.
+
+Sol-Attn ([LIT-tmpx3dxt](LIT-tmpx3dxt.md)) runs this method as its main training-free rival
+at roughly matched sparsity (81–84% for this method, about 85% for
+Sol-Attn). End to end it reports 2.02× against 1.85× on Wan 2.1 and 2.12×
+against 2.01× on HunyuanVideo, with quality level. This method's k-means
+routing uses about 11.5 GB of memory against Sol-Attn's 1.45 GB. The quality
+differences are within a fraction of a VBench point, and neither paper
+reports variance.

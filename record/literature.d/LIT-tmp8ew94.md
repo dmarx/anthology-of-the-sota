@@ -32,9 +32,11 @@ compared_against:
 - LIT-620
 - LIT-622
 - LIT-723
+- LIT-tmpe78xc
+- LIT-tmpva88i
 summary: >-
   Hu, Zhang, Su and Yi, Shanghai Jiao Tong and Zhejiang University (2025),
-  ARXIV-2510.18775. Wan-1.3B is fine-tuned for 1080P and 4K with its
+  [ARXIV-2510.18775](https://arxiv.org/abs/2510.18775). Wan-1.3B is fine-tuned for 1080P and 4K with its
   self-attention split into three branches. A local branch uses 4×4 spatial
   windows that span every frame and alternate with 5×5 windows between
   layers. A global branch runs on a latent downsampled by a strided
@@ -48,7 +50,7 @@ summary: >-
 # LIT-tmp8ew94: UltraGen: High-Resolution Video Generation with Hierarchical Attention
 
 Hu, Zhang, Su and Yi, Shanghai Jiao Tong University and Zhejiang University
-(2025) — ARXIV-2510.18775. Read at v1 (21 October 2025), the only version,
+(2025) — [ARXIV-2510.18775](https://arxiv.org/abs/2510.18775). Read at v1 (21 October 2025), the only version,
 main text and Appendices A–H.
 
 ## Key takeaways
@@ -106,7 +108,7 @@ main text and Appendices A–H.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **Its own metrics decide the comparison.** HD-FVD, HD-MSE and HD-LPIPS
   are introduced here (App. D). HD-MSE and HD-LPIPS reward energy lost when
@@ -150,18 +152,18 @@ Per DP-010:
 
 ## Standing in the anthology
 
-It extends Wan (LIT-619): the generator is Wan-1.3B with its attention
+It extends Wan ([LIT-619](LIT-619.md)): the generator is Wan-1.3B with its attention
 recomputed, and every branch reuses Wan's projections. Wan is also the main
 baseline. Run natively at 4K, Wan scores HD-FVD 1,272 against UltraGen's 425,
 and the speedup claims are measured against its inference time. HunyuanVideo
-(LIT-620) is the strongest baseline, both natively and with super-resolution:
+([LIT-620](LIT-620.md)) is the strongest baseline, both natively and with super-resolution:
 its SR cascade comes closest on HD-FVD and beats UltraGen on CLIP-L.
-CogVideoX (LIT-622) appears only with super-resolution, because it cannot
+CogVideoX ([LIT-622](LIT-622.md)) appears only with super-resolution, because it cannot
 generate at HD natively, and it is last on HD-FVD at both resolutions.
 
-Replacing the local scheme with Swin's shifted windows (LIT-723) costs 245
+Replacing the local scheme with Swin's shifted windows ([LIT-723](LIT-723.md)) costs 245
 HD-FVD points at 1080P. The paper reads this as Swin connecting windows
-without capturing hierarchical structure. T3 (LIT-tmpva88i), from an
+without capturing hierarchical structure. T3 ([LIT-tmpva88i](LIT-tmpva88i.md)), from an
 overlapping author list, finds the same direction at 720P.
 
 T3 is the direct successor. It reports +4.29 VQA over UltraGen's released 4K
@@ -171,7 +173,7 @@ split the problem differently. UltraGen keeps every window full in time and
 2D in space, with a separately parameterized compressed global branch. T3
 uses 3D windows that vary by layer and a weight-shared strided global path.
 
-Prism (LIT-tmpe78xc) lists UltraGen in its Table 5 under "Training-Free",
+Prism ([LIT-tmpe78xc](LIT-tmpe78xc.md)) lists UltraGen in its Table 5 under "Training-Free",
 applied at 2K to a backbone pretrained only at 720p (Prism §4). That does not
 describe this paper. UltraGen is a 50-epoch full fine-tune at the target
 resolution with new convolutions, fusion MLPs and LoRA branches (App. C).

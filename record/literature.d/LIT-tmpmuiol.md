@@ -33,9 +33,16 @@ summary: >-
   motion, and VMoBA's Dynamic Degree is lower than full attention's. The
   pretrained model scores 68.27 untouched. Every number is one run, and
   the partition ablation never tests a single shape alone.
+# MoBA is the method it adapts (the parameter-free mean-pooled gate) and its
+# main trained baseline; DiTFastAttn is one of its two training-free
+# baselines (Tables 1-2).
+extends:
+- LIT-tmpvcvo8
 compared_against:
 - LIT-tmpbgw07
 - LIT-tmpe78xc
+- LIT-tmpvcvo8
+- LIT-tmp04qx6
 ---
 
 # LIT-tmpmuiol: VMoBA: Mixture-of-Block Attention for Video Diffusion Models
@@ -46,8 +53,7 @@ Team, Kuaishou Technology (2025) — [ARXIV-2506.23858](https://arxiv.org/abs/25
 
 ## Key takeaways
 
-- **What it starts from** (§1, Fig. 1a). MoBA ([ARXIV-2502.13189](https://arxiv.org/abs/2502.13189), not in the
-  record) flattens the sequence, cuts it into uniform 1D blocks,
+- **What it starts from** (§1, Fig. 1a). MoBA (LIT-tmpvcvo8) flattens the sequence, cuts it into uniform 1D blocks,
   mean-pools each key block, and lets each query attend to its own block
   plus its top-k scoring blocks. Applied directly to fine-tuning Wan 2.1,
   it drops the five-dimension VBench mean from 68.25 to 56.88. Almost all of
@@ -223,6 +229,22 @@ being anisotropic.
 
 The base model is Wan 2.1-1.3B ([LIT-619](LIT-619.md)), unchanged except for the
 attention. The kernel is built on FlashAttention ([LIT-074](LIT-074.md)).
+
+It extends MoBA (LIT-tmpvcvo8), whose parameter-free gate it keeps: each key
+block is scored by its mean-pooled key, and the mixture-of-block framing is
+unchanged. It replaces MoBA's uniform 1D partition with a layer-cycled
+1D/2D/3D partition, and MoBA's per-query top-k with a per-head cumulative
+threshold. MoBA retrained on Wan 2.1-1.3B at density 0.25 is its main
+trained baseline. At 55K tokens MoBA holds Imaging Quality at 63.73, but its
+Dynamic Degree collapses to 5.80% against 61.58% for full attention, at 226
+against VMoBA's 187 GPU hours. The MoBA arm differs from VMoBA in both
+partition and selection rule, so the motion collapse is not shown to come
+from the 1D partition. DiTFastAttn (LIT-tmp04qx6) is one of its two
+training-free baselines, run at a stated density of 0.50 without saying
+which of its techniques or thresholds were used. It is the closest to the
+dense output by PSNR at 33K tokens (22.67 against 16.00 for VMoBA, at 1.18×
+against 1.01×). Applied without training to the fine-tuned full-attention
+model at 55K tokens, it lowers Subject Consistency from 90.86 to 83.33.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and Appendices A–D. Figs. 1, 3–7 are images and curves, and only

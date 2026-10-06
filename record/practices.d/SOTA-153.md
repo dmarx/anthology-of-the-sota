@@ -13,7 +13,7 @@ consensus_note: >-
   nobody has compared it against a properly extended RoPE model at matched
   cost.
 title: 'Drop positional encoding from the global-attention layers of a hybrid and let the cheap local layers carry position'
-version: 3
+version: 4
 history:
 - version: 2
   date: '2026-09-07'
@@ -37,6 +37,18 @@ history:
     strong — what NoPE wins is extrapolation, which is LIT-207's result — and
     the mechanism is the causal mask, which bounds where this transfers. The
     recommendation, status and consensus are unchanged.
+- version: 4
+  date: '2026-10-06'
+  note: >-
+    Records Olmo Hybrid (LIT-tmpax1wi), from Ai2, outside the three
+    laboratories the consensus note names. It extended one hybrid checkpoint
+    with YaRN and with DroPE, which removes RoPE from all its attention
+    layers and leaves position to the Gated DeltaNet layers, on the same
+    100B tokens. DroPE led at 32K and 64K. That is half of what
+    "What would move this" asks for: a comparison against a YaRN-extended
+    model at matched cost, reached by extension rather than by pretraining
+    without an encoding. Not added as a source and consensus unchanged,
+    because it is one model and the encoding was removed late.
 tags:
 - representation-and-encoding
 - attention-techniques
@@ -193,6 +205,19 @@ the same context and matched training cost — rather than against an
 unextended baseline. Every comparison in the record so far is against a RoPE
 model that was *not* given the rescaling treatment [SOTA-151](SOTA-151.md) recommends, which
 is the weakest point in the case.
+
+**Half of it has since been run, by a fourth group.** Olmo Hybrid
+([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)), from Ai2, is a 7B hybrid with Gated DeltaNet in three layers
+of four and full attention in the fourth. It was pretrained with RoPE, and
+for long context it was extended on the same 100B tokens in two ways: YaRN,
+and DroPE, which removes RoPE from every attention layer and leaves position
+to the recurrent layers. RULER at 4K / 16K / 32K / 64K: YaRN 92.8 / 90.0 /
+84.7 / 76.9, DroPE 92.2 / 88.4 / 86.2 / 85.0. So, against a properly
+extended RoPE model at matched cost, the encoding-free global layers win
+beyond 16K and trail slightly below. Two things keep it from settling the
+question. It is one model, and the encoding was removed at extension rather
+than absent from pretraining, which is closer to [LIT-209](../literature.d/LIT-209.md)'s conversion than
+to the designs this practice is sourced to.
 
 ## Adjacent, and not the same practice
 

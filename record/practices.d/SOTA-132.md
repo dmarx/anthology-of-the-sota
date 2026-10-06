@@ -3,15 +3,16 @@ number: 132
 status: Active
 consensus: emerging
 consensus_note: >-
-  Three laboratories ran the comparison — Kimi (LIT-133), the Gated DeltaNet
-  authors (LIT-137) and the delta-rule work two years earlier (LIT-195) — and
+  Four laboratories ran the comparison — Kimi (LIT-133), the Gated DeltaNet
+  authors (LIT-137), the delta-rule work two years earlier (LIT-195) and Ai2
+  against its own Olmo 3 at 7B/6T (LIT-tmpax1wi) — and
   four production lines ship the ratio: Kimi K3 at 2.8T (LIT-131), Qwen3-Next
   and the Qwen3.5-3.8 generations (LIT-136, LIT-135), and NVIDIA's Nemotron 3
   Nano with Mamba as the cheap layer (LIT-183). Not `converged`: dense
   full-attention frontier models are still being trained, and the adopters do
   not report the alternative.
 title: 'Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -24,6 +25,17 @@ history:
     countability ADR-010 wanted and ADR-017 made possible. LIT-195 joins as
     the second independent comparison the body already said existed. The
     recommendation is unchanged.
+- version: 3
+  date: '2026-10-06'
+  note: >-
+    Adds Olmo Hybrid (LIT-tmpax1wi) to `source:`, a fourth laboratory that
+    ran the experiment: Olmo 3 7B with its sliding-window layers replaced by
+    Gated DeltaNet at 3:1 with full attention, against the released Olmo 3,
+    plus ratio and placement ablations from 60M to 1B. The Variations
+    paragraph that called the mixer's family second-order now records that
+    under one recipe a Mamba-2 hybrid fell behind the transformer at 1B while
+    the Gated DeltaNet hybrid led it. The recommendation and consensus are
+    unchanged.
 tags:
 - attention-techniques
 date: '2026-09-05'
@@ -39,13 +51,21 @@ source:
 # ADR-017 settled and what the comment here used to get wrong. Falcon-H1's
 # parallel-head layout (LIT-120, LIT-119) was already correctly excluded as
 # contrast.
+#
+# LIT-tmpax1wi joined at v3: Ai2's 7B hybrid against its own released Olmo 3,
+# with 1:1/3:1/7:1 and interleaved/middle ablations from 60M to 1B. It ran
+# the comparison, so it is a source rather than an adopter.
 - LIT-133
 - LIT-195
 - LIT-137
+- LIT-tmpax1wi
 introduced_by:
 - LIT-133
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
+explained_by:
+- THEORY-tmp1obd6
+- THEORY-tmpszvjk
 ---
 
 # SOTA-132: Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout
@@ -104,6 +124,21 @@ layers than "retrieval gets worse without them", and it predicts that the
 right *ratio* depends on how much local comparison the task needs rather
 than on a universal constant.
 
+**A fourth laboratory has run it, against a released transformer.** Olmo
+Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)) takes Olmo 3 7B, replaces its three-in-four
+sliding-window layers with Gated DeltaNet, and keeps one full-attention layer
+in four. Against the released Olmo 3 it reaches the same MMLU in 49% fewer
+tokens and leads in every domain after mid-training. RULER at 64K is 76.9
+against 70.9 with YaRN for both. The data mix, schedule and mid-training
+batch also changed, so it is close to controlled rather than controlled. Its
+ablations, on identical data from 60M to 1B, are the cleaner part. All three
+interleaved ratios beat the transformer at 1B. 3:1 is best at 760M and 1B,
+and 7:1 is level with it at small scale and ahead at 600M. Spreading the
+attention layers evenly beat concentrating them in the middle, by 0.003 BPB
+at 1B. That is the ratio this practice recommends, chosen again by a group
+that tested the alternatives, with the caveat already above: the ratio is a
+knob and its best setting moves with scale.
+
 ## Sequence
 
 The interleave starts earlier than this practice's sources do. Griffin
@@ -134,6 +169,14 @@ using Mamba rather than a linear attention as the cheap layer. That widens
 what the practice can claim — from "the 3:1 interleave works" toward "a
 hybrid of a fixed-state mixer with periodic global attention works, and the
 mixer's family is a second-order choice".
+
+The one controlled test of that last clause points the other way. In Olmo
+Hybrid's ablations ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)), the same 3:1 layout with Mamba-2 layers
+trails the plain transformer at 1B (0.698 against 0.682 BPB), while the
+Gated DeltaNet version leads it (0.669). Mamba-3 and KDA were not in that
+comparison, so it says that the family can matter, not which one is best.
+Nemotron 3 Nano is adoption evidence for a Mamba hybrid. It does not report
+the alternative.
 
 A third *layout* also exists now. [LIT-176](../literature.d/LIT-176.md)'s Native Hybrid Attention
 puts the mixture inside one uniform layer — a linear RNN maintains long-term

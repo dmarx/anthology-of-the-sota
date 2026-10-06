@@ -9,7 +9,7 @@ consensus_note: >-
   clip; the Kimi line takes the other route. The invariant is agreed, the
   instrument is not.
 title: 'Normalize the queries and keys before the attention dot product'
-version: 8
+version: 9
 history:
 - version: 2
   date: '2026-09-18'
@@ -78,6 +78,17 @@ history:
     at one rate and 24M parameters, so it is recorded in the body and not
     added as a source. The recommendation, status and consensus are
     unchanged.
+- version: 9
+  date: '2026-10-06'
+  note: >-
+    The cost the v7 condition derived has been measured. In 26 controlled
+    7B pretraining runs (LIT-tmpnww11), QK norm is the largest single cost
+    to long-context extension, about 4 to 6 HELMET points at 32K. QK-norm
+    models have higher attention entropy and put less attention on the
+    needle. The same runs confirm QK norm's stability benefit. Recorded as a
+    condition for models that will be context-extended. The recommendation,
+    status and consensus are unchanged, and the sentence saying nobody had
+    measured it stays, followed by the measurement.
 tags:
 - model-stability
 - attention-techniques
@@ -98,6 +109,7 @@ implementations:
 explained_by:
 - THEORY-061
 - THEORY-097
+- THEORY-tmp59ici
 ---
 <!-- inactive-ok-file: THEORY-062 — Proposed, filed in this same
      contribution and named in a condition that says it is one group's
@@ -251,6 +263,29 @@ out-of-distribution one. Nobody has measured whether QK-normalised models
 disperse sooner than unnormalised ones, and until somebody does this is a
 consequence of two bounds rather than a cost anyone has paid. It is recorded
 because a reader who bounds the logits should know what the bound also does.
+
+**Somebody has now paid it, for context extension.** The paragraph above was
+right when written and is kept as written. Bertsch et al. ([LIT-tmpnww11](../literature.d/LIT-tmpnww11.md))
+pretrained 26 7–8B models on identical data for 140B tokens and extended
+each to 64K with the same recipe. QK norm was the largest single cost to
+long-context ability in the pool. Removing layerwise QK norm and post-norm
+from the Olmo 3 architecture raised HELMET at 32K from 47.5 to 53.7, and
+adding them to the Llama 3 architecture lowered it from 52.4 to 48.5.
+Headwise QK norm was slightly worse than layerwise. The QK-norm models had
+higher attention entropy, fewer attention sinks, and less attention on the
+needle at prefill. That fits Veličković et al.'s bound, though the paper
+does not test the bound itself. The effect did not wash out with a 50B-token
+extension or a different recipe.
+
+The same runs show the other side. QK-norm runs had fewer gradient spikes,
+and post-sublayer norm without QK norm diverged every time it was tried. So
+this is a trade measured at both ends, not a refutation. **If the model will
+have its context extended after pretraining, budget for the cost or
+measure it early.** Bertsch et al. find it shows up in a short extension run
+early in pretraining but not in short-context loss. The Cohere RNoPE paper
+([LIT-208](../literature.d/LIT-208.md)) had already removed QK norm from its long-context model for
+"poorly shaped attention patterns". One seed per configuration, and
+initialization alone moves these scores by about 2 points on average.
 
 `LIT-088` is a **vision encoder**. The mechanism — logit growth, entropy
 collapse, vanishing gradient — is architecture-independent and is the reason the

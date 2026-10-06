@@ -2,7 +2,7 @@
 number: 109
 status: 'Active'
 title: 'Prefer GQA to MQA or MHA'
-version: 2
+version: 3
 history:
 - version: 2
   date: '2026-09-07'
@@ -14,6 +14,14 @@ history:
     multi-query attention this replaced and had been Active beside it; they are
     Superseded here. MLA is named as the other live answer to the same problem,
     not as a successor.
+- version: 3
+  date: '2026-10-06'
+  note: >-
+    Adds a condition for models that will be context-extended. In 26
+    controlled 7B runs (LIT-tmpnww11), fewer KV heads was monotonically worse
+    for long-context extension, and GQA combined with sliding-window layers
+    cost about 9 HELMET points where windows alone cost 1.1. The
+    recommendation, status and consensus are unchanged.
 tags:
 - attention-techniques
 date: '2026-08-24'
@@ -66,3 +74,24 @@ problem — compress the cache into a latent instead of sharing heads. It is not
 a successor: GQA stays the default for a model that is not paying MLA's
 implementation cost, which is most of them. The two are `compared_against`,
 and the record recommends both, for different situations.
+
+## Condition: long-context extension
+
+"The quality loss largely goes away" was measured at the training length.
+Bertsch et al. ([LIT-tmpnww11](../literature.d/LIT-tmpnww11.md)) pretrained 26 7–8B models on identical data
+and extended each to 64K with one recipe. Fewer KV heads was worse at 32K,
+and more than Llama 3's eight was better, with the MLP widened to keep
+parameters level. The interaction is the larger effect. Adding three-in-four
+sliding-window layers cost 1.1 HELMET points without GQA and about 9 with
+it, and the worst model in the pool combined GQA, windows and headwise QK
+norm.
+
+It is not a reason to drop GQA. The Llama 3 architecture uses eight KV
+heads and was still among the best in that pool. The 16-head model at the
+top also had the most parameters. The GQA rows are the one axis the paper
+could not control for initialization, which by itself moves these scores by
+about 2 points on average. What it changes is the combination. **GQA and
+sliding-window layers each save KV cache, and together they cost long
+context more than the sum of their parts.** A model meant to be extended
+should not take both without measuring the cost early, and the paper finds
+it shows up in a short extension run early in pretraining.

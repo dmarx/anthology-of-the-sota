@@ -11,11 +11,29 @@ promote_when: >-
   third scale.
 consensus: unreplicated
 consensus_note: >-
-  One group, two scales, no deployment. The rival answer to the same problem
-  — a channel-wise forgetting gate — ships at 2.8T, so the comparison that
-  matters is available to somebody and has not been run.
+  One group, two scales, no deployment for the design as filed. A second
+  group (LIT-tmpsiw5k, NVIDIA) independently decoupled the erase from the
+  write a month earlier, but only as a channel reweighting of the write key,
+  so the freely learned erase direction remains one group's result. The
+  rival answer to the same problem — a channel-wise forgetting gate — ships
+  at 2.8T.
+# Left at `unreplicated` at v2, deliberately and as a judgement: the second
+# group's mechanism is a restricted case of this one, not a repeat of it.
+# See the body's last section before moving it.
 title: 'Decouple the erase address from the write address in a delta-rule recurrence'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-06'
+  note: >-
+    Records Gated DeltaNet-2 (LIT-tmpsiw5k), from NVIDIA, published a month
+    before the EDA paper and not citing it or cited by it. It erases along
+    the write key reweighted by a channel-wise gate, which is a decoupled
+    erase address in restricted form, and it does so on top of KDA's
+    channel-wise decay and against KDA. That comes close to the second
+    clause of `promote_when:`, and the body says why it is not treated as
+    meeting it. Status and recommendation are unchanged; consensus stays
+    `unreplicated` with a revised note.
 tags:
 - attention-techniques
 date: '2026-09-08'
@@ -85,6 +103,30 @@ not variants of each other, and the record now holds both with no comparison
 between them. That is the condition in `promote_when:`, and it is available
 to be run — the channel-wise gate ships at 2.8T.
 
+## A second group, in a narrower form
+
+Gated DeltaNet-2 ([LIT-tmpsiw5k](../literature.d/LIT-tmpsiw5k.md)), from NVIDIA and published in May 2026, a
+month before the EDA paper, reached a version of the same idea
+independently. Its update is S_t = (I − k_t (b_t ⊙ k_t)ᵀ) D_t S_{t−1} +
+k_t (w_t ⊙ v_t)ᵀ. The write still runs along k_t, but the read that gets
+erased runs along b_t ⊙ k_t, a channel-wise gate on the key. So the erase
+address is decoupled from the write address. Unlike EDA's learned erase
+direction, it can only reweight the coordinates of the current key. It is
+built on KDA's channel-wise decay and measured against it at 1.3B / 100B
+tokens with matched state size. The variant that keeps only the erase gate
+channel-wise averages 52.79 against KDA's 52.28 (Wiki perplexity 16.12
+against 16.81). The full model averages 53.11.
+
+That is close to "an independent group running an addressed erase against a
+channel-wise decay gate", and it answers the comparison the section above
+asks for in one way: the two remedies stack rather than compete. It is not
+treated here as meeting `promote_when:`, for three reasons. The erase
+direction is a restricted case of the one recommended here. It is one run
+at one scale. And its ablation does not say whether the scalarised variants
+were retrained. A reader who disagrees with that judgement has the numbers
+above to disagree with.
+
 ## Known implementations
 
-- None in the record.
+- None in the record for the design as filed. GatedDeltaNet-2 (NVlabs)
+  implements the restricted, channel-reweighted form.

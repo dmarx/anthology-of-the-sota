@@ -1,0 +1,161 @@
+---
+status: Active
+title: 'Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM'
+version: 1
+tags:
+- numerics-and-precision
+- inference-optimization
+- attention-techniques
+- analysis-and-evaluation
+date: '2026-10-06'
+published: '2026-09-03'
+arxiv: '2609.04098'
+first_author: 'Kozyrev'
+keywords:
+- 'nvfp4'
+- 'w4a4'
+- 'post-training-quantization'
+- 'gated-deltanet'
+- 'hybrid-models'
+- 'error-propagation'
+- 'fp8-kv-cache'
+- 'fused-gemm-scales'
+implementations:
+- 'mnma_qwen3.8_27b_nvfp4 (Minima)'
+summary: >-
+  Kozyrev and Maiboroda, Minima (2026), [ARXIV-2609.04098](https://arxiv.org/abs/2609.04098). Public 4-bit builds
+  of Qwen3.8-27B kept its 48 Gated DeltaNet layers in 8 or 16 bits for fear
+  that errors in a recurrence compound. Quantizing all 496 linear layers to
+  NVFP4 W4A4 by calibration alone stays within seed noise of BF16 on five
+  task suites (average −0.52) at 17.5 GiB. The perplexity cost is the largest
+  of the recipes compared, +0.72 at 4K, but it shrinks along a 32K window. In
+  replayed layers the gate projections everyone protected are the least
+  sensitive. State error holds at a plateau of about 12.6% over 32K tokens,
+  and a state impulse is erased within hundreds to a few thousand steps. One
+  model, one format.
+---
+
+# LIT-tmpd8csx: Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM
+
+Kozyrev and Maiboroda, Minima (2026) — [ARXIV-2609.04098](https://arxiv.org/abs/2609.04098). Read at v1 (3 Sep
+2026), the only version, main text and Appendices A–B.
+
+## Key takeaways
+
+- **The recipe** (§3, App. B.4). Every backbone linear layer of Qwen3.8-27B
+  ([LIT-135](LIT-135.md)) is quantized to NVFP4 W4A4 with llm-compressor, calibrated on
+  128 sequences of 32K tokens: 240 GDN, 64 attention and 192 MLP
+  projections. Embeddings, the LM head, the GDN convolutions, norms and the
+  decay parameters stay in BF16. The two public NVFP4 builds it is compared
+  with keep GDN and attention at FP8, with the decay and write-strength gate
+  projections (a, b) in BF16, and quantize only the MLPs.
+- **Accuracy holds; perplexity does not quite** (Table 1, FP8 KV for all).
+  The five-task average (MMLU-Pro, GSM8K, AIME'25, GPQA-Diamond,
+  LiveCodeBench) is 85.62 for BF16 and 85.10 for this recipe, against 85.34
+  and 84.80 for the two public builds. No pair is CI-separated. AIME'25 is
+  26/30 on all four seeds, equal to BF16's mean. RULER is 100 for every model at
+  32K and 64K. Perplexity at 4K / 32K is 6.95 / 10.35 for BF16, 7.67 / 10.84
+  here, 7.16 / 9.91 and 7.35 / 9.95 for the public builds.
+- **What it buys** (Table 1, App. B.2). Weights are 17.53 GiB, against 50.13
+  for BF16 and 18.83–20.23 for the public builds. Time to first token for a
+  32K prefill is 4.03 s, against 4.39–4.49 s. Decode is within 4% across the
+  quantized models and slightly behind one of them.
+- **The gates are the safe part** (§5.2, Table 3). With one projection
+  quantized at a time in replayed layers, the a and b gate projections move
+  the layer output by 2.1% and 2.6%, the two smallest effects, from GEMM
+  errors of 11.0% and 8.5%. The softplus-exponential decay and sigmoid write
+  strength compress the error before it reaches the recurrence. The plain
+  GEMMs carry the error: out 12.7%, qkv 10.4%, z 9.9%. Errors from the five
+  projections add in quadrature (19.4% predicted, 19.2% measured).
+- **Block scaling is why the inputs are not the problem** (§5.1, Table 2).
+  GDN inputs share the residual stream's outliers (median-layer max/RMS 63.5,
+  kurtosis about 1,560). With 16-element blocks, activation error is 7.5–9.2%
+  for every layer role, and weight error is higher everywhere (10.5–11.9%).
+- **The recurrence holds error at a plateau and erases it** (§5.3, Table 6,
+  Fig. 1). In an FP32 lockstep run over 32K tokens on five layers, state
+  error with everything quantized is 12.96% at token 256 and 12.31% at
+  32,768. A 1% state impulse falls to 1/e in 80–1,382 steps, where the decay
+  gates alone imply horizons of 1,895–61,659 tokens. The authors attribute
+  the difference to the delta rule overwriting along each new key.
+  Multiplicative noise of only 0.1% applied directly to α gives 22% state
+  error, so the robustness is the parameterization's, not the recurrence's
+  alone.
+- **The cost shrinks with position** (§5.4, Table 4). The weight-quantization
+  gap in per-token NLL is +0.081 nats over the first half of the 32K window
+  and +0.011 over the second, and −0.053 in the last 2K tokens.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **"Matches BF16" is about tasks, not perplexity.** On perplexity this recipe
+  is the worst of the three quantized ones at both lengths, +0.72 at 4K. The
+  authors say so and call it "the honest residual". The task average is also
+  behind one public build (−0.52 against −0.28), within noise.
+- **RULER is at ceiling.** Every model scores 100 at 32K and 64K, single and
+  multi-key, so the retrieval result cannot separate anything.
+- **The positional decomposition sits on an inverted baseline.** BF16's own
+  perplexity is worse inside a 32K request than in 4K windows (6.95 → 10.35),
+  and its NLL rises along the window. The per-bin gap is noisy: it is −0.003
+  at 16–18K and +0.059 at 18–20K. "Shrinks with position" is a half-window
+  average.
+- **Some numbers are inherited or single-seed.** LiveCodeBench is one seed.
+  The released checkpoint's task scores are copied from the version without
+  KV scales rather than re-measured.
+- **The plateau is flat, not small.** 12.6% state error that does not grow is
+  the finding. The paper does not say what level of state error would matter
+  downstream, beyond the task scores.
+- **Scope.** One model, one format, eight captured documents and five
+  layers for the mechanism study. Nothing past 64K. The authors ship the
+  checkpoint and say the gate argument may not hold for a linearly
+  parameterized decay.
+
+## Which comparisons are like for like
+
+- **Table 1** serves all four checkpoints on one GPU, one vLLM version, one
+  FP8-KV regime and one harness with per-sample validity checks. AIME and
+  GPQA are four seeds for every model.
+- **The public builds are not ablations.** They differ in several tensors at
+  once, so the comparison is between recipes, not between quantizing GDN or
+  not. The single-projection replays of §5.2 are the controlled part.
+- **The concurrent quantization-aware checkpoint** of the same model (QUASAR)
+  is named and not measured.
+
+## Standing in the anthology
+
+The record's first measurement of quantizing the recurrent half of a hybrid,
+and its first quantized result on a Gated DeltaNet model ([LIT-137](LIT-137.md)) of the
+kind [SOTA-135](../practices.d/SOTA-135.md) recommends. It runs against an intuition that nobody in the
+record had written down but every public build of Qwen3.8-27B acted on:
+protect the recurrence. Here the recurrence and its gates are the more
+forgiving half.
+
+For [SOTA-163](../practices.d/SOTA-163.md) it is a 2026 serving-side instance of the claim the practice
+rests on. With 16-element blocks, outliers of 48–368× the RMS stay local,
+and activation error is uniform across layer roles. NVFP4 is not the MX
+format that practice is sourced to: its blocks are 16 elements with an E4M3
+scale, against 32 with a power-of-two scale. It is the same idea at a finer
+grain. It is also the opposite strategy to [SOTA-355](../practices.d/SOTA-355.md)'s, which isolates the
+outlier dimensions in 16 bits. Here nothing is isolated, and the block
+format does that work.
+
+<!-- inactive-ok-block: SOTA-177 — Proposed, named as the line this
+     mechanism bears on; nothing here rests on its standing -->
+Its mechanism bears on [SOTA-177](../practices.d/SOTA-177.md) and the decoupled-erase line, from an
+unexpected direction. The delta rule's overwrite along each new key is what
+erases quantization error far faster than the decay gates would. That is
+the property [LIT-177](LIT-177.md) calls incomplete, because it acts only at the current
+write address. Here it is enough to clear a 1% perturbation within a few
+thousand tokens. Neither paper connects the two.
+
+One serving-stack finding belongs with the record's measurement cautions.
+When per-module NVFP4 scales are served by kernels that fuse modules into
+one GEMM, the decay and write gates were computed with mis-scaled weights.
+That broken model had *better* 32K perplexity than BF16 (6.86 against 10.35)
+while AIME fell to 80.8. A forget gate that holds everything helped
+next-token prediction on WikiText and nothing else. Long-context perplexity
+can reward a broken memory.
+
+Filed without a NOTE: the takeaways come from one full reading of v1, main
+text and Appendices A–B. Figs. 1–2 are curves, and only values in the text
+and tables are quoted.

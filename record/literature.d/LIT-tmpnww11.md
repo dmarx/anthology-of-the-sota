@@ -1,0 +1,184 @@
+---
+status: Active
+title: 'Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension'
+version: 1
+tags:
+- attention-techniques
+- model-architecture
+- adaptation-and-tuning
+- analysis-and-evaluation
+date: '2026-10-06'
+published: '2026-08-10'
+arxiv: '2608.10296'
+first_author: 'Bertsch'
+keywords:
+- 'long-context-extension'
+- 'qk-norm'
+- 'grouped-query-attention'
+- 'sliding-window-attention'
+- 'pretraining-context-length'
+- 'attention-sinks'
+- 'performance-prediction'
+- 'olmpool'
+implementations:
+- 'OlmPool (26 7B models, Ai2)'
+# Table 1-2: the Llama 3, Olmo 3 and Qwen 3 architectures are each pretrained
+# on the same data and extended with the same recipe, and ranked against the
+# rest of the pool. YaRN is the alternative extension recipe of §5.3.
+compared_against:
+- LIT-179
+- LIT-130
+- LIT-182
+- LIT-193
+summary: >-
+  Bertsch, Soldaini, Gormley, Neubig, Hajishirzi, Lo and Groeneveld, Ai2 and
+  CMU (2026), [ARXIV-2608.10296](https://arxiv.org/abs/2608.10296). Twenty-six 7–8B models, 140B tokens each on
+  identical data, extended identically to 64K. QK norm, GQA, sliding-window
+  layers and a 4K pretraining length each cost long-context ability, and
+  together they compound: HELMET at 32K runs from 56.4 down to 29.9. Counting
+  how many of the four a model has predicts that score with in-sample R² 0.67
+  (0.61 leave-one-out). Pretraining loss predicts it at R² 0.29. QK norm is
+  the largest single cost, about 4 to 6 points. GQA plus sliding windows costs about
+  9, against 1.1 for windows alone. One seed per configuration, and
+  initialization alone moves scores by 7.7% of the range on average.
+---
+
+# LIT-tmpnww11: Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension
+
+Bertsch, Soldaini, Gormley, Neubig, Hajishirzi, Lo and Groeneveld, Ai2,
+CMU and UW (2026), COLM 2026 — [ARXIV-2608.10296](https://arxiv.org/abs/2608.10296). Read at v1 (10 Aug 2026),
+the only version, main text and Appendices A–D.
+
+## Key takeaways
+
+- **The design** (§2, App. A). Twenty-six models of 7.0–8.1B, each pretrained
+  for 140B tokens on the Olmo 3 data with the same order, tokenizer, learning
+  rate and schedule. Each is then extended by raising the RoPE base and
+  annealing on 10B tokens of 64K data. Four factors vary, using only values
+  shipped in Llama 2, Llama 3, Qwen 3 or Olmo 3: QK norm (none, layerwise,
+  headwise) with norm order, KV heads (4 to 32), three-in-four 4K sliding
+  window layers, and a 4K or 8K pretraining length. The total is about
+  170,000 H100 hours, and every checkpoint is released.
+- **Short-context signals do not predict the outcome** (§3, Figs. 2, 9–11).
+  Across the pool, HELMET at 32K spans 29.9–56.4 and RULER at 32K 44.7–67.7.
+  Pretraining loss explains R² 0.29 of HELMET, extension loss 0.06, the
+  in-loop benchmark average 0.17, and the best perplexity split (WikiText)
+  0.39. HELMET 8K measured before extension, the same benchmark at a length
+  the models can already read, reaches only 0.32.
+- **QK norm is the largest single cost** (§4, Fig. 8, App. B). Taking Olmo 3's
+  layerwise QK norm and post-sublayer norm out of the Olmo architecture gives
+  53.7 against 47.5. Putting them into the Llama 3 architecture gives 48.5
+  against 52.4. Headwise QK norm is slightly worse again, and norm order alone
+  is inconsistent. Post-sublayer norm without QK norm diverged before 140B
+  tokens in every run.
+- **The others are small alone and large together** (§4, Fig. 3). Sliding
+  windows and a 4K pretraining length each cost 1–2 points on average. Fewer
+  KV heads is monotonically worse, and more than Llama 3's eight is better.
+  Adding sliding windows costs 1.1 without GQA and about 9 with it. The worst
+  model combines GQA, windows, headwise QK norm, post-norm and fp8, at 29.9.
+- **Count, not identity** (§4). The number of the four features present
+  predicts HELMET 32K better than a regression on the four separately:
+  in-sample R² 0.67, leave-one-out 0.61. Four features is not worse than
+  three, which the authors attribute to windows and a 4K pretraining length
+  limiting attention in overlapping ways.
+- **It does not wash out** (§5.1–5.3, Figs. 4–6). Separate 1B, 10B and 50B
+  extensions of three models keep their order: the worst architecture after
+  50B is below the Llama 3 architecture after 1B. Extending two
+  configurations at 70B, 140B, 280B and 2T pretraining tokens keeps the gap
+  from 140B on. A two-stage YaRN recipe on three models scores lower than the
+  main recipe but ranks them the same, with a wider gap.
+- **Sinks go with long-context ability here** (§5.4, Fig. 7). The share of
+  attention on the first 100 tokens correlates positively with HELMET
+  (R² 0.38). QK-norm models have fewer sinks, higher attention entropy and
+  less attention on the needle at prefill. Retrieval-head scores during
+  generation do not separate the models.
+
+## Where the hedges are
+
+Per [DP-010](../../docs/design-principles.md#dp-10):
+
+- **One seed per configuration, and the seed matters.** App. B builds four
+  pairs that differ only in initialization. On long-context benchmarks the
+  swing averages 7.7% and reaches 17% of the cross-pool range. With a range
+  of 26.5 HELMET points, that is about 2 points on average and 4.5 at worst.
+  The single-feature effects of windows and pretraining length (1–2 points)
+  sit inside it. The authors say they discuss only effects "substantially
+  larger" than the mean swing. The GQA comparisons are the one axis with no
+  initialization-controlled pair.
+- **The best model in the pool is also the largest.** At 56.4, it has 16 KV
+  heads and 8.1B parameters, against 7.7–7.8B for its GQA neighbours (Fig. 3
+  caption). The 32-head model is at 54.4 on a different initialization. "More
+  KV heads helps" rests on a ladder whose top rung has more parameters.
+- **Table 2 has a copied row.** The pre-norm, 8-KV-head, 4K-context model
+  (HELMET 50.2) is listed with RULER 81.1 / 67.0 / 54.7 / 45.7 / 35.2. That
+  is identical to the second-worst model's row, a post-norm QK-norm MHA run
+  at HELMET 35.0. Its RULER numbers should not be quoted.
+- **"Up to 47%"** (abstract) is 29.9 against 56.4, measured from the larger
+  best model. The Llama 3 architecture, a cleaner reference, is at 52.4.
+- **Small models early in training.** Every claim is about 7B models after
+  140B tokens and a 10B extension. Fig. 5 carries one pair to 2T tokens, and
+  only as curves. The authors note the retrieval-head null may be because the
+  models are too weak.
+- **QK norm buys stability here too** (App. D.4). Runs with QK norm have a
+  lower gradient spike score. The negative correlation between stability and
+  long-context score (R² 0.22) is mostly QK norm acting on both, so the trade
+  is measured on both sides.
+
+## Which comparisons are like for like
+
+- **Data, order, tokenizer, learning rate and extension recipe** are fixed
+  across all 26. Initialization is reused where parameter shapes allow, and
+  new parameters are freshly initialized (§2.2).
+- **GQA runs widen the MLP** to keep parameter counts near level, which the
+  authors say should favour GQA. The Qwen-like model is the one with a
+  different depth, 36 layers against 32 (App. C).
+- **The "Olmo", "Llama" and "Qwen" models are architectures**, not the
+  released checkpoints. They are trained on Olmo 3 data for 140B tokens.
+
+## Standing in the anthology
+
+It measures a cost the record had only derived. [SOTA-192](../practices.d/SOTA-192.md) recommends
+normalizing queries and keys. Its condition from Veličković et al. ([LIT-653](LIT-653.md))
+said bounding the logits also caps how sharp a head can be at long inputs,
+and that "nobody has measured whether QK-normalised models disperse sooner".
+This is that measurement for context extension. QK norm costs about 4 to 6 HELMET
+points, the models carrying it have higher attention entropy, and they put
+less mass on the needle. It also confirms the stability benefit in the same
+runs, so it is a cost against a benefit and not a refutation. The finding is
+not new: the authors credit the Cohere RNoPE paper ([LIT-208](LIT-208.md)), which removed
+QK norm for "poorly shaped attention patterns". What is new is a controlled
+size for it and its interaction with the other three factors.
+
+For [SOTA-109](../practices.d/SOTA-109.md) it is the first evidence in the record that GQA's quality
+cost does not "largely go away" once a model is extended to long context.
+Fewer KV heads is worse at 32K, and GQA with sliding windows is the
+interaction that does the most damage. The authors trained the Llama 3
+architecture ([LIT-179](LIT-179.md)) at eight KV heads, the GQA default, and it was still
+one of the best in the pool. So the cost depends on what else the
+architecture carries.
+
+The Olmo 3 architecture ([LIT-130](LIT-130.md)) combines layerwise QK norm, post-norm and
+sliding windows, and scores 47.5 against the Llama 3 architecture's 52.4 on
+identical data. That explains the authors' own observation that Olmo 3 Base
+is harder to extend than Llama 3 Base. The Qwen 3 architecture ([LIT-182](LIT-182.md)), with
+headwise QK norm and GQA, is also below Llama 3's. Neither comparison is
+about those models' released checkpoints.
+
+For [SOTA-151](../practices.d/SOTA-151.md) it is a warning about what the extension recipe can do.
+With the recipe held fixed, architecture moves HELMET at 32K by 26.5 points.
+The alternative recipe, YaRN ([LIT-193](LIT-193.md)) in two stages, does not reorder the
+models and widens the gap. A recipe tuned on Llama models may not transfer,
+which matters because most extension recipes in the literature were developed
+on Llama.
+
+On attention sinks it cuts against how they are usually treated. The record
+explains sinks as where a softmax head puts mass it has no use for
+([THEORY-019](../theory.d/THEORY-019.md)), and the gated-attention paper ([LIT-138](LIT-138.md)) treats removing them
+as a benefit. Here, in models without gating, sink mass is a positive
+correlate of long-context ability. That is a correlation across 26 models,
+not an intervention, but it is a reason not to suppress sinks in a model
+that will be extended without putting another mechanism in their place.
+
+Filed without a NOTE: the takeaways come from one full reading of v1, main
+text and Appendices A–D. Figs. 3–8 and 10–12 are curves or scatter plots,
+and only values stated in the text or Tables 1–2 are quoted.

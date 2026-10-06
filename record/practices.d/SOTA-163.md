@@ -11,7 +11,18 @@ consensus_note: >-
   still quantize per-tensor or not at all, and the format is young enough that
   hardware support is the reason it is spreading.
 title: 'Quantize with block-scaled microscaling formats rather than one scale per tensor'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-06'
+  note: >-
+    Records a serving-side instance at 4 bits (LIT-tmpd8csx). NVFP4's
+    16-element blocks keep activation error at 7.5–9.2% across every layer
+    role of a 27B hybrid despite outliers up to 368× the RMS, and W4A4 on
+    every linear layer stays within seed noise of BF16 on tasks. One model,
+    a vendor's own checkpoint, and a finer-grained format than the one this
+    practice is sourced to, so it is recorded in the body and not as a
+    source. The recommendation, status and consensus are unchanged.
 tags:
 - numerics-and-precision
 - inference-optimization
@@ -92,6 +103,21 @@ Which width goes *where in the pipeline* is a separate question, and
 much data the model was trained on, so the pretraining budget and the
 quantization plan are coupled. This practice says what the format can bear in
 each position; that one says the position is not free to choose late.
+
+## A 4-bit serving instance
+
+Kozyrev and Maiboroda ([LIT-tmpd8csx](../literature.d/LIT-tmpd8csx.md)) quantized every linear layer of a 27B
+Gated DeltaNet hybrid to NVFP4 W4A4 by calibration alone. NVFP4 is the
+finer-grained relative of the MX formats: 16-element blocks with an E4M3
+scale rather than 32 with a power-of-two one. The inputs carry the
+residual stream's usual outliers, a median-layer max/RMS of 48–368
+depending on the projection. Activation quantization error is nonetheless
+7.5–9.2% for every layer role, because each outlier sets the scale only for
+its own block of 16. Task accuracy stayed within seed noise of BF16, at a
+perplexity cost (+0.72 at 4K). It is one model and the authors' own
+checkpoint, so it is an instance of the mechanism this practice names, at a
+width the table above lists only for weights, not a replication of the
+source's ablations.
 
 ## Known implementations
 

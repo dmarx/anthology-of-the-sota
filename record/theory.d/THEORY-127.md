@@ -1,5 +1,8 @@
 ---
+number: 127
 status: Proposed
+formerly:
+- THEORY-tmp59ici
 promote_when: >-
   An intervention, not a correlation: a QK-norm model given another way to
   shed attention mass, such as a learnable sink token, an output gate or a
@@ -16,14 +19,14 @@ tags:
 - analysis-and-evaluation
 date: '2026-10-06'
 source:
-- LIT-tmpnww11
+- LIT-801
 - LIT-653
 extends:
 - THEORY-019
 explains:
 - SOTA-192
 summary: >-
-  Bertsch et al. (2026), [LIT-tmpnww11](../literature.d/LIT-tmpnww11.md), §5.4 and Fig. 7, with the dispersion
+  Bertsch et al. (2026), [LIT-801](../literature.d/LIT-801.md), §5.4 and Fig. 7, with the dispersion
   bound of Veličković et al. (2024), [LIT-653](../literature.d/LIT-653.md). In 26 controlled 7B runs, QK
   norm costs about 4 to 6 HELMET points at 32K. The QK-norm models have
   higher attention entropy, less attention-sink mass and less attention on
@@ -37,12 +40,12 @@ summary: >-
 <!-- inactive-ok-file: THEORY-061, THEORY-097 — Proposed; named as the
      neighbouring accounts of normalization, not relied on -->
 
-# THEORY-tmp59ici: QK normalization costs long-context extension because bounding the logits raises attention entropy and removes the sink a head uses to discard mass
+# THEORY-127: QK normalization costs long-context extension because bounding the logits raises attention entropy and removes the sink a head uses to discard mass
 
 ## Source
 
 Bertsch, Soldaini, Gormley, Neubig, Hajishirzi, Lo and Groeneveld (2026),
-[LIT-tmpnww11](../literature.d/LIT-tmpnww11.md) — §4, §5.4, Figs. 7–8, App. B. Veličković, Perivolaropoulos,
+[LIT-801](../literature.d/LIT-801.md) — §4, §5.4, Figs. 7–8, App. B. Veličković, Perivolaropoulos,
 Barbero and Pascanu (2024), [LIT-653](../literature.d/LIT-653.md) — the softmax dispersion bound.
 
 ## The account

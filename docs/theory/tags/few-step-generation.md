@@ -6,7 +6,7 @@
 
 **Few-step generation** — getting a sample in one or a few network evaluations — progressive, distribution-matching and adversarial distillation, consistency, flow-map, shortcut and mean-flow models, and fast ODE solvers. A subtopic, worn beside `generative-modeling` or `inference-optimization`.
 
-5 of 125 THEORY documents. Back to the [full index](../README.md).
+5 of 129 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

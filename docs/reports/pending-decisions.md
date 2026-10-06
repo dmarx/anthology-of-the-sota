@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**271 document(s) awaiting a decision.**
+**275 document(s) awaiting a decision.**
 
 ## SOTAs
 
-181 of the 271.
+181 of the 275.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -30,15 +30,15 @@
 | 2026-09-08 | Proposed | [SOTA-160](../../record/practices.d/SOTA-160.md) | 15 | 0 | Treat the pretraining token budget and the post-training quantization plan as one decision, not two |
 | 2026-09-08 | Proposed | [SOTA-166](../../record/practices.d/SOTA-166.md) | 15 | 0 | Set the pretraining data proportions by fitting a mixing law on small runs, not by argument |
 | 2026-09-08 | Proposed | [SOTA-169](../../record/practices.d/SOTA-169.md) | 12 | 0 | Widen the residual stream into several streams and constrain the mixing between them |
+| 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 12 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
 | 2026-09-08 | Proposed | [SOTA-172](../../record/practices.d/SOTA-172.md) | 11 | 0 | Build synthetic pretraining data by editing human text at the token level, not by generating from scratch |
-| 2026-09-08 | Proposed | [SOTA-178](../../record/practices.d/SOTA-178.md) | 11 | 0 | Give the recurrence vector-valued gating and in-context learning rates so it can track state a softmax layer provably cannot |
 | 2026-09-08 | Proposed | [SOTA-158](../../record/practices.d/SOTA-158.md) | 10 | 0 | Bound the activation's output range when training in low precision |
 | 2026-09-08 | Proposed | [SOTA-159](../../record/practices.d/SOTA-159.md) | 10 | 0 | Combine µP with unit scaling so the hyperparameters decouple and FP8 needs no loss scaling |
 | 2026-09-08 | Proposed | [SOTA-168](../../record/practices.d/SOTA-168.md) | 9 | 0 | Run Adam in Shampoo's eigenbasis (SOAP) instead of Shampoo itself |
 | 2026-09-08 | Proposed | [SOTA-167](../../record/practices.d/SOTA-167.md) | 8 | 0 | Build linear-attention layers from the state-space view: expressive discretisation, complex-valued state, and a MIMO readout |
+| 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 8 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
 | 2026-09-08 | Proposed | [SOTA-179](../../record/practices.d/SOTA-179.md) | 6 | 0 | Truncate the rotary encoding's low frequencies rather than rescaling its base |
 | 2026-09-08 | Proposed | [SOTA-176](../../record/practices.d/SOTA-176.md) | 5 | 0 | Hybridise inside the layer: long-term slots, a sliding window, and one softmax over both, with the window size as the only dial |
-| 2026-09-08 | Proposed | [SOTA-177](../../record/practices.d/SOTA-177.md) | 4 | 0 | Decouple the erase address from the write address in a delta-rule recurrence |
 | 2026-09-08 | Proposed | [SOTA-175](../../record/practices.d/SOTA-175.md) | 0 | 0 | Mask whole syntactic units for code fill-in-the-middle, not random character spans |
 | 2026-09-09 | Proposed | [SOTA-190](../../record/practices.d/SOTA-190.md) | 15 | 0 | Increase depth before any other dimension when scaling a transformer |
 | 2026-09-09 | Proposed | [SOTA-191](../../record/practices.d/SOTA-191.md) | 10 | 0 | Consider removing LayerNorm's learnable gain and bias rather than tuning them |
@@ -197,7 +197,7 @@
 
 ## THEORYs
 
-76 of the 271.
+80 of the 275.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -239,7 +239,7 @@
 | 2026-09-22 | Proposed | [THEORY-072](../../record/theory.d/THEORY-072.md) | 15 | 0 | Training and test loss disagree as functions of weight norm, and shrinking the norm through the gap is what takes so long |
 | 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 14 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 13 | 0 | Grokking is the transition from lazy to rich training dynamics |
-| 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 11 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
+| 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 12 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 5 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 5 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
 | 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 4 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
@@ -258,9 +258,9 @@
 | 2026-09-23 | Proposed | [THEORY-084](../../record/theory.d/THEORY-084.md) | 2 | 0 | AlphaFold 2 needs the sequence alignment to find a protein's coarse fold, not to refine it, so accuracy collapses below a minimum alignment depth and barely improves above it |
 | 2026-09-23 | Proposed | [THEORY-086](../../record/theory.d/THEORY-086.md) | 1 | 0 | A text document is better modelled as a mixture of several topics, each a distribution over words, than as a draw from a single topic |
 | 2026-09-23 | Proposed | [THEORY-094](../../record/theory.d/THEORY-094.md) | 1 | 0 | Word vectors approximate PMI in low dimensions, and relations appear as clean directions despite a noisy fit, because text behaves as if generated by a slowly drifting discourse over isotropic word vectors |
+| 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 4 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 | 2026-09-24 | Proposed | [THEORY-100](../../record/theory.d/THEORY-100.md) | 4 | 0 | Activation outliers are a product of pre-training optimization choices, not an emergent property of scale |
 | 2026-09-24 | Proposed | [THEORY-096](../../record/theory.d/THEORY-096.md) | 3 | 0 | A Pre-LN residual stream's per-layer change decays as one over root k, so deep blocks cannot refine the representation |
-| 2026-09-24 | Proposed | [THEORY-097](../../record/theory.d/THEORY-097.md) | 3 | 0 | Attention is an approximation of Kanerva's sparse distributed memory, which is why it needs normalized vectors and a fitted temperature |
 | 2026-09-24 | Proposed | [THEORY-099](../../record/theory.d/THEORY-099.md) | 3 | 0 | Muon's update matches the outer-product structure of associative memories, which is why it learns tail classes that Adam under-trains |
 | 2026-09-25 | Proposed | [THEORY-109](../../record/theory.d/THEORY-109.md) | 13 | 0 | Classifier guidance may flatter classifier-based metrics because it steps along a classifier gradient, and guidance without a classifier is the control |
 | 2026-09-25 | Proposed | [THEORY-103](../../record/theory.d/THEORY-103.md) | 7 | 0 | A transformer stores a fact where it needed it, so two-hop composition generalizes only to facts it already saw as a second hop |
@@ -277,10 +277,14 @@
 | 2026-10-03 | Proposed | [THEORY-125](../../record/theory.d/THEORY-125.md) | 2 | 0 | One affine autoregressive flow block makes every conditional a single Gaussian and cannot approximate an arbitrary density, while two blocks in opposite orders make every conditional but the last a Gaussian mixture and three make all of them one |
 | 2026-10-03 | Proposed | [THEORY-120](../../record/theory.d/THEORY-120.md) | 1 | 0 | A likelihood-trained normalizing flow samples well only when its training data carry Gaussian noise well above the quantization width, because its inverse must be well conditioned over the whole Gaussian latent |
 | 2026-10-03 | Proposed | [THEORY-121](../../record/theory.d/THEORY-121.md) | 0 | 0 | Distribution-matching distillation loses coverage because it descends a reverse divergence on the student's own samples, and a consistency term on teacher trajectories restores it |
+| 2026-10-06 | Proposed | [THEORY-126](../../record/theory.d/THEORY-126.md) | 1 | 0 | A more expressive architecture scales better by lowering the data coefficient rather than the exponent, because it can learn more of the discrete tasks in language-model data from the same tokens |
+| 2026-10-06 | Proposed | [THEORY-127](../../record/theory.d/THEORY-127.md) | 0 | 0 | QK normalization costs long-context extension because bounding the logits raises attention entropy and removes the sink a head uses to discard mass |
+| 2026-10-06 | Proposed | [THEORY-128](../../record/theory.d/THEORY-128.md) | 0 | 0 | A delta-rule recurrence does not accumulate small per-step perturbations, because each write overwrites the state along the current key, so injected error plateaus and an impulse fades far faster than the forget gate implies |
+| 2026-10-06 | Proposed | [THEORY-129](../../record/theory.d/THEORY-129.md) | 0 | 0 | Interleaving attention with a negative-eigenvalue delta-rule recurrence expresses problems neither layer type can express alone, because state tracking and recall come from different layers and one alternation composes them |
 
 ## LITs
 
-11 of the 271.
+11 of the 275.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -298,7 +302,7 @@
 
 ## ADRs
 
-3 of the 271.
+3 of the 275.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -310,4 +314,4 @@ The citation count is the second axis, and it flips the priority: an old proposa
 
 This count and the reference-status report's will differ, and that is not an off-by-one. That report covers documents something actually **cites** and hasn't acknowledged; this one covers every **undecided** document. One here is missing from there for exactly one of two reasons: nothing cites it, or every citation carries an `inactive-ok` annotation.
 
-**Cited nowhere at all** (16): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md), [SOTA-393](../../record/practices.d/SOTA-393.md), [SOTA-396](../../record/practices.d/SOTA-396.md), [SOTA-439](../../record/practices.d/SOTA-439.md), [THEORY-116](../../record/theory.d/THEORY-116.md), [THEORY-121](../../record/theory.d/THEORY-121.md) — these are the cheapest to close, since nothing depends on the answer.
+**Cited nowhere at all** (19): [ADR-012](../../record/decisions.d/ADR-012.md), [SOTA-175](../../record/practices.d/SOTA-175.md), [SOTA-220](../../record/practices.d/SOTA-220.md), [SOTA-287](../../record/practices.d/SOTA-287.md), [SOTA-293](../../record/practices.d/SOTA-293.md), [SOTA-300](../../record/practices.d/SOTA-300.md), [SOTA-316](../../record/practices.d/SOTA-316.md), [SOTA-322](../../record/practices.d/SOTA-322.md), [SOTA-385](../../record/practices.d/SOTA-385.md), [SOTA-387](../../record/practices.d/SOTA-387.md), [SOTA-391](../../record/practices.d/SOTA-391.md), [SOTA-393](../../record/practices.d/SOTA-393.md), [SOTA-396](../../record/practices.d/SOTA-396.md), [SOTA-439](../../record/practices.d/SOTA-439.md), [THEORY-116](../../record/theory.d/THEORY-116.md), [THEORY-121](../../record/theory.d/THEORY-121.md), [THEORY-127](../../record/theory.d/THEORY-127.md), [THEORY-128](../../record/theory.d/THEORY-128.md), [THEORY-129](../../record/theory.d/THEORY-129.md) — these are the cheapest to close, since nothing depends on the answer.

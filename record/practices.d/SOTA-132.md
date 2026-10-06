@@ -5,7 +5,7 @@ consensus: emerging
 consensus_note: >-
   Four laboratories ran the comparison — Kimi (LIT-133), the Gated DeltaNet
   authors (LIT-137), the delta-rule work two years earlier (LIT-195) and Ai2
-  against its own Olmo 3 at 7B/6T (LIT-tmpax1wi) — and
+  against its own Olmo 3 at 7B/6T (LIT-799) — and
   four production lines ship the ratio: Kimi K3 at 2.8T (LIT-131), Qwen3-Next
   and the Qwen3.5-3.8 generations (LIT-136, LIT-135), and NVIDIA's Nemotron 3
   Nano with Mamba as the cheap layer (LIT-183). Not `converged`: dense
@@ -28,7 +28,7 @@ history:
 - version: 3
   date: '2026-10-06'
   note: >-
-    Adds Olmo Hybrid (LIT-tmpax1wi) to `source:`, a fourth laboratory that
+    Adds Olmo Hybrid (LIT-799) to `source:`, a fourth laboratory that
     ran the experiment: Olmo 3 7B with its sliding-window layers replaced by
     Gated DeltaNet at 3:1 with full attention, against the released Olmo 3,
     plus ratio and placement ablations from 60M to 1B. The Variations
@@ -52,20 +52,20 @@ source:
 # parallel-head layout (LIT-120, LIT-119) was already correctly excluded as
 # contrast.
 #
-# LIT-tmpax1wi joined at v3: Ai2's 7B hybrid against its own released Olmo 3,
+# LIT-799 joined at v3: Ai2's 7B hybrid against its own released Olmo 3,
 # with 1:1/3:1/7:1 and interleaved/middle ablations from 60M to 1B. It ran
 # the comparison, so it is a source rather than an adopter.
 - LIT-133
 - LIT-195
 - LIT-137
-- LIT-tmpax1wi
+- LIT-799
 introduced_by:
 - LIT-133
 summary: >-
   Kimi Team (2025), [LIT-133](../literature.d/LIT-133.md) — three Kimi Delta Attention layers per gated-MLA layer beat full MLA at 48B/1.4T while cutting KV cache 75%; the layout [LIT-131](../literature.d/LIT-131.md) ships at 2.8T with 69 KDA and 24 MLA layers.
 explained_by:
-- THEORY-tmp1obd6
-- THEORY-tmpszvjk
+- THEORY-126
+- THEORY-129
 ---
 
 # SOTA-132: Interleave linear-attention layers with global attention at about 3:1 instead of using full attention throughout
@@ -125,7 +125,7 @@ right *ratio* depends on how much local comparison the task needs rather
 than on a universal constant.
 
 **A fourth laboratory has run it, against a released transformer.** Olmo
-Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)) takes Olmo 3 7B, replaces its three-in-four
+Hybrid ([LIT-799](../literature.d/LIT-799.md)) takes Olmo 3 7B, replaces its three-in-four
 sliding-window layers with Gated DeltaNet, and keeps one full-attention layer
 in four. Against the released Olmo 3 it reaches the same MMLU in 49% fewer
 tokens and leads in every domain after mid-training. RULER at 64K is 76.9
@@ -171,7 +171,7 @@ hybrid of a fixed-state mixer with periodic global attention works, and the
 mixer's family is a second-order choice".
 
 The one controlled test of that last clause points the other way. In Olmo
-Hybrid's ablations ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)), the same 3:1 layout with Mamba-2 layers
+Hybrid's ablations ([LIT-799](../literature.d/LIT-799.md)), the same 3:1 layout with Mamba-2 layers
 trails the plain transformer at 1B (0.698 against 0.682 BPB), while the
 Gated DeltaNet version leads it (0.669). Mamba-3 and KDA were not in that
 comparison, so it says that the family can matter, not which one is best.

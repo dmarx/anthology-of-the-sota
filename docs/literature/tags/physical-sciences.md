@@ -6,7 +6,7 @@
 
 **Physical sciences** — models whose data is the physical world — learned surrogates for simulation in fluids, PDEs, molecular dynamics and cosmology, foundation models for weather, climate and solar observation — what they are trusted to replace, what their benchmarks can show, and which of their methods travel to other domains.
 
-2 of 733 LIT documents. Back to the [full index](../README.md).
+2 of 737 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

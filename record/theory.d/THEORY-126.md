@@ -1,5 +1,8 @@
 ---
+number: 126
 status: Proposed
+formerly:
+- THEORY-tmp1obd6
 promote_when: >-
   A scaling comparison in which expressivity is the only thing varied: the
   same architecture with and without an extension known to change what it
@@ -18,11 +21,11 @@ tags:
 - model-architecture
 date: '2026-10-06'
 source:
-- LIT-tmpax1wi
+- LIT-799
 explains:
 - SOTA-132
 summary: >-
-  Merrill et al. (2026), [LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md), §4.2 and App. E. The quantization model
+  Merrill et al. (2026), [LIT-799](../literature.d/LIT-799.md), §4.2 and App. E. The quantization model
   of scaling laws treats language modelling as many discrete tasks with
   power-law frequencies. If a fraction ε of tasks is inexpressible, and those
   tasks need more tokens or parameters or give less loss reduction,
@@ -33,11 +36,11 @@ summary: >-
   that removing negative eigenvalues barely changes the scaling.
 ---
 
-# THEORY-tmp1obd6: A more expressive architecture scales better by lowering the data coefficient rather than the exponent, because it can learn more of the discrete tasks in language-model data from the same tokens
+# THEORY-126: A more expressive architecture scales better by lowering the data coefficient rather than the exponent, because it can learn more of the discrete tasks in language-model data from the same tokens
 
 ## Source
 
-Merrill, Li, Romero, Svete, Costello et al. (2026), [LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md) — Olmo
+Merrill, Li, Romero, Svete, Costello et al. (2026), [LIT-799](../literature.d/LIT-799.md) — Olmo
 Hybrid, §4.1–4.3, Theorem 4, Corollaries 4.1–4.2, App. E, Tables 5 and 18.
 
 ## The account
@@ -67,7 +70,7 @@ expressivity makes each token worth more and does nothing else.
 
 ## What was measured
 
-- **The coefficient** (Tables 18–20). Olmo Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)) fitted
+- **The coefficient** (Tables 18–20). Olmo Hybrid ([LIT-799](../literature.d/LIT-799.md)) fitted
   transformer, pure GDN and 3:1 hybrid ladders. Exponents fixed at α = β = 0.22, fit
   from 60M to 1B on identical data: B = 83.65 [79.9, 87.0] for the hybrid
   and 94.85 [89.3, 101.4] for the transformer. A and E overlap, and the

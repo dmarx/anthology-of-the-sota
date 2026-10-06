@@ -16,7 +16,7 @@ history:
 - version: 2
   date: '2026-10-06'
   note: >-
-    Records a serving-side instance at 4 bits (LIT-tmpd8csx). NVFP4's
+    Records a serving-side instance at 4 bits (LIT-800). NVFP4's
     16-element blocks keep activation error at 7.5–9.2% across every layer
     role of a 27B hybrid despite outliers up to 368× the RMS, and W4A4 on
     every linear layer stays within seed noise of BF16 on tasks. One model,
@@ -106,7 +106,7 @@ each position; that one says the position is not free to choose late.
 
 ## A 4-bit serving instance
 
-Kozyrev and Maiboroda ([LIT-tmpd8csx](../literature.d/LIT-tmpd8csx.md)) quantized every linear layer of a 27B
+Kozyrev and Maiboroda ([LIT-800](../literature.d/LIT-800.md)) quantized every linear layer of a 27B
 Gated DeltaNet hybrid to NVFP4 W4A4 by calibration alone. NVFP4 is the
 finer-grained relative of the MX formats: 16-element blocks with an E4M3
 scale rather than 32 with a power-of-two one. The inputs carry the

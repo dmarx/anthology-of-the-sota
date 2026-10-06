@@ -40,7 +40,7 @@ history:
 - version: 4
   date: '2026-10-06'
   note: >-
-    Records Olmo Hybrid (LIT-tmpax1wi), from Ai2, outside the three
+    Records Olmo Hybrid (LIT-799), from Ai2, outside the three
     laboratories the consensus note names. It extended one hybrid checkpoint
     with YaRN and with DroPE, which removes RoPE from all its attention
     layers and leaves position to the Gated DeltaNet layers, on the same
@@ -207,7 +207,7 @@ model that was *not* given the rescaling treatment [SOTA-151](SOTA-151.md) recom
 is the weakest point in the case.
 
 **Half of it has since been run, by a fourth group.** Olmo Hybrid
-([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)), from Ai2, is a 7B hybrid with Gated DeltaNet in three layers
+([LIT-799](../literature.d/LIT-799.md)), from Ai2, is a 7B hybrid with Gated DeltaNet in three layers
 of four and full attention in the fourth. It was pretrained with RoPE, and
 for long context it was extended on the same 100B tokens in two ways: YaRN,
 and DroPE, which removes RoPE from every attention layer and leaves position

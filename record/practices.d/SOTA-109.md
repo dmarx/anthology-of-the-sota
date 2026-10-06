@@ -18,7 +18,7 @@ history:
   date: '2026-10-06'
   note: >-
     Adds a condition for models that will be context-extended. In 26
-    controlled 7B runs (LIT-tmpnww11), fewer KV heads was monotonically worse
+    controlled 7B runs (LIT-801), fewer KV heads was monotonically worse
     for long-context extension, and GQA combined with sliding-window layers
     cost about 9 HELMET points where windows alone cost 1.1. The
     recommendation, status and consensus are unchanged.
@@ -78,7 +78,7 @@ and the record recommends both, for different situations.
 ## Condition: long-context extension
 
 "The quality loss largely goes away" was measured at the training length.
-Bertsch et al. ([LIT-tmpnww11](../literature.d/LIT-tmpnww11.md)) pretrained 26 7–8B models on identical data
+Bertsch et al. ([LIT-801](../literature.d/LIT-801.md)) pretrained 26 7–8B models on identical data
 and extended each to 64K with one recipe. Fewer KV heads was worse at 32K,
 and more than Llama 3's eight was better, with the MLP widened to keep
 parameters level. The interaction is the larger effect. Adding three-in-four

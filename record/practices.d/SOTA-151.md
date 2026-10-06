@@ -41,9 +41,9 @@ history:
   note: >-
     Adds two 2026 measurements of what the recipe cannot fix. With the
     extension recipe held fixed, architecture moves HELMET at 32K by 26.5
-    points across 26 7B models (LIT-tmpnww11), and YaRN does not reorder
+    points across 26 7B models (LIT-801), and YaRN does not reorder
     them. In one hybrid, removing RoPE at extension beat YaRN beyond 16K
-    (LIT-tmpax1wi). The recommendation is unchanged.
+    (LIT-799). The recommendation is unchanged.
 tags:
 - representation-and-encoding
 date: '2026-09-07'
@@ -154,14 +154,14 @@ configuration extending 262144 to 1M is a strong signal about usability. It
 is not a measurement of position-recognisability.
 
 **The recipe is also not the largest variable.** Bertsch et al.
-([LIT-tmpnww11](../literature.d/LIT-tmpnww11.md)) held one extension recipe fixed, a raised RoPE base and 10B
+([LIT-801](../literature.d/LIT-801.md)) held one extension recipe fixed, a raised RoPE base and 10B
 tokens at 64K, and varied only architecture across 26 7–8B models trained on
 identical data. HELMET at 32K ranged from 29.9 to 56.4. A two-stage YaRN
 extension on three of them scored lower but ranked them the same and widened
 the gap. A 50B-token extension did not close it either. Their point for this
 practice is that extension recipes are mostly developed on Llama models, and
 the Llama 3 architecture was among the easiest in the pool to extend, so a
-recipe's reported success may not transfer. Olmo Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)) adds
+recipe's reported success may not transfer. Olmo Hybrid ([LIT-799](../literature.d/LIT-799.md)) adds
 the other boundary. In a hybrid whose recurrent layers can carry position,
 dropping RoPE at extension beat YaRN at 32K and 64K (85.0 against 76.9 at
 64K). That is [SOTA-153](SOTA-153.md)'s territory, not this practice's, and it is one

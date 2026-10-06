@@ -6,7 +6,7 @@
 
 **Human–AI interaction** — how people work with a model through an interface — prompting and steering controls, editing and co-writing tools, assistive and co-adaptive interfaces, how such interfaces are scored, and what lab studies of them can and cannot show.
 
-3 of 733 LIT documents. Back to the [full index](../README.md).
+3 of 737 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

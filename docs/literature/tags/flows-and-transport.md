@@ -6,7 +6,7 @@
 
 **Flows and transport** — generative models as learned transport between distributions — flow matching, rectified flow, stochastic interpolants, normalizing flows and neural ODEs, and the paths, couplings and time schedules they are trained on; Gaussian diffusion is the special case (THEORY-106). A subtopic, worn beside `generative-modeling`.
 
-30 of 733 LIT documents. Back to the [full index](../README.md).
+30 of 737 LIT documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

@@ -1,5 +1,8 @@
 ---
+number: 128
 status: Proposed
+formerly:
+- THEORY-tmprrbmo
 promote_when: >-
   The contrast that would isolate the delta rule: the same lockstep
   perturbation measurement on a decay-only recurrence, such as Mamba-2, at
@@ -17,9 +20,9 @@ tags:
 - analysis-and-evaluation
 date: '2026-10-06'
 source:
-- LIT-tmpd8csx
+- LIT-800
 summary: >-
-  Kozyrev and Maiboroda (2026), [LIT-tmpd8csx](../literature.d/LIT-tmpd8csx.md), §5.3, Table 6, Fig. 1. In
+  Kozyrev and Maiboroda (2026), [LIT-800](../literature.d/LIT-800.md), §5.3, Table 6, Fig. 1. In
   Qwen3.8-27B's Gated DeltaNet layers, run in FP32 lockstep over 32K tokens,
   4-bit quantization noise holds state error at a plateau of about 12.6%. A
   1% state impulse falls to 1/e in 80–1,382 steps, where the decay gates
@@ -31,11 +34,11 @@ summary: >-
 <!-- inactive-ok-file: SOTA-177 — Proposed; named for the contrast with its
      account of the delta rule, not relied on -->
 
-# THEORY-tmprrbmo: A delta-rule recurrence does not accumulate small per-step perturbations, because each write overwrites the state along the current key, so injected error plateaus and an impulse fades far faster than the forget gate implies
+# THEORY-128: A delta-rule recurrence does not accumulate small per-step perturbations, because each write overwrites the state along the current key, so injected error plateaus and an impulse fades far faster than the forget gate implies
 
 ## Source
 
-Kozyrev and Maiboroda (2026), [LIT-tmpd8csx](../literature.d/LIT-tmpd8csx.md) — §5.2–5.4, Tables 3, 4 and 6,
+Kozyrev and Maiboroda (2026), [LIT-800](../literature.d/LIT-800.md) — §5.2–5.4, Tables 3, 4 and 6,
 Figs. 1–2.
 
 ## The account
@@ -62,7 +65,7 @@ mis-scaled β is then itself corrected by later writes.
 
 ## What was measured
 
-- **The plateau** (Table 6, Fig. 1a). Kozyrev and Maiboroda ([LIT-tmpd8csx](../literature.d/LIT-tmpd8csx.md))
+- **The plateau** (Table 6, Fig. 1a). Kozyrev and Maiboroda ([LIT-800](../literature.d/LIT-800.md))
   replayed Qwen3.8-27B's own GDN layers with NVFP4 error injected. Five layers spread over depth, eleven
   perturbed trajectories against one clean one, 32K tokens. With every
   projection quantized, state error is 12.96% at token 256, 12.09% at 4,096

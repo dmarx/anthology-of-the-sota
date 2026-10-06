@@ -82,7 +82,7 @@ history:
   date: '2026-10-06'
   note: >-
     The cost the v7 condition derived has been measured. In 26 controlled
-    7B pretraining runs (LIT-tmpnww11), QK norm is the largest single cost
+    7B pretraining runs (LIT-801), QK norm is the largest single cost
     to long-context extension, about 4 to 6 HELMET points at 32K. QK-norm
     models have higher attention entropy and put less attention on the
     needle. The same runs confirm QK norm's stability benefit. Recorded as a
@@ -109,7 +109,7 @@ implementations:
 explained_by:
 - THEORY-061
 - THEORY-097
-- THEORY-tmp59ici
+- THEORY-127
 ---
 <!-- inactive-ok-file: THEORY-062 — Proposed, filed in this same
      contribution and named in a condition that says it is one group's
@@ -265,7 +265,7 @@ consequence of two bounds rather than a cost anyone has paid. It is recorded
 because a reader who bounds the logits should know what the bound also does.
 
 **Somebody has now paid it, for context extension.** The paragraph above was
-right when written and is kept as written. Bertsch et al. ([LIT-tmpnww11](../literature.d/LIT-tmpnww11.md))
+right when written and is kept as written. Bertsch et al. ([LIT-801](../literature.d/LIT-801.md))
 pretrained 26 7–8B models on identical data for 140B tokens and extended
 each to 64K with the same recipe. QK norm was the largest single cost to
 long-context ability in the pool. Removing layerwise QK norm and post-norm

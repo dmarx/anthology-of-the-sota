@@ -2,7 +2,7 @@
 
 # Lines of work
 
-55 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+54 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -111,15 +111,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-074](../record/literature.d/LIT-074.md) — FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness *(Active)*
 - alongside: [LIT-655](../record/literature.d/LIT-655.md) — Self-attention Does Not Need O(n²) Memory *(Active)*
-
-### From Mamba: Linear-Time Sequence Modeling with Selective State Spaces
-
-- [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
-  - [LIT-162](../record/literature.d/LIT-162.md) — Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality *(Active)*
-    - [LIT-137](../record/literature.d/LIT-137.md) — Gated Delta Networks: Improving Mamba2 with Delta Rule *(Active)* — also extends LIT-195
-      - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
-    - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
-- [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
 
 ### From Efficient Streaming Language Models with Attention Sinks
 
@@ -346,19 +337,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - alongside: [LIT-003](../record/literature.d/LIT-003.md) — Neural Machine Translation of Rare Words with Subword Units *(Active)*
 - alongside: [LIT-679](../record/literature.d/LIT-679.md) — Dynamic Chunking for End-to-End Hierarchical Sequence Modeling *(Active)*
-
-### From RoFormer: Enhanced Transformer with Rotary Position Embedding
-
-- [LIT-045](../record/literature.d/LIT-045.md) — RoFormer: Enhanced Transformer with Rotary Position Embedding *(Active)*
-  - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
-    - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
-  - [LIT-210](../record/literature.d/LIT-210.md) — Round and Round We Go! What makes Rotary Positional Encodings useful? *(Active)*
-  - [LIT-638](../record/literature.d/LIT-638.md) — A Length-Extrapolatable Transformer *(Active)*
-- [LIT-207](../record/literature.d/LIT-207.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
-  - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
-  - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
-- alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
-- alongside: [LIT-665](../record/literature.d/LIT-665.md) — Transformer Language Models without Positional Encodings Still Learn Positional Information *(Active)*
 
 ### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
 
@@ -693,3 +671,30 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-702](../record/literature.d/LIT-702.md) — Simple and Effective Masked Diffusion Language Models *(Active)*
 - alongside: [LIT-722](../record/literature.d/LIT-722.md) — Score-Based Generative Modeling through Stochastic Differential Equations *(Active)*
 - alongside: [LIT-751](../record/literature.d/LIT-751.md) — "Principal Components" Enable A New Language of Images *(Active)*
+
+### From RoFormer: Enhanced Transformer with Rotary Position Embedding
+
+- [LIT-045](../record/literature.d/LIT-045.md) — RoFormer: Enhanced Transformer with Rotary Position Embedding *(Active)*
+  - [LIT-192](../record/literature.d/LIT-192.md) — Extending Context Window of Large Language Models via Positional Interpolation *(Active)*
+    - [LIT-193](../record/literature.d/LIT-193.md) — YaRN: Efficient Context Window Extension of Large Language Models *(Active)*
+  - [LIT-210](../record/literature.d/LIT-210.md) — Round and Round We Go! What makes Rotary Positional Encodings useful? *(Active)*
+  - [LIT-638](../record/literature.d/LIT-638.md) — A Length-Extrapolatable Transformer *(Active)*
+- [LIT-130](../record/literature.d/LIT-130.md) — Olmo 3 *(Active)*
+- [LIT-161](../record/literature.d/LIT-161.md) — Mamba: Linear-Time Sequence Modeling with Selective State Spaces *(Active)*
+  - [LIT-162](../record/literature.d/LIT-162.md) — Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality *(Active)*
+    - [LIT-137](../record/literature.d/LIT-137.md) — Gated Delta Networks: Improving Mamba2 with Delta Rule *(Active)* — also extends LIT-195
+      - [LIT-133](../record/literature.d/LIT-133.md) — Kimi Linear: An Expressive, Efficient Attention Architecture *(Active)*
+        - [LIT-802](../record/literature.d/LIT-802.md) — Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention *(Active)* — also extends LIT-137
+      - [LIT-799](../record/literature.d/LIT-799.md) — Olmo Hybrid: From Theory to Practice and Back *(Active)* — also extends LIT-130
+    - [LIT-165](../record/literature.d/LIT-165.md) — Mamba-3: Improved Sequence Modeling using State Space Principles *(Active)*
+- [LIT-195](../record/literature.d/LIT-195.md) — Parallelizing Linear Transformers with the Delta Rule over Sequence Length *(Active)*
+- [LIT-207](../record/literature.d/LIT-207.md) — The Impact of Positional Encoding on Length Generalization in Transformers *(Active)*
+  - [LIT-208](../record/literature.d/LIT-208.md) — Rope to Nope and Back Again: A New Hybrid Attention Strategy *(Active)*
+  - [LIT-209](../record/literature.d/LIT-209.md) — SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling *(Active)*
+- alongside: [LIT-048](../record/literature.d/LIT-048.md) — Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation *(Active)*
+- alongside: [LIT-120](../record/literature.d/LIT-120.md) — Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance *(Active)*
+- alongside: [LIT-179](../record/literature.d/LIT-179.md) — The Llama 3 Herd of Models *(Active)*
+- alongside: [LIT-182](../record/literature.d/LIT-182.md) — Qwen3 Technical Report *(Active)*
+- alongside: [LIT-183](../record/literature.d/LIT-183.md) — Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning *(Active)*
+- alongside: [LIT-665](../record/literature.d/LIT-665.md) — Transformer Language Models without Positional Encodings Still Learn Positional Information *(Active)*
+- alongside: [LIT-801](../record/literature.d/LIT-801.md) — Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension *(Active)*

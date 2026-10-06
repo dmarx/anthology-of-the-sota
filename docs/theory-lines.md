@@ -2,7 +2,7 @@
 
 # Lines of explanation
 
-11 lines, walked from `extends:` and `corrects:` on THEORY documents. Each step explains itself; this page is the order they came in.
+12 lines, walked from `extends:` and `corrects:` on THEORY documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -35,6 +35,11 @@ Grouped by `tags`, which every line holds in common — a line about two things 
   - [THEORY-080](../record/theory.d/THEORY-080.md) — A diffusion process needs noise to keep its intermediate states on the data manifold, and blur helps only while noise still dominates the bands it removes *(Proposed)*
 
 ## attention-techniques
+
+### From A softmax head with nothing to attend to must place its mass somewhere, so models learn a positional sink
+
+- [THEORY-019](../record/theory.d/THEORY-019.md) — A softmax head with nothing to attend to must place its mass somewhere, so models learn a positional sink *(Active)*
+  - [THEORY-127](../record/theory.d/THEORY-127.md) — QK normalization costs long-context extension because bounding the logits raises attention entropy and removes the sink a head uses to discard mass *(Proposed)*
 
 ### From Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product
 

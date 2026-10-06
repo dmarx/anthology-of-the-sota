@@ -7,23 +7,23 @@ history:
 - version: 2
   date: '2026-10-06'
   note: >-
-    Adds Olmo Hybrid (LIT-tmpax1wi) to `source:`. It is an independent
+    Adds Olmo Hybrid (LIT-799) to `source:`. It is an independent
     test, from Ai2, of the gated delta rule against Mamba-2's decay-only
     update under one recipe from 60M to 1B, pure and in a 3:1 hybrid, and
     the gated delta rule wins at every scale. It does not test the delta
     update without the gate, so it supports half of the original comparison.
-    Gated DeltaNet-2 (LIT-tmpsiw5k) joins the "where it is incomplete"
+    Gated DeltaNet-2 (LIT-802) joins the "where it is incomplete"
     section as a channel-wise split of β that stacks with KDA's channel-wise
     decay. The recommendation is unchanged.
 tags:
 - attention-techniques
 date: '2026-09-05'
 source:
-# LIT-tmpax1wi joined at v2: an independent comparison of the gated delta
+# LIT-799 joined at v2: an independent comparison of the gated delta
 # rule against Mamba-2 at seven scales, pure and hybrid (its Table 5). It
 # does not run DeltaNet without the gate.
 - LIT-137
-- LIT-tmpax1wi
+- LIT-799
 introduced_by:
 - LIT-137
 summary: >-
@@ -55,7 +55,7 @@ parents' failures in its single-needle tests to forgetting too fast (Mamba2
 past 2K tokens) and clearing memory poorly (DeltaNet at longer lengths).
 
 **An independent test, at small scale.** Olmo
-Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md)) compared Gated DeltaNet with Mamba-2 as the recurrent
+Hybrid ([LIT-799](../literature.d/LIT-799.md)) compared Gated DeltaNet with Mamba-2 as the recurrent
 layer under one recipe at seven sizes from 60M to 1B. Gated DeltaNet won
 every one of them, as a pure model (0.677 against 0.718 BPB at 1B) and in a
 3:1 hybrid (0.669 against 0.698). Pure Gated DeltaNet was also slightly
@@ -102,7 +102,7 @@ gain persists through 80B tokens of long-context midtraining.
 pressure: finer *passive* decay rather than active removal. Nobody has
 compared them directly.
 
-Gated DeltaNet-2 ([LIT-tmpsiw5k](../literature.d/LIT-tmpsiw5k.md)) comes closest, from the group that made this
+Gated DeltaNet-2 ([LIT-802](../literature.d/LIT-802.md)) comes closest, from the group that made this
 recurrence. It keeps KDA's channel-wise decay and splits β into a
 channel-wise erase gate on the key and a channel-wise write gate on the
 value. The erased read then runs along a reweighted key rather than the key

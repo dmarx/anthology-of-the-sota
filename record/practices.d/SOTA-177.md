@@ -12,7 +12,7 @@ promote_when: >-
 consensus: unreplicated
 consensus_note: >-
   One group, two scales, no deployment for the design as filed. A second
-  group (LIT-tmpsiw5k, NVIDIA) independently decoupled the erase from the
+  group (LIT-802, NVIDIA) independently decoupled the erase from the
   write a month earlier, but only as a channel reweighting of the write key,
   so the freely learned erase direction remains one group's result. The
   rival answer to the same problem — a channel-wise forgetting gate — ships
@@ -26,7 +26,7 @@ history:
 - version: 2
   date: '2026-10-06'
   note: >-
-    Records Gated DeltaNet-2 (LIT-tmpsiw5k), from NVIDIA, published a month
+    Records Gated DeltaNet-2 (LIT-802), from NVIDIA, published a month
     before the EDA paper and not citing it or cited by it. It erases along
     the write key reweighted by a channel-wise gate, which is a decoupled
     erase address in restricted form, and it does so on top of KDA's
@@ -105,7 +105,7 @@ to be run — the channel-wise gate ships at 2.8T.
 
 ## A second group, in a narrower form
 
-Gated DeltaNet-2 ([LIT-tmpsiw5k](../literature.d/LIT-tmpsiw5k.md)), from NVIDIA and published in May 2026, a
+Gated DeltaNet-2 ([LIT-802](../literature.d/LIT-802.md)), from NVIDIA and published in May 2026, a
 month before the EDA paper, reached a version of the same idea
 independently. Its update is S_t = (I − k_t (b_t ⊙ k_t)ᵀ) D_t S_{t−1} +
 k_t (w_t ⊙ v_t)ᵀ. The write still runs along k_t, but the read that gets

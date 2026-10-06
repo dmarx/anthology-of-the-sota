@@ -1,5 +1,8 @@
 ---
+number: 129
 status: Proposed
+formerly:
+- THEORY-tmpszvjk
 promote_when: >-
   Two kinds of result. One is an independent check of the separation proofs
   (Olmo Hybrid, App. B): the positive constructions and the two negative
@@ -18,11 +21,11 @@ tags:
 - analysis-and-evaluation
 date: '2026-10-06'
 source:
-- LIT-tmpax1wi
+- LIT-799
 explains:
 - SOTA-132
 summary: >-
-  Merrill et al. (2026), [LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md), §3.3–3.4 and App. B. Fixed-depth
+  Merrill et al. (2026), [LIT-799](../literature.d/LIT-799.md), §3.3–3.4 and App. B. Fixed-depth
   transformers lie in TC⁰ and cannot track state (if TC⁰ ≠ NC¹).
   Bounded-state recurrences cannot recall from a long context. A Gated
   DeltaNet with negative eigenvalues tracks state, and attention recalls.
@@ -33,14 +36,14 @@ summary: >-
   expressive gap is what makes hybrids better language models.
 ---
 
-<!-- inactive-ok-file: THEORY-tmp1obd6, SOTA-178 — Proposed, named as the
+<!-- inactive-ok-file: THEORY-126, SOTA-178 — Proposed, named as the
      separate scaling account and the neighbouring practice, not relied on -->
 
-# THEORY-tmpszvjk: Interleaving attention with a negative-eigenvalue delta-rule recurrence expresses problems neither layer type can express alone, because state tracking and recall come from different layers and one alternation composes them
+# THEORY-129: Interleaving attention with a negative-eigenvalue delta-rule recurrence expresses problems neither layer type can express alone, because state tracking and recall come from different layers and one alternation composes them
 
 ## Source
 
-Merrill, Li, Romero, Svete, Costello et al. (2026), [LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md) — Olmo
+Merrill, Li, Romero, Svete, Costello et al. (2026), [LIT-799](../literature.d/LIT-799.md) — Olmo
 Hybrid, §3.1–3.5, Theorems 1 and 3, Corollary 3.1, App. B and C.
 
 ## The account
@@ -72,7 +75,7 @@ evaluation is the named example.
 
 ## What was measured
 
-- **Synthetic tasks** (§3.5, Tables 15–17). Olmo Hybrid ([LIT-tmpax1wi](../literature.d/LIT-tmpax1wi.md))
+- **Synthetic tasks** (§3.5, Tables 15–17). Olmo Hybrid ([LIT-799](../literature.d/LIT-799.md))
   trained 4-layer models, best run of a
   sweep. Here "hybrid" means three GDN layers followed by one attention
   layer. State tracking at n = 128: transformer 0.23, GDN 1.00, hybrid 1.00.
@@ -94,7 +97,7 @@ evaluation is the named example.
   large n is consistent with the account. It is not a test of it.
 - **Not that this is why hybrids are better language models.** That further
   step is the paper's scaling argument, filed separately
-  ([THEORY-tmp1obd6](THEORY-tmp1obd6.md)). Its own ablations weaken it: a hybrid without negative
+  ([THEORY-126](THEORY-126.md)). Its own ablations weaken it: a hybrid without negative
   eigenvalues, which cannot track state, scales about as well.
 - **Not that interleaving many times beats alternating once.** One
   alternation suffices for both theorems. The authors leave open whether

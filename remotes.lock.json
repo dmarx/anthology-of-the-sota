@@ -1949,6 +1949,9 @@
     "ARXIV/2604.01499": {
       "title": "Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-Training"
     },
+    "ARXIV/2604.03444": {
+      "title": "Olmo Hybrid: From Theory to Practice and Back"
+    },
     "ARXIV/2605.01609": {
       "title": "Concepts Whisper: Spectral Anti-Concentration and the Dual Geometry of Transformer Representations"
     },
@@ -1960,6 +1963,9 @@
     },
     "ARXIV/2605.19095": {
       "title": "ScheduleFree+: Scaling Learning-Rate-Free & Schedule-Free Learning to Large Language Models"
+    },
+    "ARXIV/2605.22791": {
+      "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention"
     },
     "ARXIV/2605.25704": {
       "title": "PowLU: An Activation Function for Stable Pre-Training of LLMs"
@@ -2003,6 +2009,9 @@
     "ARXIV/2608.05541": {
       "title": "Hyper-ES: Effective Evolution Strategies for LLM Reasoning via Descent Direction Merging"
     },
+    "ARXIV/2608.10296": {
+      "title": "Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension"
+    },
     "ARXIV/2608.12679": {
       "title": "Beyond the Best Guess: Improving LLM Solution Coverage with Evolution Strategies"
     },
@@ -2017,6 +2026,9 @@
     },
     "ARXIV/2609.02672": {
       "title": "oHC: Orthogonal Hyper-Connections on SO(4) via Quaternions"
+    },
+    "ARXIV/2609.04098": {
+      "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM"
     },
     "ARXIV/2609.10980": {
       "title": "EGGROLL, Unrolled: Understanding and Improving Low-Rank Evolution Strategies at Scale"

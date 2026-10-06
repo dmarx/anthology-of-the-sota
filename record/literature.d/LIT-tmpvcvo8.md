@@ -25,7 +25,7 @@ implementations:
 - 'Kimi long-context serving (stated in the abstract)'
 summary: >-
   Lu, Jiang, Liu et al., Moonshot AI, Tsinghua and Zhejiang (2025),
-  ARXIV-2502.13189. Block-sparse attention with no new parameters: keys are
+  [ARXIV-2502.13189](https://arxiv.org/abs/2502.13189). Block-sparse attention with no new parameters: keys are
   cut into fixed 1D blocks, each block is scored by the query's dot product
   with its mean-pooled key, and each query attends causally to its own
   block plus the top-k others. Trained from scratch at 8K it tracks full
@@ -34,6 +34,10 @@ summary: >-
   extrapolation. Most of Table 2's parity with full attention is measured
   on inputs short enough that top-12 of 4,096-token blocks is full
   attention, and decoding is dense. One run per arm.
+compared_against:
+- LIT-tmpmuiol
+extended_by:
+- LIT-tmpmuiol
 ---
 
 # LIT-tmpvcvo8: MoBA: Mixture of Block Attention for Long-Context LLMs
@@ -41,7 +45,7 @@ summary: >-
 Lu, Jiang, Liu, Du, Jiang, Hong, Liu, He, Yuan, Wang, Huang, Yuan, Xu, Xu,
 Lai, Chen, Zheng, Yan, Su, Wu, Zhang, Yang, Zhou, Zhang and Qiu, Moonshot
 AI, Tsinghua University and Zhejiang Lab / Zhejiang University (2025) —
-ARXIV-2502.13189. Read at v1 (18 Feb 2025), the only version, main text and
+[ARXIV-2502.13189](https://arxiv.org/abs/2502.13189). Read at v1 (18 Feb 2025), the only version, main text and
 Appendix A.
 
 ## Key takeaways
@@ -101,7 +105,7 @@ Appendix A.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **Table 2's parity is mostly not a test of sparsity.** With block 4,096
   and top-12, a query attends to everything when the sequence is under
@@ -153,32 +157,32 @@ Per DP-010:
 - **Fig. 5a** trains three 1.5B models on the same 30B tokens. Only the
   attention schedule differs.
 - **Table 2** compares two continued pre-training and SFT runs from the same
-  Llama 3.1 8B base (LIT-179) with "the only difference" being attention.
+  Llama 3.1 8B base ([LIT-179](LIT-179.md)) with "the only difference" being attention.
   But at the lengths of most rows the MoBA model runs dense attention (see
   above). So the comparison is of training histories more than of attention
   at inference.
 - **No comparison against another sparse method.** Quest, LongHeads,
   sliding-window attention and attention sinks are related in prose only.
   The paper argues, without an experiment, that sliding-window attention and
-  attention sinks (LIT-191) are special cases of MoBA's gate.
+  attention sinks ([LIT-191](LIT-191.md)) are special cases of MoBA's gate.
 
 ## Standing in the anthology
 
-It is a second laboratory's evidence for SOTA-138's claim that sparse
+It is a second laboratory's evidence for [SOTA-138](../practices.d/SOTA-138.md)'s claim that sparse
 attention can be trained natively, published two days after Native Sparse
-Attention (LIT-143). Neither paper compares against the other. The
-designs differ where SOTA-138 is specific. MoBA has no learned indexer: it
+Attention ([LIT-143](LIT-143.md)). Neither paper compares against the other. The
+designs differ where [SOTA-138](../practices.d/SOTA-138.md) is specific. MoBA has no learned indexer: it
 scores blocks with mean-pooled keys and no new parameters. It has no
 compression branch and no sliding window. Its schedule is the opposite of
-SOTA-138's warm-up: train sparse first, then switch to dense for the last
+[SOTA-138](../practices.d/SOTA-138.md)'s warm-up: train sparse first, then switch to dense for the last
 10% of tokens (Fig. 5a), and keep the top layers dense for SFT. It
 matches full attention's loss at 8K and stays behind on trailing tokens
-at 32K. SOTA-138's conditions put the payoff at 64K–1M, and MoBA's only
+at 32K. [SOTA-138](../practices.d/SOTA-138.md)'s conditions put the payoff at 64K–1M, and MoBA's only
 sparse evaluations at those lengths are RULER at 128K and the needle
 heat map. It adds no test of the warm-up.
 
 Its parameter-free gate (mean-pooled key blocks, top-k, own block forced)
-is the selector that VMoBA and VSA start from. VMoBA (LIT-tmpmuiol) is built on it and could not stand
+is the selector that VMoBA and VSA start from. VMoBA ([LIT-tmpmuiol](LIT-tmpmuiol.md)) is built on it and could not stand
 without it. It keeps the mean-pooled block score and the mixture-of-block
 framing, and replaces MoBA's 1D partition and per-query top-k with a
 layer-cycled 1D/2D/3D partition and a per-head cumulative threshold. VMoBA
@@ -193,7 +197,7 @@ to the number of 1D blocks. VMoBA credits the motion collapse to MoBA's 1D
 partition, but its MoBA arm changes the selection rule too, so that
 attribution is not isolated.
 
-VSA (LIT-tmp5vqlh) names MoBA as one of its two inspirations (App. E)
+VSA ([LIT-tmp5vqlh](LIT-tmp5vqlh.md)) names MoBA as one of its two inspirations (App. E)
 without running it. It keeps the mean-pooled coarse stage. It also feeds
 that stage's attention output into the result, where MoBA uses it only to
 route. It moves from MoBA's variable-length gather to fixed 64-token tiles,

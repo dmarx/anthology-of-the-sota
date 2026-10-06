@@ -29,6 +29,9 @@ compared_against:
 - LIT-620
 - LIT-tmpe78xc
 - LIT-tmpx3dxt
+- LIT-tmpms9qj
+- LIT-tmpxwbvb
+- LIT-tmp7p0tb
 summary: >-
   Yang, Xi et al., UC Berkeley, MIT, NVIDIA and Stanford (2025), NeurIPS
   2025, [ARXIV-2505.18875](https://arxiv.org/abs/2505.18875). Training-free sparse attention for video DiTs that
@@ -188,10 +191,27 @@ The dense models it accelerates are Wan 2.1 ([LIT-619](LIT-619.md)) and HunyuanV
 ([LIT-620](LIT-620.md)). Table 1 measures SVG2's output against theirs, and the two
 backbones respond differently: App. E shows HunyuanVideo tolerating kernel
 numerics far better than Wan, which is why every method scores 4.6–7.4 dB
-higher PSNR on it. The Sparse VideoGen predecessor it beats is not in the record.
+higher PSNR on it.
 Native Sparse Attention ([LIT-143](LIT-143.md)) also scores blocks through a pooled
 representative, but over fixed contiguous blocks in a trained model, so it
 is the language-model counterpart of the design SVG2 argues against.
+
+Its main baseline is its own group's Sparse VideoGen ([LIT-tmpms9qj](LIT-tmpms9qj.md)),
+which gives each head a fixed spatial or temporal window chosen by
+sampled-query error. At matched density (25–31%) and the same 30% warm-up,
+this paper leads on fidelity at nearly equal speed: Wan T2V PSNR 25.81
+against 22.99 (1.60× against 1.58×), I2V 26.56 against 24.06, and
+HunyuanVideo 30.45 against 29.16. Without warm-up Sparse VideoGen falls to
+12.3–15.6. SpargeAttention ([LIT-tmpxwbvb](LIT-tmpxwbvb.md)) ran at its official 39–43%
+density and scored PSNR 21.18 / 20.52 / 27.89, not at matched compute. It is
+also the earlier source of the diagnosis this paper builds on: SpargeAttention
+already computed dissimilar blocks densely, because a mean-pooled
+representative cannot stand for them.
+
+PISA ([LIT-tmp7p0tb](LIT-tmp7p0tb.md)) runs this method at its official 80.6–84.4% sparsity
+against PISA at 87.5%. PISA is faster and higher on VBench on all three
+models, but this method stays closer to the dense output on SSIM and PSNR
+for all three.
 
 Filed without a NOTE: the takeaways come from one full reading of v5, main
 text and Appendices A–E. Figs. 2, 3, 7, 8, 11 and 12 are curves, and only

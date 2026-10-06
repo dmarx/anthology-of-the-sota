@@ -35,6 +35,8 @@ compared_against:
 - LIT-646
 - LIT-tmpbgw07
 - LIT-tmpe78xc
+- LIT-tmpms9qj
+- LIT-tmpk75wo
 summary: >-
   Zhang, Chen, Huang et al., UC San Diego, MBZUAI and UC Berkeley (2025),
   [ARXIV-2505.13389](https://arxiv.org/abs/2505.13389). Video self-attention in two stages over (4,4,4) token
@@ -211,6 +213,17 @@ coarse output, and sparsity level. Prism's related work describes VSA as
 with methods that "target inference acceleration at 480P/720P". The second
 description does not fit. VSA's headline result is a cut in pretraining
 FLOPs.
+
+The training-free arm of its human study is Sparse VideoGen
+([LIT-tmpms9qj](LIT-tmpms9qj.md)) at 82.5% sparsity on the original Wan weights. Sparse VideoGen
+chooses a spatial or temporal window per head, and its own paper calibrated
+it to keep about 30% of attention, so 82.5% is well past its design point.
+
+SLA ([LIT-tmpk75wo](LIT-tmpk75wo.md)) reruns VSA with official code on its own 20,000-clip
+Wan2.1-1.3B fine-tune. At 89% sparsity VSA scores VBench alignment 55.37,
+against SLA's 76.96 at 95% and full attention's 76.78. On LightningDiT,
+at 75% sparsity against SLA's 87.5%, VSA scores FID 35.75 against 31.49.
+The recipe is SLA's, not this paper's.
 
 Filed without a NOTE: the takeaways come from one full reading of v5, main
 text and Appendices A–F. Figs. 2–5 are curves, bars and attention maps, and

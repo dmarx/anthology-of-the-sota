@@ -26,6 +26,7 @@ implementations:
 # approximate branch fused into the same pass; it is defined by that loop.
 extends:
 - LIT-074
+- LIT-tmp7p0tb
 # Tables 1-3 and 5, Fig. 5c: Sparse VideoGen2 at matched sparsity on Wan,
 # HunyuanVideo, LTX 2.3, SANA-WM and Bernini, and its routing memory.
 # Table 1: dense Wan 2.1-14B and HunyuanVideo-13B are the reference rows.
@@ -34,6 +35,7 @@ compared_against:
 - LIT-619
 - LIT-620
 - LIT-tmpe78xc
+- LIT-tmp7p0tb
 summary: >-
   Li, Li et al., NVIDIA (2026), [ARXIV-2607.24027](https://arxiv.org/abs/2607.24027). Training-free block-sparse
   attention for video DiTs. Each query block keeps the key blocks whose
@@ -187,6 +189,16 @@ inference side only. [SOTA-138](../practices.d/SOTA-138.md) is about training sp
 Sol-Attn is forward-only (§6). Prism [LIT-tmpe78xc](LIT-tmpe78xc.md) applied it to a
 full-attention model at 85% and labelled that budget a top-k budget, but
 Sol-Attn has no top-k. Its budget comes from β.
+
+PISA ([LIT-tmp7p0tb](LIT-tmp7p0tb.md)), the first author's earlier method, supplies the
+correction term: each skipped block enters the online softmax through its
+mean key. Sol-Attn keeps PISA's zeroth-order block term, drops its global
+first-order term, and replaces PISA's top-k selection with a per-query
+mean-plus-β-deviations threshold computed in the kernel. PISA is the
+strongest baseline in every table. On Wan 2.1-14B it scores VBench 76.03 at
+1.86× against Sol-Attn's 76.13 at 2.02×. On HunyuanVideo PISA leads on
+quality (77.02 against 76.81) at 1.88× against 2.12×. Across tasks Sol-Attn's
+speedup over PISA runs from 1.06× to 1.29×.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and Appendices A–C. Figs. 3, 5, 6, 8, 9 and 10 are plots, and only

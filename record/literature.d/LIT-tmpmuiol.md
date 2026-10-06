@@ -43,6 +43,8 @@ compared_against:
 - LIT-tmpe78xc
 - LIT-tmpvcvo8
 - LIT-tmp04qx6
+- LIT-tmpms9qj
+- LIT-tmpk75wo
 ---
 
 # LIT-tmpmuiol: VMoBA: Mixture-of-Block Attention for Video Diffusion Models
@@ -53,7 +55,7 @@ Team, Kuaishou Technology (2025) — [ARXIV-2506.23858](https://arxiv.org/abs/25
 
 ## Key takeaways
 
-- **What it starts from** (§1, Fig. 1a). MoBA (LIT-tmpvcvo8) flattens the sequence, cuts it into uniform 1D blocks,
+- **What it starts from** (§1, Fig. 1a). MoBA ([LIT-tmpvcvo8](LIT-tmpvcvo8.md)) flattens the sequence, cuts it into uniform 1D blocks,
   mean-pools each key block, and lets each query attend to its own block
   plus its top-k scoring blocks. Applied directly to fine-tuning Wan 2.1,
   it drops the five-dimension VBench mean from 68.25 to 56.88. Almost all of
@@ -230,7 +232,7 @@ being anisotropic.
 The base model is Wan 2.1-1.3B ([LIT-619](LIT-619.md)), unchanged except for the
 attention. The kernel is built on FlashAttention ([LIT-074](LIT-074.md)).
 
-It extends MoBA (LIT-tmpvcvo8), whose parameter-free gate it keeps: each key
+It extends MoBA ([LIT-tmpvcvo8](LIT-tmpvcvo8.md)), whose parameter-free gate it keeps: each key
 block is scored by its mean-pooled key, and the mixture-of-block framing is
 unchanged. It replaces MoBA's uniform 1D partition with a layer-cycled
 1D/2D/3D partition, and MoBA's per-query top-k with a per-head cumulative
@@ -239,12 +241,25 @@ trained baseline. At 55K tokens MoBA holds Imaging Quality at 63.73, but its
 Dynamic Degree collapses to 5.80% against 61.58% for full attention, at 226
 against VMoBA's 187 GPU hours. The MoBA arm differs from VMoBA in both
 partition and selection rule, so the motion collapse is not shown to come
-from the 1D partition. DiTFastAttn (LIT-tmp04qx6) is one of its two
+from the 1D partition. DiTFastAttn ([LIT-tmp04qx6](LIT-tmp04qx6.md)) is one of its two
 training-free baselines, run at a stated density of 0.50 without saying
 which of its techniques or thresholds were used. It is the closest to the
 dense output by PSNR at 33K tokens (22.67 against 16.00 for VMoBA, at 1.18×
 against 1.01×). Applied without training to the fine-tuned full-attention
 model at 55K tokens, it lowers Subject Consistency from 90.86 to 83.33.
+
+Sparse VideoGen ([LIT-tmpms9qj](LIT-tmpms9qj.md)) is its other training-free baseline, run at
+0.50 density on the fine-tuned full-attention Wan 2.1-1.3B, so not at
+VMoBA's 0.18–0.31. VMoBA offers its fixed layer-index cycle of partitions
+as a cheaper alternative to Sparse VideoGen's per-head classification.
+Sparse VideoGen picks between its two anisotropic windows per head, per step
+and per prompt from content, while VMoBA's shapes are fixed by layer.
+
+SLA ([LIT-tmpk75wo](LIT-tmpk75wo.md)) reruns VMoBA with official code on its own 20,000-clip
+Wan2.1-1.3B fine-tune. At 85% sparsity VMoBA scores VBench alignment 32.33,
+against SLA's 76.96 at 95% and full attention's 76.78. On LightningDiT, at
+75% sparsity against SLA's 87.5%, it scores FID 39.45 against 31.49. The
+recipe is SLA's, not this paper's.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and Appendices A–D. Figs. 1, 3–7 are images and curves, and only

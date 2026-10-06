@@ -16,9 +16,10 @@ consensus_note: >-
   as kernel tiles: Hao AI Lab (Sliding Tile Attention, VSA), Meituan
   (LongCat-Video), Tencent Hunyuan (HunyuanVideo 1.5, Prism) and, in one
   layer in three, Kuaishou (VMoBA). The dissent is real and works:
-  SpargeAttention2 (Tsinghua) reaches 95% sparsity on Wan2.1 with runs of
-  consecutive tokens, and Sparse VideoGen2 replaces geometric blocks with
-  content clusters. No group has measured cubes against raster runs at
+  SpargeAttention, SLA and SpargeAttention2 (Tsinghua) and PISA (HKUST
+  Guangzhou) all use runs of consecutive tokens, SpargeAttention2 reaching
+  95% sparsity on Wan2.1, and Sparse VideoGen2 replaces geometric blocks
+  with content clusters. No group has measured cubes against raster runs at
   matched settings.
 title: 'In block-sparse attention over video tokens, make each block a small 3D spatiotemporal cube laid out as one kernel tile, not a run of raster-order tokens'
 version: 1
@@ -38,6 +39,9 @@ source:
 - LIT-tmp5vqlh
 - LIT-tmpe78xc
 - LIT-tmpucn4v
+# SpargeAttention v1 measured a 3D-locality token ordering (Hilbert curve)
+# against raster orders, at fixed hyperparameters, not matched error.
+- LIT-tmpxwbvb
 introduced_by:
 # STA is the first paper in the record to make a 3D cube one FlashAttention
 # block by re-indexing tokens. Neighbourhood attention did 3D windows
@@ -116,6 +120,17 @@ every density. That supports regrouping before pooling. It shows nothing
 about geometric cubes in particular, because its regrouping is by k-means
 on the features, not by position. It is shown as a curve, without values.
 
+**A 3D-local token order raises block similarity, measured once.**
+SpargeAttention ([LIT-tmpxwbvb](../literature.d/LIT-tmpxwbvb.md), Table 9) reorders CogVideoX and Mochi tokens
+along a 3D Hilbert curve, which keeps spatiotemporal neighbours adjacent,
+and compares it with row-major, column-major, time-major and random 1D
+orders. With hyperparameters held fixed, the Hilbert order gives the highest
+sparsity (0.265 / 0.392 against 0.242 / 0.363 for row-major), because more
+blocks pass its self-similarity test. Its output error is also higher
+(L1 0.0323 / 0.0389 against 0.0265 / 0.0307), so the comparison is not at
+matched error. It is the closest the record comes to cubes against raster
+order, and it is about a curve, not cubes.
+
 ## What it does not establish
 
 **The deciding comparison has not been run.** No paper in the record trains
@@ -126,7 +141,8 @@ rests on the plausible argument that a cube's tokens are more alike than a
 run that wraps across rows, on Sparse VideoGen2's evidence that regrouping
 helps, and on adoption.
 
-**Raster runs work in at least one strong method.** SpargeAttention2
+**Raster runs work in several strong methods.** SLA ([LIT-tmpk75wo](../literature.d/LIT-tmpk75wo.md)) and
+PISA ([LIT-tmp7p0tb](../literature.d/LIT-tmp7p0tb.md)) also use 64-token runs in sequence order. SpargeAttention2
 ([LIT-tmpbgw07](../literature.d/LIT-tmpbgw07.md)) uses runs of 128 query and 64 key tokens in raster order. It
 reaches 95% sparsity on Wan2.1 at 1.3B and 14B with quality level with the
 dense model, after fine-tuning against a dense teacher. Training may be what

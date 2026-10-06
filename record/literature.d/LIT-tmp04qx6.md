@@ -22,7 +22,7 @@ implementations:
 - 'DiTFastAttn (project site nics-effalg.com/DiTFastAttn)'
 summary: >-
   Yuan, Zhang, Lu et al., Tsinghua, Infinigence AI and SJTU (2024),
-  ARXIV-2406.08552, NeurIPS 2024. A training-free plan, chosen per layer and
+  [ARXIV-2406.08552](https://arxiv.org/abs/2406.08552), NeurIPS 2024. A training-free plan, chosen per layer and
   per step by a greedy search on output error, picks from three
   substitutes for attention. One is a 1D diagonal window plus a cached
   full-minus-window residual. The others reuse the previous step's output
@@ -32,13 +32,16 @@ summary: >-
   against 23.67 and IS 49.34 against 51.89. On DiT-512 under its original
   250-step sampler, FID worsens from 3.16 to 4.52. Video results are
   qualitative only. One run per setting.
+compared_against:
+- LIT-tmpms9qj
+- LIT-tmpmuiol
 ---
 
 # LIT-tmp04qx6: DiTFastAttn: Attention Compression for Diffusion Transformer Models
 
 Yuan, Zhang, Lu, Ning, Zhang, Zhao, Yan, Dai and Wang, Tsinghua University,
 Infinigence AI and Shanghai Jiao Tong University (2024), NeurIPS 2024 —
-ARXIV-2406.08552. Read at v2 (18 Oct 2024), main text and Appendices
+[ARXIV-2406.08552](https://arxiv.org/abs/2406.08552). Read at v2 (18 Oct 2024), main text and Appendices
 A.1–A.8. v1 is 12 Jun 2024.
 
 ## Key takeaways
@@ -96,7 +99,7 @@ A.1–A.8. v1 is 12 Jun 2024.
 
 ## Where the hedges are
 
-Per DP-010:
+Per [DP-010](../../docs/design-principles.md#dp-10):
 
 - **"Up to 76% of attention FLOPs and 1.8× end to end" is one setting at
   one resolution.** Both numbers are PixArt-Sigma at 2048² and D6 (Table 1,
@@ -152,16 +155,16 @@ Per DP-010:
 ## Standing in the anthology
 
 It is the record's earliest training-free attention compression for
-diffusion transformers. The models it runs on are DiT (LIT-448) and
+diffusion transformers. The models it runs on are DiT ([LIT-448](LIT-448.md)) and
 PixArt-Sigma. Of its three parts, only the window is sparse attention in
 the sense the later papers use. The window is a band on the flattened
 token order. For an image in raster order, that is a run of neighbouring
 rows, not a 2D tile. Two techniques reuse cached outputs across steps
-or across the classifier-free guidance pair (LIT-693). Those are closer to
+or across the classifier-free guidance pair ([LIT-693](LIT-693.md)). Those are closer to
 feature caching than to sparsity.
 
 Two later papers run it as a baseline, and both take only part of it.
-Sparse VideoGen (LIT-tmpms9qj) runs "DiTFastAttn (Spatial-only)" on
+Sparse VideoGen ([LIT-tmpms9qj](LIT-tmpms9qj.md)) runs "DiTFastAttn (Spatial-only)" on
 CogVideoX-v1.5 and HunyuanVideo at 720p and treats it as the spatial-head
 half of its own spatial/temporal split. On CogVideoX-v1.5 text-to-video it
 reaches 1.56× (338 against 528 s) at PSNR 23.20 and LPIPS 0.256 against
@@ -171,7 +174,7 @@ Imaging Quality is the highest in the table (67.33 against 66.11 for dense
 attention), so the low PSNR measures distance from the dense video and not
 a loss on that metric.
 
-VMoBA (LIT-tmpmuiol) runs it at a stated density of 0.50 on Wan 2.1-1.3B.
+VMoBA ([LIT-tmpmuiol](LIT-tmpmuiol.md)) runs it at a stated density of 0.50 on Wan 2.1-1.3B.
 In the training-free setting at 33K tokens it is the closest to the dense
 output by PSNR (22.67, against 16.00 for VMoBA), at 1.18× (89 against 103
 s). At 76K tokens it reaches 1.31× at PSNR 24.50. Applied without training
@@ -182,7 +185,7 @@ it ran. It says it removed caching "tricks", and AST, ASC and the residual
 in WA-RS are all caches. DiTFastAttn has no density setting, so "0.50" is
 VMoBA's description, not one of this paper's configurations.
 
-SpargeAttention v1 (LIT-tmpxwbvb) mentions it only in related work. It
+SpargeAttention v1 ([LIT-tmpxwbvb](LIT-tmpxwbvb.md)) mentions it only in related work. It
 says DiTFastAttn is limited to plain DiTs and does not work with MMDiT
 models such as CogVideoX. Sparse VideoGen's table shows the window part
 running on CogVideoX-v1.5.

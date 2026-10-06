@@ -25,6 +25,8 @@ compared_against:
 - LIT-tmp5vqlh
 - LIT-tmpmuiol
 - LIT-tmpe78xc
+- LIT-tmpxwbvb
+- LIT-tmpk75wo
 summary: >-
   Zhang, Jiang, Xiang et al., Tsinghua and UC Berkeley (2026), [ARXIV-2602.13515](https://arxiv.org/abs/2602.13515).
   Block-sparse attention for video diffusion. Each query block keeps the union
@@ -189,6 +191,25 @@ Blocks are runs of consecutive tokens in the flattened sequence (bq = 128,
 bkv = 64). The paper does not tile in 3D, does not choose block shape or
 size from content, and does not discuss either. The backbones are Wan2.1
 ([LIT-619](LIT-619.md)) at 1.3B and 14B, unmodified apart from attention.
+
+SpargeAttention v1 ([LIT-tmpxwbvb](LIT-tmpxwbvb.md)), the group's training-free predecessor,
+is a baseline in Tables 4–5 at 89% sparsity (1.3B) and 86% (14B). It scores
+IQ 35.28 against 63.67 for full attention and VQA-a 3.26 against 81.28.
+v1 calibrated itself to 31–54% sparsity under an error bound, so these rows
+show it cannot reach 90% untrained, not that it fails at its own operating
+point. v1 selected by top-p alone (TopCdf over the mean-pooled block map) and
+computed low-self-similarity blocks densely. This paper's top-k floor
+answers the sink failure of exactly that rule.
+
+SLA ([LIT-tmpk75wo](LIT-tmpk75wo.md)), the same group's previous method, is one of the trained
+baselines in Table 4. On Wan2.1-1.3B at 95% sparsity SLA scores IQ 63.14
+and VQA-a 72.66 with 11 s of attention, against 67.68, 83.86 and 6 s here
+and 63.67 and 81.28 for full attention. SLA's own paper had it level with
+full attention on its own data, and here it falls behind on alignment. This
+paper drops SLA's linear branch for the marginal blocks and gets its
+quality from the top-k ∪ top-p mask and velocity distillation instead. It
+does not say whether SLA was retrained with the same 500 steps and loss, so
+the gap mixes method and recipe.
 
 Filed without a NOTE: the takeaways come from one full reading of v1, main
 text and Appendices A–B. Figures 1–4 are images and only text and table

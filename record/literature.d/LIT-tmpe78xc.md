@@ -135,9 +135,13 @@ Per [DP-010](../../docs/design-principles.md#dp-10):
   the union's sparsity. On a 1.3B Wan model it found the union only slightly
   ahead of top-k alone, and behind it on one metric.
 - **Most of what Prism presents as new has precedents among its own
-  baselines.** Sparse VideoGen2 ([LIT-tmpucn4v](LIT-tmpucn4v.md)) made the diagnosis first,
-  that fixed blocks mix dissimilar tokens and corrupt pooled
-  representatives, and answered it with content-defined k-means clusters.
+  baselines.** SpargeAttention v1 ([LIT-tmpxwbvb](LIT-tmpxwbvb.md)) acted on the diagnosis
+  first, that a mean cannot represent a block of dissimilar tokens, by
+  computing such blocks densely, and it already selected by top-p over a
+  mean-pooled block map. Sparse VideoGen2 ([LIT-tmpucn4v](LIT-tmpucn4v.md)) answered the same
+  diagnosis with content-defined k-means clusters. Sparse VideoGen
+  ([LIT-tmpms9qj](LIT-tmpms9qj.md)) already chose an anisotropic window per head and step from
+  content, between two fixed patterns.
   VMoBA ([LIT-tmpmuiol](LIT-tmpmuiol.md)) already varied block shape, cycling temporal slabs,
   spatial columns and 3D cubes by layer. Sliding Tile Attention
   ([LIT-tmp1yfvi](LIT-tmp1yfvi.md)) and VSA ([LIT-tmp5vqlh](LIT-tmp5vqlh.md)) already used fixed 4×4×4 cubes laid

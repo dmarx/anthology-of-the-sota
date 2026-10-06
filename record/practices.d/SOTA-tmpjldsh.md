@@ -100,6 +100,13 @@ step), scores 0.76. So in Prism's setting, the union beats top-k at more than
 matched compute. It is one run per arm, from a paper whose baselines were
 trained differently.
 
+**Where the two halves come from.** Top-p over a mean-pooled block softmax
+is older than the union. SpargeAttention v1 ([LIT-tmpxwbvb](../literature.d/LIT-tmpxwbvb.md), February 2025)
+selected by it alone (its TopCdf rule), training-free, and forced
+low-similarity blocks dense. SpargeAttention2 added the top-k floor a year
+later to stop the rule collapsing onto sinks once sparsity was pushed to
+95% under training. The union is SpargeAttention2's.
+
 ## What it costs
 
 - **Routing time.** Top-p needs each row sorted. Sol-Attn ([LIT-tmpx3dxt](../literature.d/LIT-tmpx3dxt.md))
@@ -116,7 +123,10 @@ trained differently.
   Both sources are video models, and SpargeAttention2's backbones are Wan2.1
   only. Language-model block selection in the record ([LIT-143](../literature.d/LIT-143.md), [SOTA-138](SOTA-138.md)) uses
   learned scores and a fixed budget, and this rule is untested there.
-- **Training matters more than the rule.** SpargeAttention2's same masker
+- **Training matters more than the rule.** SLA ([LIT-tmpk75wo](../literature.d/LIT-tmpk75wo.md), Table 1)
+  ran SpargeAttention v1's top-p selection on Wan2.1-1.3B both untrained, at
+  85% sparsity, and fine-tuned, at 84%. VBench alignment went from 0.002 to
+  73.83, against 76.78 for full attention. SpargeAttention2's same masker
   without fine-tuning loses 42–66 points of VQA. The rule is evidence about
   what to select once the model is adapted to the mask.
 - **The alternatives are single dynamic budgets.** Sparse VideoGen2

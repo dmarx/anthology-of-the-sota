@@ -24,6 +24,8 @@ summary: >-
   moves it to 5158. [LIT-190](../literature.d/LIT-190.md) finds the same concentration in the residual
   stream, and [SOTA-134](../practices.d/SOTA-134.md)'s gate removes sinks rather than relocating them, which
   is what the account predicts.
+extended_by:
+- THEORY-tmp59ici
 ---
 
 

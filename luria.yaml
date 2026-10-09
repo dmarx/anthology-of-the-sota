@@ -689,6 +689,18 @@ schemes:
         required_when:
           consensus:
           - contested
+      superseded_by:
+        scheme:
+        - SOTA
+        - THEORY
+        many: true
+        required: false
+        required_when:
+          status:
+          - Superseded
+        forbidden_when:
+          status:
+          - Active
     fields:
       # A provisional practice must say what would settle it (ADR-014). Required
       # only at the statuses where something is actually pending: an Active
@@ -765,6 +777,8 @@ schemes:
         # unnoticed because nothing read it — `tiny-models` was never added
         # (ADR-049).
     axis: tags
+    retires_on: Superseded
+    successor: superseded_by
   # ── The explanation: one document per claim about why something works ────
   # A practice is an instruction; a theory is a finding. They were one scheme
   # until ADR-031, and the seam showed from both sides: six practices
@@ -885,6 +899,16 @@ schemes:
         required: false
         many: true
         converse: rivals
+      superseded_by:
+        scheme: SOTA
+        many: true
+        required: false
+        required_when:
+          status:
+          - Superseded
+        forbidden_when:
+          status:
+          - Active
     fields:
       # The same rule as the practice registry's (ADR-014), and if anything a
       # sharper one here: what distinguishes an explanation from a story is
@@ -919,6 +943,8 @@ schemes:
         # vocabulary at all and is not covered — see the decision.
         closed: true
     axis: tags
+    retires_on: Superseded
+    successor: superseded_by
   # ── The evidence: one note per paper ─────────────────────────────────────
   LIT:
     dir: record/literature.d
@@ -1047,6 +1073,18 @@ schemes:
         required: false
         many: true
         converse: corrects
+      superseded_by:
+        scheme:
+        - LIT
+        - ARXIV
+        many: true
+        required: false
+        required_when:
+          status:
+          - Superseded
+        forbidden_when:
+          status:
+          - Active
     fields:
       # The publication date, and the one place it lives. A LIT note is about a
       # paper, so the paper's date is this scheme's fact; SOTA and NOTE read it
@@ -1082,6 +1120,8 @@ schemes:
         # unnoticed because nothing read it — `tiny-models` was never added
         # (ADR-049).
     axis: tags
+    retires_on: Superseded
+    successor: superseded_by
   # ── The reading: one document per paper someone actually opened ──────────
   # A LIT note says what a paper's STANDING is here. It never said what the
   # paper CONTAINS, and the corpus holds two demonstrations of the cost:
@@ -1128,6 +1168,16 @@ schemes:
         scheme: LIT
         required: true
         many: false
+      superseded_by:
+        scheme: NOTE
+        many: true
+        required: false
+        required_when:
+          status:
+          - Superseded
+        forbidden_when:
+          status:
+          - Read
     fields:
       status:
         vocabulary: note-statuses
@@ -1160,6 +1210,8 @@ schemes:
         from: paper
         many: true
     axis: tags
+    retires_on: Superseded
+    successor: superseded_by
   # ── This project reasoning about itself ──────────────────────────────────
   ADR:
     dir: record/decisions.d
@@ -1176,6 +1228,24 @@ schemes:
         required: true
         closed: false
     axis: tags
+    retires_on: Superseded
+    successor: superseded_by
+    references:
+      superseded_by:
+        scheme: ADR
+        many: true
+        required: false
+        required_when:
+          status:
+          - Superseded
+        forbidden_when:
+          status:
+          - Active
+      influenced_by:
+        scheme: ADR
+        many: true
+        required: false
+    influence: influenced_by
   DP:
     dir: record/principles.d
     output: docs/design-principles.md
@@ -1194,6 +1264,24 @@ schemes:
         required: true
         closed: false
     axis: tags
+    retires_on: Superseded
+    successor: superseded_by
+    references:
+      superseded_by:
+        scheme: DP
+        many: true
+        required: false
+        required_when:
+          status:
+          - Superseded
+        forbidden_when:
+          status:
+          - Active
+      influenced_by:
+        scheme: ADR
+        many: true
+        required: false
+    influence: influenced_by
 remotes:
   # ── arXiv as a remote ────────────────────────────────────────────────────
   # Not a Luria record — a `uid` remote, whose references are the prefix plus

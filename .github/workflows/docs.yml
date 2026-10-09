@@ -98,7 +98,7 @@ jobs:
       - id: generate
         uses: dmarx/luria/actions/generate@0.33.3
         with:
-          pip-spec: luria==0.33.3
+          pip-spec: "git+https://github.com/dmarx/luria@12d44f89dd0228831a932cd58ed6eba9c20bc016"
           # Assign real numbers to merge-allocated temporary codes
           # (LU-ADR-049) — only where merges serialize, which is this job.
           # Concretizing on a branch is the premature number claim the
@@ -128,7 +128,7 @@ jobs:
           python-version: "3.12"
       - uses: dmarx/luria/actions/lint@0.33.3
         with:
-          pip-spec: luria==0.33.3
+          pip-spec: "git+https://github.com/dmarx/luria@12d44f89dd0228831a932cd58ed6eba9c20bc016"
 
   # The pull-request shape: repair the sources, push the repair onto the
   # branch, and lint the sources in the same job. No view is written, so two
@@ -153,7 +153,7 @@ jobs:
           python-version: "3.12"
       - uses: dmarx/luria/actions/generate@0.33.3
         with:
-          pip-spec: luria==0.33.3
+          pip-spec: "git+https://github.com/dmarx/luria@12d44f89dd0228831a932cd58ed6eba9c20bc016"
           views: "false"
       - uses: dmarx/luria/actions/lint@0.33.3
         with:
@@ -169,7 +169,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install luria==0.33.3
+      - run: pip install "git+https://github.com/dmarx/luria@12d44f89dd0228831a932cd58ed6eba9c20bc016"
       - run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

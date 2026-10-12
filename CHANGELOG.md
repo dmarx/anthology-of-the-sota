@@ -6,6 +6,81 @@ in `.github/workflows/docs.yml` moves them here.
 
 <!-- luria-insert-here -->
 
+## 2026-10-12
+
+### Changed
+
+- `luria.yaml` declares the relations luria used to supply on its own. luria
+  now takes relation semantics only from configuration (dmarx/luria#360), so
+  `luria upgrade explicit-relations` wrote them down. It added a
+  `superseded_by` reference to SOTA, THEORY, LIT, NOTE, ADR and DP, keeping
+  the old conditions: required while the status is `Superseded`, forbidden
+  while it is `Active`. Each reference targets what the record's own
+  successors already name: SOTA to SOTA or THEORY, THEORY to SOTA, and LIT to
+  LIT or ARXIV. It also declared `influenced_by` on ADR and DP, which the
+  `influence` role now names, and added `active`, `retires_on` and
+  `successor` roles wherever they were missing. The upgrade only adds lines.
+- CI moves from luria 0.33.3 to 1.0.0, the release that carries the change.
+
+### Added
+
+- [LIT-799](record/literature.d/LIT-799.md), Olmo Hybrid (arXiv 2604.03444): Olmo 3 7B with Gated DeltaNet
+  in place of its sliding-window layers, at 3:1 with full attention, set
+  against the released Olmo 3, plus scaling fits and an expressivity theory.
+  Read in full at v4. The note records that the 7B comparison changed the
+  data mix, schedule and mid-training batch as well. It also records that the
+  projected token savings have confidence intervals including 1 at every size
+  but 3B, and that removing negative eigenvalues barely changes the scaling.
+- [LIT-801](record/literature.d/LIT-801.md), Cracks in the Foundation (arXiv 2608.10296): 26 controlled 7B
+  pretraining runs showing that QK norm, GQA, sliding windows and a 4K
+  pretraining length each cost long-context extension, and that they
+  compound. One seed per configuration; Table 2 has a copied RULER row.
+- [LIT-802](record/literature.d/LIT-802.md), Gated DeltaNet-2 (arXiv 2605.22791): KDA's scalar β split
+  into channel-wise erase and write gates. It is best of six recurrent mixers
+  at 1.3B and matched state, in one run, and it loses the word-needle task at
+  4K to Gated DeltaNet.
+- [LIT-800](record/literature.d/LIT-800.md), Why Gated DeltaNet Survives 4-Bit Quantization (arXiv
+  2609.04098): NVFP4 W4A4 on every linear layer of Qwen3.8-27B, Gated
+  DeltaNet included, within seed noise of BF16 on tasks. The perplexity cost
+  is the largest of the recipes compared. The gate projections that public
+  builds protected are the least sensitive, and the delta rule erases state
+  error rather than accumulating it. One model, one format; RULER is at
+  ceiling.
+- Olmo 3, Gated DeltaNet, Kimi Linear, Mamba-2, Mamba-3, YaRN, Falcon-H1,
+  Nemotron 3 Nano, Llama 3 and Qwen3 now say in prose how the new papers
+  extend or measure them.
+
+- Four Proposed theories from the batch, each with the test that would
+  settle it. [THEORY-129](record/theory.d/THEORY-129.md): hybrids of attention and a negative-eigenvalue
+  delta rule express what neither can alone (proved under TC⁰ ≠ NC¹).
+  [THEORY-126](record/theory.d/THEORY-126.md): expressivity improves scaling through the data
+  coefficient, against which the source paper's own positive-eigenvalue
+  ablation already counts. [THEORY-128](record/theory.d/THEORY-128.md): delta-rule recurrences erase
+  perturbations rather than accumulating them, with no arm yet removing the
+  delta rule. [THEORY-127](record/theory.d/THEORY-127.md): QK norm costs long-context extension by
+  raising entropy and removing sinks, extending [THEORY-019](record/theory.d/THEORY-019.md). The evidence
+  for it is correlational.
+
+### Changed
+
+- [SOTA-132](record/practices.d/SOTA-132.md) v3 and [SOTA-135](record/practices.d/SOTA-135.md) v2 add Olmo Hybrid to `source:`. It is a fourth
+  laboratory running the hybrid interleave, and an independent test of the
+  gated delta rule against Mamba-2. [SOTA-132](record/practices.d/SOTA-132.md)'s Variations section records
+  that, under one recipe, the mixer's family was not second-order.
+- [SOTA-177](record/practices.d/SOTA-177.md) v2 records Gated DeltaNet-2 as an independent, restricted form of
+  the decoupled erase, measured against KDA's channel-wise decay. It says
+  why that is not taken as meeting `promote_when:`. Status and consensus are
+  unchanged.
+- [SOTA-192](record/practices.d/SOTA-192.md) v9 and [SOTA-109](record/practices.d/SOTA-109.md) v3 gain long-context-extension conditions from
+  Cracks in the Foundation. QK norm costs about 4 to 6 HELMET points at 32K,
+  and GQA with sliding windows about 9.
+- [SOTA-153](record/practices.d/SOTA-153.md) v4 and [SOTA-151](record/practices.d/SOTA-151.md) v4 record Olmo Hybrid's YaRN-against-DroPE
+  comparison, and the finding that architecture moves long-context scores
+  more than the extension recipe does.
+- [SOTA-163](record/practices.d/SOTA-163.md) v2 records the NVFP4 result as a 4-bit serving instance of block
+  scaling containing outliers, in the body and not as a source.
+  Recommendations, statuses and consensus are unchanged throughout.
+
 ## 2026-10-05
 
 ### Fixed

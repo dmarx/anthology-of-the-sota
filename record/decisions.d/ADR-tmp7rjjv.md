@@ -14,8 +14,8 @@ summary: >-
   inside "graph-structured data and the models that run on it". The blurb
   listed only what the first nine documents happened to be about, so a
   reader browsing it could not tell embeddings or equivariant networks
-  belonged there. Rejected: a new representation-learning topic, and
-  graph subtopics.
+  belonged there. Rejected: graph subtopics. A representation-learning
+  topic is left to its own decision.
 ---
 
 # ADR-tmp7rjjv: Widen the graphs-and-networks blurb to the field it now holds
@@ -55,14 +55,13 @@ about graph models whatever the blurb says.
 
 ## Alternatives rejected
 
-- **A `representation-learning` topic** for embeddings learned by an
-  objective, which the companion record has. The anthology files
-  self-supervised and contrastive work by subject: contrastive-learning papers sit
-  under vision, training or analysis, and word-embedding papers under analysis. A graph
-  embedding is about graphs first, and `representation-and-encoding` is
-  about how input is encoded before the network sees it, not about
-  learned embeddings ([ADR-060](ADR-060.md) made the same distinction for concept
-  geometry).
+- **A `representation-learning` topic, in this decision.** The embedding
+  papers this pass files share a subject with the word-embedding and
+  self-supervised papers already in the record, most of which sit under
+  `representation-and-encoding`, whose subject is how input is encoded
+  before the network sees it. That is a vocabulary question reaching well
+  past graphs, so it is decided on its own, not as a rider on a graph
+  blurb.
 - **Graph subtopics**, as [ADR-066](ADR-066.md) added under `generative-modeling`. That
   decision answered a topic of 169 documents. This one, after the pass,
   is a few dozen, and can be read whole.

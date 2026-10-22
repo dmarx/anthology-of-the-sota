@@ -83,7 +83,7 @@ is a node-pair task with informative features, which [SOTA-351](../practices.d/S
 conditions already exclude.
 
 **Positional encodings** are the subject of other documents in this pass,
-starting from [ARXIV-2110.07875](https://arxiv.org/abs/2110.07875). This note records only what this paper
+starting from [LIT-tmpmiegg](LIT-tmpmiegg.md). This note records only what this paper
 measured.
 
 Read — [NOTE-tmpjnifj](../notes.d/NOTE-tmpjnifj.md).

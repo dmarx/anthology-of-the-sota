@@ -1,0 +1,99 @@
+---
+status: Active
+title: 'Equivariant Subgraph Aggregation Networks'
+version: 1
+tags:
+- graphs-and-networks
+- model-architecture
+date: '2026-10-22'
+published: '2021-10-06'
+arxiv: '2110.02910'
+first_author: 'Bevilacqua'
+keywords:
+- 'esan'
+- 'subgraph-gnn'
+- 'bag-of-subgraphs'
+- 'expressive-power'
+- 'weisfeiler-leman'
+- 'equivariance'
+implementations:
+- ESAN
+compared_against:
+- LIT-580
+- LIT-tmpo8g4p
+- LIT-tmp41jsc
+summary: >-
+  Bevilacqua, Frasca, Lim, Srinivasan, Cai, Balamurugan, Bronstein, Maron
+  (ICLR 2022), [ARXIV-2110.02910](https://arxiv.org/abs/2110.02910). Represents a graph as a bag of its
+  subgraphs (node-deleted, edge-deleted or ego-networks), runs a shared GNN
+  on each, optionally with information shared across the bag, and pools.
+  With a 1-WL encoder this is strictly more expressive than 1-WL. On ZINC12k
+  under 100k parameters, GIN goes from 0.252 to 0.102 MAE. On TUD and OGB
+  the gains over GIN are mostly inside a standard deviation, and with a GCN
+  encoder most variants lower OGB-MOLHIV test AUC. Training costs about 2–3×
+  GIN per epoch.
+---
+
+<!-- inactive-ok-file: NOTE-tmpe0x91 — Skimmed, and cited precisely to record that the proofs were not read (ADR-025) -->
+
+# LIT-tmp6ppm0: Equivariant Subgraph Aggregation Networks
+
+Bevilacqua, Frasca, Lim, Srinivasan, Cai, Balamurugan, Bronstein, Maron,
+Purdue, Imperial, MIT, UCSD, Tübingen and NVIDIA (ICLR 2022) —
+[ARXIV-2110.02910](https://arxiv.org/abs/2110.02910)
+
+## Key takeaways
+
+- **The architecture:** a selection policy maps a graph to a bag of
+  subgraphs with aligned nodes. DS-GNN runs one GNN on each independently
+  (a Siamese network) and pools. DSS-GNN adds, per layer, a second GNN on
+  the bag's aggregate, so subgraphs share information
+- **Expressivity:** DS-WL and DSS-WL, its WL analogues, are strictly
+  stronger than 1-WL for some policies (Theorem 1). The networks reach them
+  on bounded-size graphs (Theorem 2). DSS is at least as strong as DS and
+  strictly stronger for some policy (Proposition 1). With a 3-WL encoder and
+  depth-1 ego-network policies, DS-GNN exceeds 3-WL (Proposition 2). On
+  strongly regular graphs of equal parameters, node-deletion and ego
+  policies fail like 3-WL does, and edge deletion separates some pairs
+  (Proposition 3)
+- **Synthetic** (Table 6): EXP and CEXP, built so that 1-WL models score 50%
+  and 75%, go to 100% with every policy. CSL is solved perfectly
+- **ZINC12k** (Table 3, 100k budget): GIN 0.252, best DSS-GNN (EGO+) 0.102.
+  Edge- and node-deletion policies reach only 0.166–0.172. Ego-network
+  policies carry the result
+- **TUD** (Table 1): most variants are within one standard deviation of
+  GIN. DS-GNN with ego policies falls below it on NCI1 and NCI109 (EGO 81.4
+  and 79.5 vs 82.7 and 82.2). A GIN widened to ESAN's parameter count does
+  not close the gap (Table 10)
+- **OGB, GIN encoder** (Table 2): MOLHIV 75.58 to at most 78.00, MOLTOX21
+  74.91 to at most 77.95
+- **Cost** (Table 11): an NCI1 epoch takes GIN 1.00 s, DS-GNN about 2.0 s and
+  DSS-GNN about 3.2 s. Sampling 20% of subgraphs saves 10–15%
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22). It is `compared_against` three papers in the record.
+GIN ([LIT-580](LIT-580.md)) is the base encoder for every headline number, and the paper
+reruns it. GSN ([LIT-tmpo8g4p](LIT-tmpo8g4p.md)) is quoted from its paper: on ZINC, DSS-GNN with
+EGO+ reaches 0.102 against GSN's 0.108, without using ring counts. The
+0.108 matches a 385k-parameter GSN in that paper's Table 4, while ESAN
+stays under 100k. GSN at about 100k reports 0.115. Random
+node initialization ([LIT-tmp41jsc](LIT-tmp41jsc.md)) supplies the EXP and CEXP datasets, and
+in the TUD table an RNI model sits below plain GraphConv on PROTEINS (73.3
+vs 73.9) and NCI1 (82.1 vs 82.4).
+
+**Where the main text and Table 5 differ.** "ESAN consistently improves
+over the base encoder" holds for GIN. With a GCN encoder on OGB-MOLHIV
+(Table 5, appendix), DS-GNN lowers test ROC-AUC under all four policies
+(74.00–74.70 vs 76.06), while training AUC rises as high as 91.91. DSS-GNN
+with GCN reaches up to 99.52 training AUC for at most 76.50 test. More
+expressive here means fitting more, not generalizing more. This bears on the
+"Where it stops" section of [THEORY-083](../theory.d/THEORY-083.md).
+
+**The TUD protocol** is GIN's, best epoch averaged across folds, and the
+gains there are inside the noise. ZINC is the benchmark where the result is
+clearly real.
+
+Skimmed — [NOTE-tmpe0x91](../notes.d/NOTE-tmpe0x91.md) (main text and the results appendix read; proofs
+not).

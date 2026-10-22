@@ -24,6 +24,7 @@ history:
     `extends` THEORY-093, the factorization result its skip-gram half
     rests on. Unchanged otherwise.
 tags:
+- representation-learning
 - representation-and-encoding
 - signal-structure
 - concept-geometry

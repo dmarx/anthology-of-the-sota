@@ -22,6 +22,7 @@ history:
     Re-sourced from LIT-609 to LIT-603, the same paper filed first; LIT-609
     is retired as its duplicate. The practice is unchanged.
 tags:
+- representation-learning
 - representation-and-encoding
 - training-optimization
 date: '2026-09-23'

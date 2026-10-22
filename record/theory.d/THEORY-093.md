@@ -6,6 +6,7 @@ formerly:
 title: 'Skip-gram with negative sampling implicitly factorizes the word-context PMI matrix shifted by log k, weighting frequent pairs more heavily'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - signal-structure
 date: '2026-09-23'

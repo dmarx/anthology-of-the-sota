@@ -25,6 +25,7 @@ history:
     (ADR-049). Recommendation unchanged.
 tags:
 - systems-optimization
+- representation-learning
 - representation-and-encoding
 - training-optimization
 date: '2026-09-23'

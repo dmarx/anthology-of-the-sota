@@ -4,6 +4,7 @@ title: 'DeepWalk: Online Learning of Social Representations'
 version: 1
 tags:
 - graphs-and-networks
+- representation-learning
 - representation-and-encoding
 date: '2026-10-22'
 published: '2014-03-26'

@@ -14,6 +14,7 @@ promote_when: >-
 title: 'Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - multimodal-learning
 - concept-geometry

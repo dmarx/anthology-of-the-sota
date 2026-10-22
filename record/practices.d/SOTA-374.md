@@ -25,6 +25,7 @@ history:
     signal, so it should fail on a near-uniform unit distribution.
 tags:
 - data-pipeline
+- representation-learning
 - representation-and-encoding
 - signal-structure
 date: '2026-09-23'

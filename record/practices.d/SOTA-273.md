@@ -20,6 +20,7 @@ title: 'Choose a pretraining context whose association with the input is neither
 version: 1
 tags:
 - training-optimization
+- representation-learning
 - representation-and-encoding
 date: '2026-09-20'
 source:

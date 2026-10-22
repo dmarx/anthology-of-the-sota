@@ -19,6 +19,7 @@ history:
     Proposed: only two exponents are compared.
 tags:
 - training-optimization
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

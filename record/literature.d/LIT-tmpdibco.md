@@ -4,6 +4,7 @@ title: 'RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Spac
 version: 1
 tags:
 - graphs-and-networks
+- representation-learning
 - representation-and-encoding
 date: '2026-10-22'
 published: '2019-02-26'

@@ -24,7 +24,7 @@
 # practice drawn from it still hold. Two schemes, two status fields, and the
 # relationship between them is a citation the lint can follow. See ADR-002.
 vocabularies:
-  # The twenty-eight topics: the primary axis of both the practice registry and the
+  # The twenty-nine topics: the primary axis of both the practice registry and the
   # reading list, in the order the indexes show them.
   #
   # The first seven are transcribed from the 2024 naming-conventions document;
@@ -61,6 +61,9 @@ vocabularies:
   #            physical-sciences, human-ai-interaction -- the #180 reading
   #            pass declined three papers and filed four more under the
   #            nearest wrong word; each reader named the missing topic
+  #   ADR-tmpwwyq0 representation-learning -- about seventy documents on
+  #            learning representations from an objective sat under a topic
+  #            about input encoding
   #
   # Every one of those words was already in the LIT scheme, which has carried
   # them since ADR-003; the practice registry caught up one decision at a time.
@@ -82,9 +85,9 @@ vocabularies:
     # What the axis IS, which until luria 0.25.0 could only be said in a
     # comment no view could reach (LU-#279).
     blurb: >-
-      The twenty-eight kinds of claim this anthology files against — the
+      The twenty-nine kinds of claim this anthology files against — the
       primary axis of both the practice registry and the reading list, and the
-      same twenty-eight for each (ADR-026). The filing rule is the point: take a domain
+      same twenty-nine for each (ADR-026). The filing rule is the point: take a domain
       topic when the claim is ABOUT the domain; a claim merely discovered in
       one still takes its kind. The axis organizes the record, it does not
       bound it: content the list cannot place is evidence the list is short
@@ -151,6 +154,12 @@ vocabularies:
       representation-and-encoding:
         label: Representation and encoding
         blurb: how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them
+      # Added by ADR-tmpwwyq0. Self-supervised, contrastive and embedding
+      # papers had been filed under `representation-and-encoding`, whose
+      # subject is the input, as concept geometry had been before ADR-060.
+      representation-learning:
+        label: Representation learning
+        blurb: how learned systems come to represent their data — self-supervised, contrastive and masked-prediction objectives, word, node and knowledge-graph embeddings learned from co-occurrence, what the learned representations keep and compress, and whether they converge across models
       analysis-and-evaluation:
         label: Analysis and evaluation
         blurb: how to find out whether something worked — what to measure, what a measurement cannot tell you, and which comparisons are unsound; theory, interpretability and debugging belong here too

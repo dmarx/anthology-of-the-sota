@@ -11,6 +11,7 @@ status_note: >-
 title: 'Use prediction-based word vectors rather than count-based distributional vectors'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - analysis-and-evaluation
 date: '2026-09-23'

@@ -16,6 +16,7 @@ title: 'Compose augmentations so the shortcut dies, and tune them for the contra
 version: 1
 tags:
 - data-pipeline
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

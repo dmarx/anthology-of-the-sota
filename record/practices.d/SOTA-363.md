@@ -16,6 +16,7 @@ consensus_note: >-
 title: 'Decouple the negative set from the batch with a queue, and keep the encoder that fills it slow'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - training-optimization
 date: '2026-09-23'

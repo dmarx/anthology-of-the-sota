@@ -13,6 +13,7 @@ promote_when: >-
 title: 'Train retrieval embeddings with nested losses, so a prefix of the vector can shortlist and the full vector re-rank'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - inference-optimization
 date: '2026-09-22'

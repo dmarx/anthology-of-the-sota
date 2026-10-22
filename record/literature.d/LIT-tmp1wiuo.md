@@ -4,6 +4,7 @@ title: 'Graph Contrastive Learning with Augmentations'
 version: 1
 tags:
 - graphs-and-networks
+- representation-learning
 - representation-and-encoding
 - adaptation-and-tuning
 date: '2026-10-22'

@@ -15,6 +15,7 @@ title: 'Add many low-resolution views alongside the two full ones, because view 
 version: 1
 tags:
 - data-pipeline
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

@@ -4,6 +4,7 @@ title: 'Deep Graph Infomax'
 version: 1
 tags:
 - graphs-and-networks
+- representation-learning
 - representation-and-encoding
 date: '2026-10-22'
 published: '2018-09-27'

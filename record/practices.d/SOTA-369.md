@@ -17,6 +17,7 @@ title: 'Curate a pretraining set by retrieving neighbours of curated seeds, rath
 version: 1
 tags:
 - data-pipeline
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

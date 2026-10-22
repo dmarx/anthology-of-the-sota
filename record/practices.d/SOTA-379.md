@@ -19,6 +19,7 @@ history:
     filed after it.
 tags:
 - analysis-and-evaluation
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

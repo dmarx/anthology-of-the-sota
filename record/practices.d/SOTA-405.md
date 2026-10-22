@@ -20,6 +20,7 @@ promote_when: >-
 title: 'Scale the masked-language-modelling rate with model size rather than holding it at 15%'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - training-optimization
 date: '2026-09-25'

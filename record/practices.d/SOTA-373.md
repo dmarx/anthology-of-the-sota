@@ -47,6 +47,7 @@ history:
     absorbs that correction; this document stops implying that redundancy is the
     only term.
 tags:
+- representation-learning
 - representation-and-encoding
 - signal-structure
 date: '2026-09-23'

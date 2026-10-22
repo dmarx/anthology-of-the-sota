@@ -1,0 +1,92 @@
+---
+status: Active
+title: 'Inductive Representation Learning on Large Graphs'
+version: 1
+tags:
+- graphs-and-networks
+- model-architecture
+date: '2026-10-22'
+published: '2017-06-07'
+arxiv: '1706.02216'
+first_author: 'Hamilton'
+keywords:
+- 'graphsage'
+- 'inductive-learning'
+- 'neighbor-sampling'
+- 'aggregation'
+- 'node-embedding'
+implementations: []
+compared_against:
+- LIT-582
+- LIT-tmpislka
+- LIT-tmprm7bo
+summary: >-
+  Hamilton, Ying, Leskovec (NIPS 2017), [ARXIV-1706.02216](https://arxiv.org/abs/1706.02216). GraphSAGE learns
+  aggregator functions over a uniformly sampled, fixed-size neighborhood,
+  so it can embed nodes and whole graphs it never saw in training.
+  Supervised micro-F1 on unseen nodes is 0.839 on a Web of Science citation
+  graph, 0.954 on Reddit and 0.612 on unseen PPI graphs, against 0.575,
+  0.585 and 0.422 for raw features alone. Each cell is a single run with no
+  spread, and the aggregator significance test rests on six settings.
+---
+
+# LIT-tmp77hqw: Inductive Representation Learning on Large Graphs
+
+Hamilton, Ying, Leskovec, Stanford (NIPS 2017) — [ARXIV-1706.02216](https://arxiv.org/abs/1706.02216)
+
+## Key takeaways
+
+- **The layer** (Algorithm 1): aggregate the previous-layer states of a
+  sampled neighborhood, concatenate with the node's own state, apply a
+  linear map and a nonlinearity, then L2-normalize. The concatenation acts
+  as a skip connection, and the paper credits it with "significant gains"
+- **Sampling** (§3.1, §4.3): a uniform draw of S₁ = 25 and S₂ = 10
+  neighbors at K = 2 fixes per-batch cost at O(S₁·S₂). K = 2 beat K = 1 by
+  10–15% on average. K > 2 added 0–5% at 10–100× the runtime
+- **Aggregators** (Table 1): mean, LSTM over a random permutation, and
+  max-pooling after a one-layer MLP. Supervised micro-F1, citation /
+  Reddit / PPI: GraphSAGE-GCN 0.772 / 0.930 / 0.500, mean 0.820 / 0.950 /
+  0.598, LSTM 0.832 / 0.954 / 0.612, pool 0.839 / 0.948 / 0.600
+- **Against the GCN-style aggregator** (§4.4): LSTM, pool and mean each
+  beat it in a Wilcoxon test over six settings (T = 1.0, p = 0.02). The
+  authors call the test "somewhat underpowered"
+- **Inductive** (§4.3): DeepWalk must re-run SGD for every new node and is
+  100–500× slower at test time. It cannot be used across disjoint PPI
+  graphs at all, because its embedding spaces rotate arbitrarily between
+  runs
+- **Theory** (Theorem 1): with distinct input features, the pooling
+  aggregator can approximate every node's clustering coefficient to
+  arbitrary precision after K = 4 iterations
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22).
+
+It is `compared_against` GCN ([LIT-582](LIT-582.md)) through its own GraphSAGE-GCN
+variant, which is GCN's propagation rule made inductive: a mean over the
+node and its sampled neighbors, with no concatenation. On unseen nodes
+that variant scores 0.772, 0.930 and 0.500 supervised micro-F1, below every
+trainable aggregator. The paper puts the average gap at 7.4%, and credits
+part of it to the missing concatenation rather than to the aggregator.
+
+**What the table cannot carry.** Table 1 reports one number per cell, with
+no seeds or spread, and the hyperparameter grid was fixed on held-out
+subsets of the citation and Reddit data. A footnote concedes that a
+follow-up reached higher PPI scores by tuning GraphSAGE for that task.
+Under a shared protocol over 100 splits, GraphSAGE-mean ranks behind GCN
+on transductive node classification ([LIT-581](LIT-581.md)). GIN ([LIT-580](LIT-580.md)) proves that
+the mean and max aggregators used here cannot count neighbors. The
+graph-classification re-evaluation filed alongside this note,
+[LIT-tmprm7bo](LIT-tmprm7bo.md), finds GIN and GraphSAGE trading places once both are tuned
+the same way: GIN ahead on NCI1 and COLLAB, GraphSAGE ahead on both IMDB
+sets when nodes carry no features.
+
+**Beaten on PPI by attention over full neighbourhoods.** GAT
+([LIT-tmpislka](LIT-tmpislka.md)) reports micro-F1 0.973 on unseen PPI graphs, against
+GraphSAGE's published best of 0.612 and a three-layer GraphSAGE-LSTM the GAT
+authors enlarged to 0.768. That margin changes sampled for full
+neighbourhoods, depth, width and skip connections together, so it does not
+isolate attention.
+
+Read — [NOTE-tmpqyoo1](../notes.d/NOTE-tmpqyoo1.md).

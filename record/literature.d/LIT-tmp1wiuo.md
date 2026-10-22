@@ -1,0 +1,93 @@
+---
+status: Active
+title: 'Graph Contrastive Learning with Augmentations'
+version: 1
+tags:
+- graphs-and-networks
+- representation-and-encoding
+- adaptation-and-tuning
+date: '2026-10-22'
+published: '2020-10-22'
+arxiv: '2010.13902'
+first_author: 'You'
+keywords:
+- 'graphcl'
+- 'contrastive-learning'
+- 'graph-augmentation'
+- 'pre-training'
+- 'graph-classification'
+- 'self-supervised'
+implementations: []
+summary: >-
+  You, Chen, Sui, Chen, Wang, Shen (NeurIPS 2020), [ARXIV-2010.13902](https://arxiv.org/abs/2010.13902). SimCLR
+  for graph-level GNN pre-training: two augmentations of each graph (node
+  dropping, edge perturbation, attribute masking, random-walk subgraph) as
+  positives, the rest of the batch as negatives. Contrasting without
+  augmentation hurts, and which augmentation helps depends on the data: edge
+  perturbation lowers accuracy on the molecule set NCI1 at every strength
+  tried and raises it on social networks. In transfer to molecular property
+  prediction it has the best mean on 4 of 9 tasks and is below no
+  pre-training on 3.
+---
+
+# LIT-tmp1wiuo: Graph Contrastive Learning with Augmentations
+
+You, Chen, Sui, Chen, Wang, Shen, Texas A&M, UT Austin, USTC and Google
+Research (NeurIPS 2020) — [ARXIV-2010.13902](https://arxiv.org/abs/2010.13902)
+
+## Key takeaways
+
+- **The framework** (§3.2): sample two augmentations of a graph, encode
+  both with a shared GNN and a 2-layer projection head, and apply the
+  NT-Xent loss with the other N−1 graphs in the batch as negatives.
+  Default augmentation ratio 0.2
+- **Augmentation is necessary** (Figure 2, semi-supervised, 10% labels):
+  contrasting a graph with an unaugmented copy is often worse than training
+  from scratch. The best single
+  augmentation gains 1.62 points on NCI1, 3.15 on PROTEINS, 6.27 on COLLAB
+  and 1.66 on RDT-B, and the best pair of different augmentations gains
+  2.10, 3.15, 7.11 and 1.85
+- **Which augmentation is data-dependent** (§4.2, Figure 4): edge
+  perturbation helps COLLAB, RDT-B and PROTEINS and hurts NCI1 at every
+  ratio tried, which the authors attribute to an edge being a covalent bond.
+  Attribute masking helps the denser graphs. Subgraph and node dropping help
+  everywhere they were tried
+- **Semi-supervised** (Table 3): GraphCL is best or within a spread on most
+  datasets at 10% labels; at 1%, Infomax is ahead on NCI1 (62.72 against
+  62.55) and GAE on GITHUB (59.44 against 58.56). The large gains are on the
+  superpixel sets: MNIST 93.11 against 79.71 from scratch at 10%
+- **Unsupervised** (Table 4, GIN encoder, SVM probe): ahead of InfoGraph on
+  NCI1, DD, COLLAB, RDT-B and RDT-M5K; behind it on MUTAG (86.80 against
+  89.01) and IMDB-B (71.14 against 73.03). Baseline numbers are copied from
+  their papers
+- **Transfer** (Table 5, ROC-AUC, baselines from Hu et al.): best mean on
+  BBBP, ClinTox, HIV and PPI. Below no pre-training on Tox21 (73.87 against
+  74.0), ToxCast (62.40 against 63.4) and MUV (69.80 against 71.8)
+- **Adversarial** (Table 6, synthetic component counting): under the RL-S2V
+  attack a 3-layer structure2vec goes from 41.93 to 61.66 with GraphCL
+  pre-training, and a 2-layer one does not move (42.93 to 42.20)
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22).
+
+**What the headline does not say.** "State-of-the-art in transfer" is the
+best mean on 4 of 9 tasks; on 3 others pre-training with GraphCL is worse
+than none, and the authors acknowledge there is no universally beneficial
+pre-training scheme. The augmentation pools for the comparison section were
+chosen per data category from the Section 4 study on the same kind of
+datasets, and the unsupervised and transfer tables compare against numbers
+copied from other papers.
+
+**Where it sits in the record.** It applies the view-based contrastive
+recipe of image work to graphs, and its
+unsupervised baseline InfoGraph and its transfer baseline "Infomax" both
+descend from Deep Graph Infomax ([LIT-tmp2xwx2](LIT-tmp2xwx2.md)). Its encoders are GIN
+([LIT-580](LIT-580.md)) and GCN ([LIT-582](LIT-582.md)). No relation is declared to DGI, because the
+comparisons are to later graph-level variants, not to DGI's node-level
+method.
+
+<!-- inactive-ok-file: NOTE-tmpi6udg — Skimmed, and named as this paper's own reading at its stated depth -->
+
+Skimmed — [NOTE-tmpi6udg](../notes.d/NOTE-tmpi6udg.md).

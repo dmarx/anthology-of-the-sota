@@ -4,7 +4,16 @@ status: Active
 formerly:
 - SOTA-tmpola8o
 title: 'In a message-passing GNN for graph-level tasks, aggregate neighbours by sum with an MLP update, not by mean or max, when graph structure rather than node features carries the signal'
-version: 1
+version: 2
+history:
+- version: 2
+  date: '2026-10-22'
+  note: >-
+    The 92.4 and 57.5 quoted from GIN's Table 1 are fold-averaged
+    validation accuracies, as GIN's §6 says, not held-out test scores.
+    Errica et al.'s held-out rerun (87.0 and 53.8) is now quoted beside
+    them. The practice is unchanged: the mean variants' collapse to chance
+    is a failure to separate graphs, which a protocol cannot rescue.
 tags:
 - graphs-and-networks
 - model-architecture
@@ -24,7 +33,8 @@ summary: >-
   Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md) — mean and max aggregation cannot count
   neighbors, so graphs that differ only in counts look the same to them. On
   featureless Reddit graphs, mean-aggregation GNNs are at chance (50.0,
-  20.0) and sum–MLP scores 92.4 and 57.5. With informative node features the
+  20.0) and sum–MLP scores 92.4 and 57.5, which are validation accuracies
+  across folds; held out, GIN scores 87.0 and 53.8. With informative node features the
   choice matters much less, and results are mostly within noise. Use
   h = MLP((1 + ε)h + Σ neighbors) with ε = 0 and a sum readout.
 ---
@@ -42,7 +52,11 @@ Xu et al. proposed this aggregator as GIN in [LIT-580](../literature.d/LIT-580.m
 message passing is bounded by 1-WL and that sum followed by an MLP reaches the
 bound where mean and max do not. On REDDIT-BINARY and REDDIT-MULTI-5K with no
 node features, GIN-0 scores 92.4 and 57.5 and the mean variants sit at
-chance (50.0 and 20.0). On the other seven datasets GIN is best or tied,
+chance (50.0 and 20.0). Those are the fold-averaged validation accuracies
+the paper reports. Errica et al. ([LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md)) rerun GIN with selection
+inside each training fold and score the held-out fold: 87.0 and 53.8,
+against 72.1 and 35.1 for a baseline that ignores the graph. They do not
+rerun the mean variants. On the other seven datasets GIN is best or tied,
 mostly within one standard deviation, and mean–MLP beats it on PTC, which is
 the third bullet.
 

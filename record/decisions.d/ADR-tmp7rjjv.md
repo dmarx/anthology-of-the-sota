@@ -1,0 +1,76 @@
+---
+status: Active
+title: 'Widen the graphs-and-networks blurb to the field it now holds'
+version: 1
+tags:
+- taxonomy
+- record
+date: '2026-10-22'
+summary: >-
+  `graphs-and-networks` keeps its name and gains a blurb that names node,
+  graph and knowledge-graph embeddings, expressive power and positional
+  encodings, graph transformers, geometric and equivariant GNNs,
+  over-smoothing and language models given graphs. The words were already
+  inside "graph-structured data and the models that run on it". The blurb
+  listed only what the first nine documents happened to be about, so a
+  reader browsing it could not tell embeddings or equivariant networks
+  belonged there. Rejected: graph subtopics. A representation-learning
+  topic is left to its own decision.
+---
+
+# ADR-tmp7rjjv: Widen the graphs-and-networks blurb to the field it now holds
+
+## Context
+
+The owner asked how the anthology covered graph representation learning
+and current graph neural networks, then for the gaps to be filed. [ADR-064](ADR-064.md)
+added `graphs-and-networks` with a blurb written from the documents it was
+admitting: message passing, evaluation, curvature, rewiring and
+over-squashing, community structure. That was nine documents.
+
+The gap-filling pass adds node embeddings (DeepWalk and its successors),
+graph self-supervised learning, knowledge-graph embeddings, higher-order
+and subgraph GNNs, positional encodings, graph transformers, equivariant
+interatomic potentials, mesh and weather simulators built on graph
+networks, and language models prompted with graphs. Each is a model that
+runs on graph-structured data, so the topic's opening clause already holds
+them. Its list of examples did not name them, and a list of examples is
+what a reader browsing a topic reads.
+
+## Decision
+
+**Keep the topic and widen its blurb** to name what it now holds:
+
+> graph-structured data and the models that run on it — node, graph and
+> knowledge-graph embeddings, message passing and graph neural networks,
+> their expressive power and positional encodings, graph transformers,
+> geometric and equivariant GNNs, how they are evaluated, over-smoothing,
+> over-squashing, curvature and rewiring, community structure and
+> partitioning, and language models given graphs
+
+No document is retagged by this decision. [SOTA-349](../practices.d/SOTA-349.md), a graph-transformer
+practice filed under `analysis-and-evaluation` and `model-architecture`
+alone, gains `graphs-and-networks` in the same contribution, because it is
+about graph models whatever the blurb says.
+
+## Alternatives rejected
+
+- **A `representation-learning` topic, in this decision.** The embedding
+  papers this pass files share a subject with the word-embedding and
+  self-supervised papers already in the record, most of which sit under
+  `representation-and-encoding`, whose subject is how input is encoded
+  before the network sees it. That is a vocabulary question reaching well
+  past graphs, so it is decided on its own, not as a rider on a graph
+  blurb.
+- **Graph subtopics**, as [ADR-066](ADR-066.md) added under `generative-modeling`. That
+  decision answered a topic of 169 documents. This one, after the pass,
+  is a few dozen, and can be read whole.
+
+## Consequences
+
+- Geometric GNNs for molecules and physics are filed with `biomolecular-modeling`
+  or `physical-sciences` first where the paper is mostly about its domain,
+  and with `graphs-and-networks` second. The blurb naming them is not a
+  claim that they belong here first.
+- If the topic grows past the point where it can be read whole, the
+  [ADR-066](ADR-066.md) pattern is the precedent for subtopics.

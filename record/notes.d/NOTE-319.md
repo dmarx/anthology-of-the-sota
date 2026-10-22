@@ -10,8 +10,10 @@ date: '2026-09-23'
 summary: >-
   Message passing is bounded by 1-WL, and sum aggregation with an MLP
   reaches the bound where mean and max do not. The theory predicts the
-  training-fit ordering. Test accuracy separates the aggregators decisively
-  only on featureless graphs. Main text read, proofs skimmed.
+  training-fit ordering. Accuracy separates the aggregators decisively
+  only on featureless graphs, and Table 1's accuracies are validation
+  scores across folds, not held-out test scores. Main text read, proofs
+  skimmed.
 ---
 
 # NOTE-319: GIN
@@ -43,5 +45,10 @@ keeps the set. Only sum, followed by an MLP, keeps the multiset.
 - **Distinguishing power is not accuracy.** The theorem bounds what can be
   separated, not what will generalize
 - **Small graph-classification benchmarks** with large variance
+- **Table 1 is validation accuracy.** §6 reports "the average and standard
+  deviation of validation accuracies across the 10 folds", with the epoch
+  chosen on the same folds. This reading first called them test accuracy.
+  Errica et al. ([LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md)), scoring held-out folds, get 87.0 and 53.8 on
+  the two Reddit sets, against 92.4 and 57.5
 - **Node features blunt the difference.** Where features are informative,
   the aggregator matters much less

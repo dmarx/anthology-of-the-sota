@@ -1,0 +1,82 @@
+---
+status: Active
+title: 'A Survey on Oversmoothing in Graph Neural Networks'
+version: 1
+tags:
+- graphs-and-networks
+- analysis-and-evaluation
+- model-stability
+date: '2026-10-22'
+published: '2023-03-20'
+arxiv: '2303.10993'
+first_author: 'Rusch'
+keywords:
+- 'over-smoothing'
+- 'dirichlet-energy'
+- 'mean-average-distance'
+- 'deep-gnns'
+- 'continuous-time-gnns'
+implementations: []
+summary: >-
+  Rusch, Bronstein, Mishra (2023), [ARXIV-2303.10993](https://arxiv.org/abs/2303.10993). A short survey that
+  defines over-smoothing as exponential decay with depth of a node-similarity
+  measure, one that is zero exactly when all node features are equal and is
+  subadditive. Dirichlet energy qualifies. Mean Average Distance does not,
+  being zero for any one-dimensional features of one sign. Its key
+  experiment: on Cora, a deep GCN with a bias term keeps its Dirichlet
+  energy constant and loses accuracy with depth just as the plain GCN does,
+  and so does PairNorm. Avoiding over-smoothing is necessary for deep GNNs
+  and not sufficient.
+---
+
+# LIT-tmp44ov9: A Survey on Oversmoothing in Graph Neural Networks
+
+Rusch, Bronstein, Mishra, ETH Zurich and Oxford (2023) — [ARXIV-2303.10993](https://arxiv.org/abs/2303.10993)
+
+## Key takeaways
+
+- **A definition** (Definition 1): μ is a node-similarity measure if
+  μ(X) = 0 exactly when every node has the same feature vector, and μ is
+  subadditive. A GNN over-smooths with respect to μ if
+  μ(X^n) ≤ C₁e^{−C₂n}. Slower, algebraic decay does not count. Disconnected
+  graphs sum μ over components
+- **Measures** (§3): the square root of the Dirichlet energy satisfies the
+  definition. Mean Average Distance fails both axioms, though in more than
+  one dimension it does decay exponentially when a GNN over-smooths. The
+  authors prefer Dirichlet energy, which is also more stable numerically
+- **It happens** (Figure 1): with 128-dimensional Gaussian features in
+  place of the real ones, GCN, GAT and GraphSAGE drive both measures
+  exponentially to zero on Texas, Cora and the Facebook Cornell5 graph.
+  Dirichlet energy reaches machine zero within 64 layers
+- **Mitigations** (§4, Figure 2): DropEdge and residual GCN still decay
+  exponentially. PairNorm, GCNII, GraphCON and G² keep Dirichlet energy
+  roughly constant to 128 layers
+- **Not sufficient** (§5, Figure 3, fully supervised Cora, 10 splits of
+  Pei et al.): a GCN with shared weights across layers and a bias keeps
+  its Dirichlet energy constant once trained. Its test accuracy falls with
+  depth about as much as a plain GCN's. PairNorm also holds the energy
+  and drops sharply past 32 layers. Only G² holds both energy and accuracy
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22), skimmed for the measure-of-over-smoothing framing and
+read in full because it is seven pages.
+
+**The underreported sentence is the useful one.** The definition is the
+survey's stated contribution. The finding that bears on the record is
+§5's: a model can avoid over-smoothing by the survey's own measure and
+still degrade with depth. That separates the theorem in Li et al.
+([LIT-tmp8uu4y](LIT-tmp8uu4y.md)) and Oono and Suzuki ([LIT-tmpivepp](LIT-tmpivepp.md)) from the accuracy loss
+it is usually invoked to explain, including [LIT-582](LIT-582.md)'s difficulty past
+about seven layers. It is one dataset and one figure, without numbers in
+the text.
+
+**Read the method ranking with the authorship in view.** GraphCON and G²,
+the two dynamics-based methods tested, were both written by all three of
+the survey's authors with others, and G² is the only method shown to hold
+both energy and accuracy. The
+comparison is qualitative: one similarity measure, Gaussian inputs for
+§3–4, and no tuning protocol described. The account is [THEORY-tmpv5yfb](../theory.d/THEORY-tmpv5yfb.md).
+
+Read — [NOTE-tmpgkme7](../notes.d/NOTE-tmpgkme7.md).

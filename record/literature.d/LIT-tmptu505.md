@@ -1,0 +1,94 @@
+---
+status: Active
+title: 'Weisfeiler and Leman Go Neural: Higher-order Graph Neural Networks'
+version: 1
+tags:
+- graphs-and-networks
+- model-architecture
+- analysis-and-evaluation
+date: '2026-10-22'
+published: '2018-10-04'
+arxiv: '1810.02244'
+first_author: 'Morris'
+keywords:
+- 'k-gnn'
+- 'weisfeiler-leman'
+- 'expressive-power'
+- 'higher-order-gnn'
+- 'graph-classification'
+- 'qm9'
+implementations:
+- k-gnn
+summary: >-
+  Morris, Ritzert, Fey, Hamilton, Lenssen, Rattan, Grohe (AAAI 2019),
+  [ARXIV-1810.02244](https://arxiv.org/abs/1810.02244). Proves, independently of GIN and three days after it,
+  that no message-passing GNN separates more graphs than 1-WL, and that a
+  plain sum-aggregation layer with suitably chosen weights matches 1-WL on a
+  given graph. Proposes k-GNNs, which pass messages between k-element node
+  sets. On QM9 the hierarchical 1-2-3-GNN lowers MAE against a 1-GNN on 11
+  of 12 targets, by 54.45% averaged over all 12. Its TUD accuracy gains over
+  the 1-GNN are 1.8–3.9 points, reported without deviations.
+compared_against:
+- LIT-tmp41jsc
+---
+
+# LIT-tmptu505: Weisfeiler and Leman Go Neural: Higher-order Graph Neural Networks
+
+Morris, Ritzert, Fey, Hamilton, Lenssen, Rattan, Grohe, TU Dortmund, RWTH
+Aachen and McGill (AAAI 2019) — [ARXIV-1810.02244](https://arxiv.org/abs/1810.02244)
+
+## Key takeaways
+
+- **Upper bound** (Theorem 1): for any aggregate and merge functions and
+  any weights, the 1-WL coloring refines the coloring a message-passing GNN
+  computes. So a GNN never separates nodes or graphs that 1-WL does not
+- **Matching it** (Theorem 2): for a given labeled graph there exist
+  weights under which the simple layer `σ(f(v)·W1 + Σ_neighbors f(w)·W2)`
+  produces exactly the 1-WL coloring, provided distinct labels are encoded
+  as linearly independent vectors. The construction is per graph and uses
+  feature width up to 2n. A ReLU version needs twice the layers
+  (Corollary 16)
+- **The shared blind spots:** a triangle plus a 4-cycle gets one color for
+  every node, and triangle counts are invisible to both 1-WL and the GNN
+- **k-GNNs** (Propositions 3 and 4): message passing over k-element node
+  subsets, as powerful as a set-based k-WL. A hierarchical 1-2-3-GNN feeds
+  each level the learned features of the level below. The experiments use
+  the cheaper *local* variant, which drops the global neighborhood the
+  equivalence proof uses
+- **QM9** (Table 2): the 1-2-3-GNN beats the 1-GNN on 11 of 12 targets.
+  The gains are 94.9–98.5% on the four thermodynamic energies (U0, U, H, G)
+  and 6.1% or less on the dipole moment and the orbital energies, with no
+  gain on HOMO
+- **TUD** (Table 1, 10-fold CV): the 1-2-3-GNN beats the 1-GNN on all seven
+  datasets, by 1.8–3.9 points, with no standard deviations reported. A 1-GNN
+  with untrained aggregation weights is close to the trained one, and better
+  on PROTEINS
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22). It is the second, independent proof of the bound that
+[THEORY-083](../theory.d/THEORY-083.md) states. Xu et al. ([LIT-580](LIT-580.md)) posted theirs on 1 October 2018 and
+this paper on 4 October. The two proofs agree on the bound and differ on the
+matching half. [LIT-580](LIT-580.md) shows that injective sum-and-MLP aggregation reaches
+1-WL, and that mean and max cannot. This paper shows that a linear sum layer
+can reach it with weights built for the graph at hand, and says nothing
+about mean or max.
+
+**"On par with the kernels" and "significantly outperforms"** are the two
+sentences to check against Table 1. On NCI1 the 1-2-3-GNN scores 76.2
+against 83.1 for the 1-WL kernel and 86.1 for WL-OA, so "on par" does not
+hold there. "Significantly" is backed by neither a test nor deviations. The
+paper also says that widening the 1-GNN to the k-GNN's parameter count "did
+not lead to better results in any experiment", but shows no numbers for it.
+
+**The QM9 average is uneven.** The 54.45% mean comes from four targets
+improving by over 94% and the rest by much less. The 1-GNN baseline sees
+distances only along bonds, not a complete distance graph, so it is a
+modest baseline.
+
+**Its 1-2-3-GCN-L reappears as a baseline** in Abboud et al.
+([LIT-tmp41jsc](LIT-tmp41jsc.md)). On their EXP dataset it scores 50.0%, which is chance, and
+they attribute this to its connected-tuple relaxation.
+
+Read — [NOTE-tmpc8k29](../notes.d/NOTE-tmpc8k29.md).

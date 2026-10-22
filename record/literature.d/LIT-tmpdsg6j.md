@@ -23,7 +23,7 @@ compared_against:
 - LIT-tmp3l6xc
 summary: >-
   Perozzi, Fatemi, Zelle, Tsitsulin, Kazemi, Al-Rfou, Halcrow (2024),
-  ARXIV-2402.05862. GraphToken trains a small GNN, separately for each
+  [ARXIV-2402.05862](https://arxiv.org/abs/2402.05862). GraphToken trains a small GNN, separately for each
   task, whose pooled output is projected into soft tokens and prepended to
   the prompt of a frozen Flan-PaLM 2 S. On GraphQA it reaches 0.996 on node
   count, 0.962 on node degree and 0.956 on cycle check, but only 0.264 on
@@ -38,7 +38,7 @@ summary: >-
 # LIT-tmpdsg6j: Let Your Graph Do the Talking: Encoding Structured Data for LLMs
 
 Perozzi, Fatemi, Zelle, Tsitsulin, Kazemi, Al-Rfou, Halcrow, Google Research
-and Waymo (2024) — ARXIV-2402.05862
+and Waymo (2024) — [ARXIV-2402.05862](https://arxiv.org/abs/2402.05862)
 
 ## Key takeaways
 
@@ -69,14 +69,14 @@ and Waymo (2024) — ARXIV-2402.05862
 ## Standing in the anthology
 
 **Filed from the graph-coverage pass** (gap list from the record's own review, 2026-10-22).
-The GNN encoders it compares include GCN (LIT-582) and GIN (LIT-580). In its
+The GNN encoders it compares include GCN ([LIT-582](LIT-582.md)) and GIN ([LIT-580](LIT-580.md)). In its
 Table 2, GIN is the best encoder on no task. GCN is best on connected nodes
 (0.264) and ties EdgeSet on cycle check (0.964).
 
-**Compared against Talk like a Graph** (LIT-tmp3l6xc), whose GraphQA
+**Compared against Talk like a Graph** ([LIT-tmp3l6xc](LIT-tmp3l6xc.md)), whose GraphQA
 benchmark and prompting methods are its baselines. The zero-shot, few-shot
 and CoT rows of Table 1 are identical, column for column, to the "Overall"
-rows of LIT-tmp3l6xc's Table 1 (v1). Those are PaLM 62B accuracies averaged
+rows of [LIT-tmp3l6xc](LIT-tmp3l6xc.md)'s Table 1 (v1). Those are PaLM 62B accuracies averaged
 over all nine text encodings, including the named-entity ones that fail on
 counting. GraphToken itself runs on Flan-PaLM 2 S. The paper does not say
 the baselines come from another model. That paper's appendix gives a closer
@@ -96,4 +96,4 @@ for like. Tasks are on small synthetic graphs. The generalization claim
 rests on probes of frozen representations (§5.1), not on an LLM answering
 an unseen task.
 
-Read — NOTE-tmpasyzx.
+Read — [NOTE-tmpasyzx](../notes.d/NOTE-tmpasyzx.md).

@@ -44,10 +44,10 @@ graph.
 ## Limitations
 
 - **Baselines are not same-model.** The prompting rows equal the PaLM 62B
-  encoder-averages from LIT-tmp3l6xc. GraphToken runs on Flan-PaLM 2 S
+  encoder-averages from [LIT-tmp3l6xc](../literature.d/LIT-tmp3l6xc.md). GraphToken runs on Flan-PaLM 2 S
 - **One encoder trained per task** on 1,000 graphs, selected per task. No
   multi-task encoder is reported
 - **Connected nodes** (0.264) is far below what a well-chosen text encoding
-  reaches on PaLM 2 S in LIT-tmp3l6xc (81.6%)
+  reaches on PaLM 2 S in [LIT-tmp3l6xc](../literature.d/LIT-tmp3l6xc.md) (81.6%)
 - **No intervals or repeated runs**, and the LLM and benchmark both come
   from the authors' group

@@ -20,7 +20,7 @@ keywords:
 implementations:
 - NLGraph
 summary: >-
-  Wang, Feng, He, Tan, Han, Tsvetkov (NeurIPS 2023), ARXIV-2305.10037.
+  Wang, Feng, He, Tan, Han, Tsvetkov (NeurIPS 2023), [ARXIV-2305.10037](https://arxiv.org/abs/2305.10037).
   NLGraph is a benchmark of 29,370 synthetic graph problems in natural
   language over eight tasks. Its standard set (5,902 problems) is used with
   text-davinci-003. With chain of thought (CoT), the model averages 84.6% on
@@ -36,7 +36,7 @@ summary: >-
 # LIT-tmpkrsn9: Can Language Models Solve Graph Problems in Natural Language?
 
 Wang, Feng, He, Tan, Han, Tsvetkov, Xi'an Jiaotong, Washington and Notre
-Dame (NeurIPS 2023, spotlight) — ARXIV-2305.10037
+Dame (NeurIPS 2023, spotlight) — [ARXIV-2305.10037](https://arxiv.org/abs/2305.10037)
 
 ## Key takeaways
 
@@ -75,7 +75,7 @@ Dame (NeurIPS 2023, spotlight) — ARXIV-2305.10037
 
 **Filed from the graph-coverage pass** (gap list from the record's own review, 2026-10-22).
 It is the first systematic benchmark of graph reasoning by language models
-in the record. GraphQA, from Talk like a Graph (LIT-tmp3l6xc), starts from
+in the record. GraphQA, from Talk like a Graph ([LIT-tmp3l6xc](LIT-tmp3l6xc.md)), starts from
 its design: Erdős–Rényi graphs, its BAG prompt as one of the prompting
 methods, and a wider set of graph generators and text encodings.
 
@@ -88,10 +88,10 @@ exemplar-based prompting. It does not hold for cliques, and it reverses for
 zero-shot CoT. The BAG gains are a few points on the two easier tasks, and
 the dot-length control covers only shortest path.
 
-**Bearing on SOTA-281.** That practice says to try the single step-by-step
+**Bearing on [SOTA-281](../practices.d/SOTA-281.md).** That practice says to try the single step-by-step
 instruction first. Here zero-shot CoT is the worst method on shortest path
 (8.89 exact match on easy, against 29.40 for zero-shot). Talk like a Graph
 reports the same reversal on basic graph tasks. Both are conditions on that
 practice, not evidence against it.
 
-Read — NOTE-tmpmot78.
+Read — [NOTE-tmpmot78](../notes.d/NOTE-tmpmot78.md).

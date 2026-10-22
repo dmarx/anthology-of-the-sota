@@ -23,7 +23,7 @@ compared_against:
 - LIT-582
 - LIT-580
 summary: >-
-  Liu, Feng, Kong, Liang, Tao, Chen, Zhang (ICLR 2024), ARXIV-2310.00149.
+  Liu, Feng, Kong, Liang, Tao, Chen, Zhang (ICLR 2024), [ARXIV-2310.00149](https://arxiv.org/abs/2310.00149).
   OFA describes every node and edge in text and embeds it with one language
   model. It adds a task "prompt node" and one node per class to the graph,
   and trains a single R-GCN-style GNN on nine datasets at once. Jointly
@@ -39,7 +39,7 @@ summary: >-
 # LIT-tmptwetd: One for All: Towards Training One Graph Model for All Classification Tasks
 
 Liu, Feng, Kong, Liang, Tao, Chen, Zhang, WashU, NTU and Peking (ICLR 2024)
-— ARXIV-2310.00149
+— [ARXIV-2310.00149](https://arxiv.org/abs/2310.00149)
 
 ## Key takeaways
 
@@ -77,10 +77,10 @@ Liu, Feng, Kong, Liang, Tao, Chen, Zhang, WashU, NTU and Peking (ICLR 2024)
 
 **Filed from the graph-coverage pass** (gap list from the record's own review, 2026-10-22).
 It is the record's first cross-domain graph model. The position paper on
-graph foundation models (LIT-tmpoyulj) takes it as its example of a
+graph foundation models ([LIT-tmpoyulj](LIT-tmpoyulj.md)) takes it as its example of a
 "primitive" GFM.
 
-**Compared against GCN** (LIT-582) **and GIN** (LIT-580). GCN, GAT and GIN
+**Compared against GCN** ([LIT-582](LIT-582.md)) **and GIN** ([LIT-580](LIT-580.md)). GCN, GAT and GIN
 are its supervised baselines, rerun ten times on the Cora, PubMed and arxiv
 node tasks and on WN18RR and FB15K237, and quoted from earlier work
 elsewhere. GCN stays ahead
@@ -98,4 +98,4 @@ benefit is mixed in the paper's own appendix: positive for some node and
 graph tasks, negative for every link task. The zero-shot HIV result is
 below chance (AUC 35.67), and the paper does not discuss it.
 
-Read — NOTE-tmp25kz1.
+Read — [NOTE-tmp25kz1](../notes.d/NOTE-tmp25kz1.md).

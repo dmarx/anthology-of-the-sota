@@ -18,7 +18,7 @@ keywords:
 - 'graph-structure'
 implementations: []
 summary: >-
-  Fatemi, Halcrow, Perozzi (ICLR 2024), ARXIV-2310.04560. The paper writes
+  Fatemi, Halcrow, Perozzi (ICLR 2024), [ARXIV-2310.04560](https://arxiv.org/abs/2310.04560). The paper writes
   a graph as text in nine ways and asks PaLM 62B and PaLM 2 XXS–L six basic
   questions about graphs of 5–20 nodes, with five prompting methods
   (GraphQA). Encoding matters most where an answer needs one node's
@@ -29,11 +29,13 @@ summary: >-
   and the edge list beats incident on edge count. The headline "4.8% to 61.8%" is
   the gap between the best and worst of the nine encodings, not a gain over
   a sensible default.
+compared_against:
+- LIT-tmpdsg6j
 ---
 
 # LIT-tmp3l6xc: Talk like a Graph: Encoding Graphs for Large Language Models
 
-Fatemi, Halcrow, Perozzi, Google Research (ICLR 2024) — ARXIV-2310.04560
+Fatemi, Halcrow, Perozzi, Google Research (ICLR 2024) — [ARXIV-2310.04560](https://arxiv.org/abs/2310.04560)
 
 ## Key takeaways
 
@@ -44,7 +46,7 @@ Fatemi, Halcrow, Perozzi, Google Research (ICLR 2024) — ARXIV-2310.04560
   existence, node degree, node count, edge count, connected nodes and cycle
   check, plus disconnected nodes. The prompting methods are zero-shot,
   zero-shot CoT, few-shot, CoT and CoT with NLGraph's Build-a-Graph
-  instruction (LIT-tmpkrsn9). Each configuration is decoded once at
+  instruction ([LIT-tmpkrsn9](LIT-tmpkrsn9.md)). Each configuration is decoded once at
   temperature 0
 - **Encoding** (Table 1, PaLM 62B): incident is best on node degree and
   connected nodes under every prompt. Under CoT it scores 75.0 on degree,
@@ -75,7 +77,7 @@ Fatemi, Halcrow, Perozzi, Google Research (ICLR 2024) — ARXIV-2310.04560
 ## Standing in the anthology
 
 **Filed from the graph-coverage pass** (gap list from the record's own review, 2026-10-22).
-It sources SOTA-tmpjux0f, a Proposed practice to serialize a graph as
+It sources [SOTA-tmpjux0f](../practices.d/SOTA-tmpjux0f.md), a Proposed practice to serialize a graph as
 per-node neighbour lists with integer ids for neighbourhood and degree
 questions.
 
@@ -89,12 +91,12 @@ negative on edge count. All results are for one model family (PaLM and PaLM
 2), with no repeated runs or intervals. The arXiv text is v1, and the
 camera-ready may differ.
 
-**Its benchmark reused by the same group.** GraphToken (LIT-tmpdsg6j) trains
+**Its benchmark reused by the same group.** GraphToken ([LIT-tmpdsg6j](LIT-tmpdsg6j.md)) trains
 a graph encoder for a frozen LLM on GraphQA. Its prompting baselines match,
 to the digit, this paper's PaLM 62B averages over all nine encodings.
 
-**Bearing on SOTA-281.** As in NLGraph, zero-shot CoT underperforms plain
+**Bearing on [SOTA-281](../practices.d/SOTA-281.md).** As in NLGraph, zero-shot CoT underperforms plain
 zero-shot here. These are basic look-up and counting tasks, which the paper
 says need no multi-step reasoning.
 
-Read — NOTE-tmpovagj.
+Read — [NOTE-tmpovagj](../notes.d/NOTE-tmpovagj.md).

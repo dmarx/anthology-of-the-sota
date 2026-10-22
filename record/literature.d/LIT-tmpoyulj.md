@@ -19,7 +19,7 @@ keywords:
 implementations: []
 summary: >-
   Mao, Chen, Tang, Zhao, Ma, Zhao, Shah, Galkin, Tang (ICML 2024, position
-  paper), ARXIV-2402.02216. A graph foundation model needs a "graph
+  paper), [ARXIV-2402.02216](https://arxiv.org/abs/2402.02216). A graph foundation model needs a "graph
   vocabulary": units of graph structure that keep their meaning across
   datasets, so training on many graphs transfers positively. The paper
   reviews network-analysis, expressiveness and stability principles for
@@ -34,14 +34,14 @@ summary: >-
 # LIT-tmpoyulj: Position: Graph Foundation Models are Already Here
 
 Mao, Chen, Tang, Zhao, Ma, Zhao, Shah, Galkin, Tang, Michigan State,
-Montréal/Mila, RPI, Snap and Intel Labs (ICML 2024) — ARXIV-2402.02216
+Montréal/Mila, RPI, Snap and Intel Labs (ICML 2024) — [ARXIV-2402.02216](https://arxiv.org/abs/2402.02216)
 
 ## Key takeaways
 
 - **Three kinds of GFM** (§2.1): task-specific (ULTRA, zero-shot
   knowledge-graph completion), domain-specific (DiG, chemistry) and
   "primitive" ones that generalize to a few datasets and tasks. OFA
-  (LIT-tmptwetd) is its example of a primitive one, and the paper notes that
+  ([LIT-tmptwetd](LIT-tmptwetd.md)) is its example of a primitive one, and the paper notes that
   it needs every feature turned into text
 - **The vocabulary argument** (§2.2): ULTRA is said to transfer for two
   reasons. Conditional message passing does not merge non-isomorphic node
@@ -58,8 +58,8 @@ Montréal/Mila, RPI, Snap and Intel Labs (ICML 2024) — ARXIV-2402.02216
   homophily). Scaling evidence is positive for molecules and materials and
   mixed elsewhere: a larger GAT underperforms on graph regression. LLMs used
   as feature encoders do not show scaling either
-- **LLMs on graph problems** (§4.4): it cites NLGraph (LIT-tmpkrsn9), Talk
-  like a Graph (LIT-tmp3l6xc) and GraphToken (LIT-tmpdsg6j). It reads the
+- **LLMs on graph problems** (§4.4): it cites NLGraph ([LIT-tmpkrsn9](LIT-tmpkrsn9.md)), Talk
+  like a Graph ([LIT-tmp3l6xc](LIT-tmp3l6xc.md)) and GraphToken ([LIT-tmpdsg6j](LIT-tmpdsg6j.md)). It reads the
   last as showing that equivariance is not necessary when the decoder is an
   LLM
 
@@ -76,4 +76,4 @@ all graph tasks and datasets from all domains" and the conclusion's
 narrower: models that transfer within one task or one domain exist, and a
 shared vocabulary is the authors' account of why.
 
-Skimmed — NOTE-tmpbwjql.
+Skimmed — [NOTE-tmpbwjql](../notes.d/NOTE-tmpbwjql.md).

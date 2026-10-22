@@ -28,7 +28,7 @@ introduced_by:
 - LIT-tmp3l6xc
 implementations: []
 summary: >-
-  Fatemi et al. (2023), LIT-tmp3l6xc — "Node 2 is connected to nodes 0, 1,
+  Fatemi et al. (2023), [LIT-tmp3l6xc](../literature.d/LIT-tmp3l6xc.md) — "Node 2 is connected to nodes 0, 1,
   3" puts a node's neighbourhood in one span. On PaLM 62B it beats an edge
   list on connected-nodes and degree questions under all five prompting
   methods: 53.8 against 19.8 zero-shot on connected nodes, 75.2 against
@@ -42,11 +42,11 @@ summary: >-
 
 ## Source
 
-Fatemi et al. (2023), LIT-tmp3l6xc. Read as NOTE-tmpovagj.
+Fatemi et al. (2023), [LIT-tmp3l6xc](../literature.d/LIT-tmp3l6xc.md). Read as [NOTE-tmpovagj](../notes.d/NOTE-tmpovagj.md).
 
 ## The practice
 
-The comparison is LIT-tmp3l6xc's. Fatemi, Halcrow and Perozzi wrote the
+The comparison is [LIT-tmp3l6xc](../literature.d/LIT-tmp3l6xc.md)'s. Fatemi, Halcrow and Perozzi wrote the
 same graphs as text in nine ways. They asked PaLM 62B and four sizes of
 PaLM 2 six basic questions with five prompting methods. Its "incident"
 encoding writes one line per node, listing that node's neighbours. On PaLM
@@ -83,7 +83,7 @@ CoT, on PaLM 62B.
   existence stays near the majority rate, and listing disconnected nodes is
   about 0% under every encoding
 - **A trained encoder can beat any text format on counting**, though not
-  here on neighbour listing. GraphToken (LIT-tmpdsg6j) reaches 0.962 on
+  here on neighbour listing. GraphToken ([LIT-tmpdsg6j](../literature.d/LIT-tmpdsg6j.md)) reaches 0.962 on
   degree and 0.264 on connected nodes, where incident text on PaLM 2 S
   reaches 81.6. That is a different intervention, and it needs gradient
   access to the model

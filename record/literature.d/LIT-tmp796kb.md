@@ -1,0 +1,109 @@
+---
+status: Active
+title: 'GraphCast: Learning skillful medium-range global weather forecasting'
+version: 1
+tags:
+- physical-sciences
+- graphs-and-networks
+date: '2026-10-22'
+published: '2022-12-24'
+arxiv: '2212.12794'
+first_author: 'Lam'
+extends:
+- LIT-tmpfbgua
+keywords:
+- 'graphcast'
+- 'weather-forecasting'
+- 'era5'
+- 'hres'
+- 'multi-mesh'
+- 'icosahedral-mesh'
+- 'autoregressive-training'
+- 'learned-simulation'
+implementations:
+- 'deepmind/graphcast'
+summary: >-
+  Lam et al. (Science 2023), [ARXIV-2212.12794](https://arxiv.org/abs/2212.12794). A 36.7M-parameter
+  encode-process-decode GNN on an icosahedral multi-mesh, trained on 39
+  years of ERA5 to step the global 0.25° state six hours ahead, rolled out
+  to 10 days. Against ECMWF's HRES, each scored on its own analysis, it has
+  lower RMSE on 90.3% of 1,380 variable-level-lead-time targets (89.9%
+  significantly). Most losses are at 50 hPa, which with the levels above
+  it carries 0.66% of the training loss weight. Deterministic only, and its MSE training blurs
+  long-lead forecasts; with both models optimally blurred it still wins
+  88.0%.
+---
+<!-- inactive-ok-file: NOTE-tmpzdlnj — Skimmed, and cited as this paper's reading at the depth it was read -->
+<!-- inactive-ok-file: LIT-715 — Deferred, named as a neighbour in the record, not relied on -->
+
+# LIT-tmp796kb: GraphCast: Learning skillful medium-range global weather forecasting
+
+Lam, Sanchez-Gonzalez, Willson, Wirnsberger, Fortunato, Alet, Ravuri,
+Ewalds, Eaton-Rosen, Hu, Merose, Hoyer, Holland, Vinyals, Stott, Pritzel,
+Mohamed, Battaglia, Google DeepMind and Google Research (Science 2023) —
+[ARXIV-2212.12794](https://arxiv.org/abs/2212.12794)
+
+## Key takeaways
+
+- **The model**: inputs are the two latest states on a 721 × 1440 grid, 227
+  variables per point (5 surface, 6 atmospheric × 37 levels). One GNN layer
+  encodes grid to mesh, 16 unshared interaction-network layers process on
+  the mesh, one layer decodes back and predicts a residual. The mesh is an
+  icosahedron refined six times (40,962 nodes), carrying the edges of every
+  coarser level too, so long edges reach far in one hop
+- **Training**: MSE weighted by pressure level, latitude cell area and
+  per-variable inverse variance of time differences; a curriculum from one to
+  twelve autoregressive steps (3 days) with backpropagation through the
+  rollout. About four weeks on 32 TPU v4. A 10-day forecast takes under a
+  minute on one TPU v4
+- **Verification design**: GraphCast scored against ERA5, HRES against its
+  own step-0 analysis, and only initializations whose assimilation windows
+  look the same distance ahead (06z/18z). HRES's 06z/18z runs stop at 3.75
+  days, so later lead times compare against its 00z/12z runs
+- **Scorecard** (Figure 2): 90.3% of 1,380 targets better, 89.9%
+  significantly (p ≤ 0.05). z500 RMSE skill score 7–14% better at all lead
+  times. Excluding 50 hPa, 96.9% of 1,280 significantly better; excluding 50
+  and 100 hPa, 99.7% of 1,180. Precipitation is excluded from evaluation
+- **Severe events, untrained for**: lower median cyclone track error,
+  significant in paired comparison from 18 hours to 4.75 days; integrated
+  vapour transport over coastal North America and the Eastern Pacific 25%
+  better at short leads and
+  10% at long; 2 m temperature extremes better at 5 and 10 days, worse at 12
+  hours
+- **Ablations** (Supplement 7.3): without the coarse mesh levels, it loses
+  its lead over HRES on geopotential under 5 days. Fewer autoregressive
+  training steps trade long-lead skill for short-lead skill
+- **Recency**: trained to 2017, 2018, 2019 or 2020 and tested on 2021, later
+  cut-offs score better on z500
+- **Against Pangu-Weather**: better on 99.2% of the 252 targets Pangu reports
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22). It `extends` MeshGraphNets ([LIT-tmpfbgua](LIT-tmpfbgua.md)), whose
+encode-process-decode graph simulator with residual MLP blocks it carries to
+the sphere. What it adds is the multi-resolution mesh, a separate grid-to-mesh
+encoder and decoder so the data need not sit on the mesh, and training
+through twelve unrolled steps where MeshGraphNets trained one step with
+noise.
+
+**What "outperforms HRES" is measured against.** The comparison is careful
+about assimilation windows and ground truth, and it is deterministic against
+deterministic: the ensemble ENS, which matters most past 10 days, is not the
+baseline. GraphCast runs at 0.25° with 37 levels and 6-hour steps against
+HRES's 0.1°, 137 levels and hourly output. The levels where it loses are the
+ones its loss barely weights.
+
+**The blur is part of the score.** MSE through a long rollout rewards hedging
+toward the mean, and the paper shows its long-lead forecasts get smoother.
+RMSE rewards that too, which is why the paper fits optimal blurring filters to
+both models; the 88.0% survives it. Spectral sharpness is a different
+question, addressed only in the supplement.
+
+**Neighbours in the record.** Surya ([LIT-715](LIT-715.md)), a foundation model for
+solar observation, is the record's other large model trained on
+archived data of a physical system rather than on its equations. Erwin ([LIT-763](LIT-763.md))
+argues for attention over message passing on large physical point sets;
+GraphCast's answer to long range is long edges in a fixed hierarchy instead.
+
+Skimmed — [NOTE-tmpzdlnj](../notes.d/NOTE-tmpzdlnj.md).

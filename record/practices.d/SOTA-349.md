@@ -7,6 +7,7 @@ title: 'Before crediting a graph transformer with long-range gains, retune the m
 version: 1
 tags:
 - analysis-and-evaluation
+- graphs-and-networks
 - model-architecture
 date: '2026-09-23'
 source:

@@ -207,7 +207,7 @@ vocabularies:
         blurb: systems that perceive, act and are changed by the consequences — percept–action loops, world models and the environments agents are trained in, multi-agent and collective behaviour, and what acting rather than only predicting changes about learning, memory and their costs
       graphs-and-networks:
         label: Graphs and networks
-        blurb: graph-structured data and the models that run on it — message passing and graph neural networks, how they are evaluated, graph curvature, rewiring and over-squashing, community structure and partitioning
+        blurb: graph-structured data and the models that run on it — node, graph and knowledge-graph embeddings, message passing and graph neural networks, their expressive power and positional encodings, graph transformers, geometric and equivariant GNNs, how they are evaluated, over-smoothing, over-squashing, curvature and rewiring, community structure and partitioning, and language models given graphs
       physical-sciences:
         label: Physical sciences
         blurb: models whose data is the physical world — learned surrogates for simulation in fluids, PDEs, molecular dynamics and cosmology, foundation models for weather, climate and solar observation — what they are trusted to replace, what their benchmarks can show, and which of their methods travel to other domains

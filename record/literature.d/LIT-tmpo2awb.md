@@ -1,0 +1,95 @@
+---
+status: Active
+title: 'Translating Embeddings for Modeling Multi-relational Data'
+version: 1
+tags:
+- graphs-and-networks
+- representation-and-encoding
+date: '2026-10-22'
+published: '2013-12-01'
+url: 'https://papers.nips.cc/paper/2013/hash/1cecc7a77928ca8133fa24680a88d2f9-Abstract.html'
+first_author: 'Bordes'
+keywords:
+- 'transe'
+- 'knowledge-graph-embedding'
+- 'link-prediction'
+- 'translation'
+- 'filtered-ranking'
+- 'freebase'
+- 'wordnet'
+implementations: []
+summary: >-
+  Bordes, Usunier, Garcia-Durán, Weston, Yakhnenko (NeurIPS 2013). Embed
+  knowledge-base entities and relations in one space so that h + r ≈ t, and
+  train with a margin ranking loss against triples with the head or tail
+  replaced. One vector per relation, so far fewer parameters than the
+  matrix-per-relation models it beats. Filtered hits@10 is 89.2% on WN and
+  47.1% on FB15k, against 81.6% and 44.1% for the best baselines. It
+  introduced the FB15k benchmark and the filtered evaluation setting.
+compared_against:
+- LIT-tmpdibco
+extended_by:
+- LIT-tmpdibco
+---
+
+# LIT-tmpo2awb: Translating Embeddings for Modeling Multi-relational Data
+
+Bordes, Usunier, Garcia-Durán, Weston, Yakhnenko, Université de Technologie
+de Compiègne and Google (NeurIPS 2013) —
+https://papers.nips.cc/paper/2013/hash/1cecc7a77928ca8133fa24680a88d2f9-Abstract.html
+
+## Key takeaways
+
+- **The model** (§2, Algorithm 1): energy d(h + ℓ, t) under L1 or L2,
+  trained with the hinge loss [γ + d(h + ℓ, t) − d(h′ + ℓ, t′)]₊ against one
+  corrupted triple per positive, by minibatch SGD. Entity vectors are
+  renormalized to unit length each step; relation vectors are not
+- **Why translations** (§1): hierarchies are common in knowledge bases, and
+  in a 2-D embedding of a tree a parent–child relation is a translation. A
+  zero translation is an equivalence, which is also how the model has to
+  represent any symmetric relation
+- **Filtered evaluation** (§4.2): when ranking the true entity against all
+  corruptions, remove corruptions that are themselves true triples in the
+  train, validation or test sets. Both raw and filtered results are given
+- **Link prediction** (Table 3): WN filtered mean rank 251 and hits@10
+  89.2%, against 304 for Unstructured and 81.6% for LFM, the best baselines
+  on each. FB15k filtered 125 and 47.1%, against SME(linear)'s 154 and
+  RESCAL's 44.1%. FB1M (1M entities, 17.5M training
+  triples) raw hits@10 34.0% against SE's 17.5%
+- **By relation type** (Table 4, FB15k, filtered hits@10): TransE leads on
+  1-to-1 and many-to-many. SME(bilinear) beats it on predicting the head of
+  1-to-many relations (69.6 against 65.7) and the tail of many-to-1 (76.0
+  against 66.7)
+- **Underfitting, not expressiveness** (§3, §4.3): SE can express TransE but
+  fits worse, with training mean rank 165 against TransE's 127 on a 50k
+  subset. The authors say TransE fails where three-way interactions matter,
+  as on Kinships
+- **New relations from few examples** (Figure 1): with 10 examples of each
+  unseen relation, hits@10 is already 18%
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22).
+
+**Its benchmarks were later found to leak.** RotatE ([LIT-tmpdibco](LIT-tmpdibco.md)), citing
+Toutanova and Chen, notes that about 81% of FB15k test triples can be
+inferred from a directly linked triple in reverse, which is why FB15k-237
+and WN18RR were built. This paper removed reversed duplicates of the
+`!/people/person/nationality` kind when building FB15k; inverse relations
+stored under different names stayed in.
+
+**Its numbers are not what TransE can do.** RotatE re-trains TransE with
+self-adversarial negative sampling, many negatives and 1000 dimensions, and
+reaches MRR 0.332 on FB15k-237 against 0.294 previously reported, close to
+RotatE's 0.338. The architecture here was tuned over k ∈ {20, 50}, and the
+baselines over the same small grid. [SOTA-tmphec3z](../practices.d/SOTA-tmphec3z.md) draws the practice.
+
+**What the headline does not say.** "Outperforms all counterparts" is the
+average over relation types; the per-type table shows the bilinear model
+ahead on the many-to-one direction. Symmetric relations force r ≈ 0, which
+is the limitation RotatE was designed around.
+
+Read — [NOTE-tmp228zz](../notes.d/NOTE-tmp228zz.md).
+
+<!-- inactive-ok-file: SOTA-tmphec3z — Proposed; the practice filed from RotatE's ablation in this contribution -->

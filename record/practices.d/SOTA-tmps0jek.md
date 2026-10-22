@@ -41,6 +41,8 @@ explained_by:
 - THEORY-tmpk02h3
 ---
 
+<!-- inactive-ok-file: SOTA-tmpzd1sw — a Proposed sibling practice, named as an alternative not compared -->
+
 # SOTA-tmps0jek: On a graph-level task that depends on interactions between distant nodes, make the last message-passing layer fully adjacent before reaching for a wider model
 
 ## Source
@@ -83,3 +85,6 @@ and five seeds per target, mean relative error fell by 39.5% for R-GIN,
 - **Untuned on purpose.** The source kept the base hyperparameters to rule
   out tuning as the cause. A retuned comparison, as [SOTA-349](SOTA-349.md) asks for
   graph transformers, has not been run here
+- **A neighbouring remedy.** [SOTA-tmpzd1sw](SOTA-tmpzd1sw.md) adds a virtual node joined to
+  every node, another global channel. The two have not been compared under
+  one protocol

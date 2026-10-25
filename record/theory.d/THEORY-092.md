@@ -20,6 +20,7 @@ history:
     negative sampling with smoothed PMI, filed after it.
 tags:
 - signal-structure
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

@@ -19,6 +19,7 @@ promote_when: >-
 title: "Replace every masked token with [MASK]; drop BERT's 80-10-10 substitution rule"
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - training-optimization
 date: '2026-09-25'

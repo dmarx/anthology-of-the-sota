@@ -15,6 +15,7 @@ consensus_note: >-
 title: 'Score a density ratio against sampled negatives instead of reconstructing the target'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - training-optimization
 date: '2026-09-23'

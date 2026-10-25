@@ -15,6 +15,7 @@ consensus_note: >-
 title: 'Train through a projection head and then discard it, taking the layer before as the representation'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - model-architecture
 date: '2026-09-23'

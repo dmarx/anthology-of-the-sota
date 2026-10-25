@@ -22,6 +22,7 @@ title: 'Before crediting a knowledge-graph embedding score function, train the b
 version: 1
 tags:
 - analysis-and-evaluation
+- representation-learning
 - graphs-and-networks
 date: '2026-10-22'
 source:

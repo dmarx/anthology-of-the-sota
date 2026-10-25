@@ -43,6 +43,7 @@ history:
     the optimum, fine-tuning is flat across 40–80%.
 tags:
 - signal-structure
+- representation-learning
 - representation-and-encoding
 - analysis-and-evaluation
 date: '2026-09-23'

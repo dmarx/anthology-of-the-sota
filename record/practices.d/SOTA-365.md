@@ -31,6 +31,7 @@ history:
     recommendation is unchanged; `converged` is kept and its grounds are
     narrowed to the family that does use a predictor.
 tags:
+- representation-learning
 - representation-and-encoding
 - model-architecture
 - model-stability

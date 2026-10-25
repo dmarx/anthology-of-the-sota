@@ -14,6 +14,7 @@ title: 'Pretrain by predicting representations of masked regions, not their pixe
 version: 1
 tags:
 - vision-and-graphics
+- representation-learning
 - representation-and-encoding
 date: '2026-09-19'
 source:

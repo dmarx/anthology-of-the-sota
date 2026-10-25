@@ -7,6 +7,7 @@ title: 'InfoNCE maximizes a lower bound on mutual information that cannot exceed
 version: 1
 tags:
 - analysis-and-evaluation
+- representation-learning
 - representation-and-encoding
 date: '2026-09-23'
 source:

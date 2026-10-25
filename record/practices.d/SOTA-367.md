@@ -16,6 +16,7 @@ consensus_note: >-
 title: 'Or put the anti-collapse constraint in the loss, as a variance floor and a decorrelation term'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - model-stability
 date: '2026-09-23'

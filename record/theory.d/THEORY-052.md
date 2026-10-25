@@ -16,6 +16,7 @@ promote_when: >-
 title: 'Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown'
 version: 1
 tags:
+- representation-learning
 - representation-and-encoding
 - vision-and-graphics
 date: '2026-09-21'

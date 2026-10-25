@@ -17,6 +17,7 @@ title: 'Apparent compression in the information plane is saturating activations 
 version: 1
 tags:
 - analysis-and-evaluation
+- representation-learning
 - representation-and-encoding
 date: '2026-09-21'
 source:

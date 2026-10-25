@@ -7,6 +7,7 @@ title: 'Skip-gram node embeddings with negative sampling implicitly factorize a 
 version: 1
 tags:
 - graphs-and-networks
+- representation-learning
 - representation-and-encoding
 - analysis-and-evaluation
 date: '2026-10-22'

@@ -2,7 +2,7 @@
 
 # THEORYs with `tags` `graphs-and-networks`
 
-*Topics — The twenty-eight kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-eight for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-nine kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-nine for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Graphs and networks** — graph-structured data and the models that run on it — node, graph and knowledge-graph embeddings, message passing and graph neural networks, their expressive power and positional encodings, graph transformers, geometric and equivariant GNNs, how they are evaluated, over-smoothing, over-squashing, curvature and rewiring, community structure and partitioning, and language models given graphs.
 

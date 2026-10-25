@@ -444,6 +444,45 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [LIT-834](../record/literature.d/LIT-834.md) — Translating Embeddings for Modeling Multi-relational Data *(Active)*
   - [LIT-819](../record/literature.d/LIT-819.md) — RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space *(Active)*
 
+## representation-learning
+
+### From Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences
+
+- [LIT-505](../record/literature.d/LIT-505.md) — Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences *(Active)*
+  - [LIT-506](../record/literature.d/LIT-506.md) — Interpretable RNA Foundation Model from Unannotated Data for Highly Accurate RNA Structure and Function Predictions *(Active)*
+
+### From Adaptive Estimators Show Information Compression in Deep Neural Networks
+
+- alongside: [LIT-507](../record/literature.d/LIT-507.md) — Adaptive Estimators Show Information Compression in Deep Neural Networks *(Active)*
+- alongside: [LIT-508](../record/literature.d/LIT-508.md) — Opening the Black Box of Deep Neural Networks via Information *(Active)*
+- alongside: [LIT-509](../record/literature.d/LIT-509.md) — On the Information Bottleneck Theory of Deep Learning *(Active)*
+
+### From Momentum Contrast for Unsupervised Visual Representation Learning
+
+- alongside: [LIT-590](../record/literature.d/LIT-590.md) — Momentum Contrast for Unsupervised Visual Representation Learning *(Active)*
+- alongside: [LIT-591](../record/literature.d/LIT-591.md) — A Simple Framework for Contrastive Learning of Visual Representations *(Active)*
+- alongside: [LIT-744](../record/literature.d/LIT-744.md) — Text Embeddings by Weakly-Supervised Contrastive Pre-training *(Active)*
+
+### From Bootstrap your own latent: A new approach to self-supervised Learning
+
+- [LIT-594](../record/literature.d/LIT-594.md) — Bootstrap your own latent: A new approach to self-supervised Learning *(Active)*
+  - [LIT-593](../record/literature.d/LIT-593.md) — Exploring Simple Siamese Representation Learning *(Active)*
+
+### From VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
+
+- alongside: [LIT-595](../record/literature.d/LIT-595.md) — VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning *(Active)*
+- alongside: [LIT-596](../record/literature.d/LIT-596.md) — Barlow Twins: Self-Supervised Learning via Redundancy Reduction *(Active)*
+
+### From Efficient Estimation of Word Representations in Vector Space
+
+- [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
+  - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
+
+### From Translating Embeddings for Modeling Multi-relational Data
+
+- [LIT-834](../record/literature.d/LIT-834.md) — Translating Embeddings for Modeling Multi-relational Data *(Active)*
+  - [LIT-819](../record/literature.d/LIT-819.md) — RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space *(Active)*
+
 ## signal-structure
 
 ### From Efficient Estimation of Word Representations in Vector Space

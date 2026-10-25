@@ -259,6 +259,13 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - [SOTA-380](../record/practices.d/SOTA-380.md) — Use prediction-based word vectors rather than count-based distributional vectors *(Rejected, unassessed)*
   - [SOTA-379](../record/practices.d/SOTA-379.md) — Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike *(Active, unreplicated)*
 
+## representation-learning
+
+### From Use prediction-based word vectors rather than count-based distributional vectors
+
+- [SOTA-380](../record/practices.d/SOTA-380.md) — Use prediction-based word vectors rather than count-based distributional vectors *(Rejected, unassessed)*
+  - [SOTA-379](../record/practices.d/SOTA-379.md) — Before crediting a word-embedding method over count-based ones, give the baselines the same design choices and tune every method alike *(Active, unreplicated)*
+
 ## systems-optimization
 
 ### From Use operator fusion for small operations

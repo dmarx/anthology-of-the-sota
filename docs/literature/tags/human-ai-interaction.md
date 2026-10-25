@@ -2,7 +2,7 @@
 
 # LITs with `tags` `human-ai-interaction`
 
-*Topics — The twenty-eight kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-eight for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
+*Topics — The twenty-nine kinds of claim this anthology files against — the primary axis of both the practice registry and the reading list, and the same twenty-nine for each (ADR-026). The filing rule is the point: take a domain topic when the claim is ABOUT the domain; a claim merely discovered in one still takes its kind. The axis organizes the record, it does not bound it: content the list cannot place is evidence the list is short (ADR-059).*
 
 **Human–AI interaction** — how people work with a model through an interface — prompting and steering controls, editing and co-writing tools, assistive and co-adaptive interfaces, how such interfaces are scored, and what lab studies of them can and cannot show.
 

@@ -219,7 +219,7 @@
 | 2026-09-20 | Proposed | [THEORY-032](../../record/theory.d/THEORY-032.md) | 20 | 0 | A spectral update wins where the incoming activations are low stable rank and the gradient spectrum is spread out |
 | 2026-09-20 | Proposed | [THEORY-033](../../record/theory.d/THEORY-033.md) | 14 | 0 | What a spectral optimizer buys is a step size that stays optimal, not adherence to a target geometry |
 | 2026-09-20 | Proposed | [THEORY-030](../../record/theory.d/THEORY-030.md) | 13 | 0 | Adaptive optimizers work by shaping the curvature they adapt to, and oscillation is how a first-order method sees curvature at all |
-| 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 11 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
+| 2026-09-20 | Proposed | [THEORY-034](../../record/theory.d/THEORY-034.md) | 12 | 0 | Concepts sit in embedding space as intersections of half-spaces, so inclusion, intersection and union are geometric operations |
 | 2026-09-20 | Proposed | [THEORY-026](../../record/theory.d/THEORY-026.md) | 5 | 0 | Critical batch size is set by how much data has been seen, not by how large the model is |
 | 2026-09-20 | Proposed | [THEORY-036](../../record/theory.d/THEORY-036.md) | 4 | 0 | Representations converge across architectures, objectives and modalities, and the endpoint is a model of what generated the data |
 | 2026-09-20 | Proposed | [THEORY-029](../../record/theory.d/THEORY-029.md) | 3 | 0 | A model of bounded capacity allocates it across datasets like a knapsack, so the optimum jumps rather than sliding |
@@ -227,10 +227,10 @@
 | 2026-09-21 | Proposed | [THEORY-059](../../record/theory.d/THEORY-059.md) | 11 | 0 | A low-rank branch corrects quantization because weight spectra are steep and quantization-error spectra are flat |
 | 2026-09-21 | Proposed | [THEORY-060](../../record/theory.d/THEORY-060.md) | 9 | 0 | Calibration error and refinement error have separate minimizers during training, so the loss minimum is optimal for neither |
 | 2026-09-21 | Proposed | [THEORY-051](../../record/theory.d/THEORY-051.md) | 8 | 0 | A text feature predicts success partly by being uncommon, so a tool that gives it to everyone destroys its predictive value |
+| 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 5 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-21 | Proposed | [THEORY-045](../../record/theory.d/THEORY-045.md) | 4 | 0 | How much of parameter space behaves like your trained network is a description length, and the better-generalizing network occupies more of it |
 | 2026-09-21 | Proposed | [THEORY-052](../../record/theory.d/THEORY-052.md) | 4 | 0 | Synthesis requires equivariant representations and discriminative pretraining rewards invariant ones, which is why a generative prior groups objects it was never shown |
 | 2026-09-21 | Proposed | [THEORY-057](../../record/theory.d/THEORY-057.md) | 4 | 0 | A corpus a model generates is narrower than the distribution it imitates, and the narrowing shows up as n-gram over-concentration |
-| 2026-09-21 | Proposed | [THEORY-058](../../record/theory.d/THEORY-058.md) | 4 | 0 | Apparent compression in the information plane is saturating activations collapsing into extreme bins, not information being discarded |
 | 2026-09-21 | Proposed | [THEORY-050](../../record/theory.d/THEORY-050.md) | 3 | 0 | Parameters carry memorization and parallel computation carries reasoning |
 | 2026-09-21 | Proposed | [THEORY-054](../../record/theory.d/THEORY-054.md) | 3 | 0 | The regularizer that is intractable in data space is tractable in noise space, and bounds the data-space divergence |
 | 2026-09-21 | Proposed | [THEORY-056](../../record/theory.d/THEORY-056.md) | 3 | 0 | Distinct state machines agree at chance on long random inputs, so a learner that reads only statistics loses the signal as the sequences get longer |
@@ -245,9 +245,9 @@
 | 2026-09-22 | Proposed | [THEORY-062](../../record/theory.d/THEORY-062.md) | 14 | 0 | What crashes a transformer is spectral energy concentrating in the query-key product, not low attention entropy as such |
 | 2026-09-22 | Proposed | [THEORY-070](../../record/theory.d/THEORY-070.md) | 13 | 0 | Grokking is the transition from lazy to rich training dynamics |
 | 2026-09-22 | Proposed | [THEORY-061](../../record/theory.d/THEORY-061.md) | 12 | 0 | Attention entropy is bounded below by a quantity falling exponentially in the spectral norm of the query-key product |
+| 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 5 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-066](../../record/theory.d/THEORY-066.md) | 5 | 0 | Pure self-attention collapses every token onto one, and skip connections prevent it by keeping short paths alive |
 | 2026-09-22 | Proposed | [THEORY-074](../../record/theory.d/THEORY-074.md) | 5 | 0 | A phase transition of the Bayesian posterior and a transition in the training trajectory are different events, and only the first is well defined |
-| 2026-09-22 | Proposed | [THEORY-063](../../record/theory.d/THEORY-063.md) | 4 | 0 | Contextual concept directions sit in the low-variance tail of the unembedding spectrum while vocabulary contrasts sit at the top |
 | 2026-09-22 | Proposed | [THEORY-065](../../record/theory.d/THEORY-065.md) | 4 | 0 | Self-attention drives tokens into a few clusters, and the spectrum of the value matrix decides the geometry they land in |
 | 2026-09-22 | Proposed | [THEORY-064](../../record/theory.d/THEORY-064.md) | 3 | 0 | Transformers are biased toward low-sensitivity functions, and that bias is what their robustness is made of |
 | 2026-09-22 | Proposed | [THEORY-073](../../record/theory.d/THEORY-073.md) | 3 | 0 | Training passes through stages marked by changes in loss-landscape degeneracy, and the loss curve does not show them |

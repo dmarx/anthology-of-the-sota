@@ -61,7 +61,7 @@ vocabularies:
   #            physical-sciences, human-ai-interaction -- the #180 reading
   #            pass declined three papers and filed four more under the
   #            nearest wrong word; each reader named the missing topic
-  #   ADR-tmpwwyq0 representation-learning -- about seventy documents on
+  #   ADR-068 representation-learning -- about seventy documents on
   #            learning representations from an objective sat under a topic
   #            about input encoding
   #
@@ -154,7 +154,7 @@ vocabularies:
       representation-and-encoding:
         label: Representation and encoding
         blurb: how the signal is encoded before the expensive network sees it — tokenizers and learned latents, positional encoding, and the frequency or basis choices that go with them
-      # Added by ADR-tmpwwyq0. Self-supervised, contrastive and embedding
+      # Added by ADR-068. Self-supervised, contrastive and embedding
       # papers had been filed under `representation-and-encoding`, whose
       # subject is the input, as concept geometry had been before ADR-060.
       representation-learning:

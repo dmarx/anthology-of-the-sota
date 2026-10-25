@@ -12,20 +12,25 @@ tags:
 date: '2026-09-23'
 source:
 - LIT-580
+- LIT-tmptu505
 summary: >-
   Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md) — each message-passing layer refines node
   labels as one 1-WL iteration can at best, so 1-WL bounds what the network
   separates. Injective aggregation reaches the bound. Sums of an MLP over a
   multiset are injective. Means lose counts and maxes lose multiplicities.
   It is a theorem, and it explains the paper's training-fit ordering and the
-  collapse of mean aggregators to chance on featureless graphs.
+  collapse of mean aggregators to chance on featureless graphs. Morris et al.
+  (2019), LIT-tmptu505, proved the same bound independently.
 ---
+
+<!-- inactive-ok-file: SOTA-tmpd2i1s — Proposed, named as where the encodings that leave this account are recommended -->
 
 # THEORY-083: A message-passing GNN can distinguish no more graphs than the 1-WL test, and reaches that limit only if its neighbor aggregation is injective on multisets, as a sum followed by an MLP is and a mean or max is not
 
 ## Source
 
 Xu et al. (2019), [LIT-580](../literature.d/LIT-580.md). Read as [NOTE-319](../notes.d/NOTE-319.md).
+Morris et al. (2019), [LIT-tmptu505](../literature.d/LIT-tmptu505.md). Read as [NOTE-tmpc8k29](../notes.d/NOTE-tmpc8k29.md).
 
 ## The account
 
@@ -41,7 +46,20 @@ The bound and the injectivity argument are [LIT-580](../literature.d/LIT-580.md)
 a test: training accuracy ranks sum–MLP above sum with one layer above the
 mean and max variants (Figure 4), and on REDDIT-BINARY and MULTI-5K with no
 node features GIN-0 reaches 92.4 and 57.5 while the mean variants sit at
-chance, 50.0 and 20.0.
+chance, 50.0 and 20.0. Those are fold-averaged validation accuracies, as
+GIN's §6 says. Errica et al. ([LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md)) score held-out folds and get
+87.0 and 53.8 for GIN. The mean variants' chance-level scores are a
+failure to separate the graphs at all, which is what this account
+predicts, and no protocol would lift them.
+
+Morris et al. proved the bound independently, three days later, in
+[LIT-tmptu505](../literature.d/LIT-tmptu505.md). Their Theorem 1 shows that 1-WL refines the coloring of any
+message-passing GNN, for every choice of aggregate and merge functions and
+weights. That is the first half of this account, reached by a separate
+induction. Their matching result (Theorem 2) is narrower than the second
+half here. For a given labeled graph, weights exist under which a linear sum
+layer reproduces 1-WL. They say nothing about mean or max, so the
+injectivity argument that separates the aggregators rests on [LIT-580](../literature.d/LIT-580.md) alone.
 
 ## What it explains
 
@@ -53,7 +71,24 @@ chance, 50.0 and 20.0.
 ## Where it stops
 
 - **Distinguishability, not generalization.** With informative features,
-  aggregator choice matters little in the paper's own tables
-- **1-WL is itself limited.** It cannot count cycles or tell some regular
-  graphs apart. Positional encodings and higher-order GNNs address that,
-  outside this account
+  aggregator choice matters little in the paper's own tables. Later work
+  that goes past 1-WL shows the same gap from the other side. In
+  Bouritsas et al. ([LIT-tmpo8g4p](../literature.d/LIT-tmpo8g4p.md), Figure 5), training error on ZINC follows
+  how uniquely the added substructure counts identify nodes, and test error
+  does not. With a GCN encoder on OGB-MOLHIV, Bevilacqua et al.
+  ([LIT-tmp6ppm0](../literature.d/LIT-tmp6ppm0.md), Table 5) raise training AUC to as much as 99.5, while test
+  AUC ranges from 73.8 to 76.5 around the base model's 76.1. More
+  separating power buys fit first
+- **1-WL is itself limited.** It cannot count triangles or cycles, gives
+  every node of a triangle-plus-square the same color ([LIT-tmptu505](../literature.d/LIT-tmptu505.md)), and
+  cannot tell some regular graphs apart
+- **The bound is on message passing over the raw graph with deterministic
+  inputs.** Change the input or the unit of computation and it no longer
+  applies. Each of the following is outside this account:
+  - messages between k-element node sets ([LIT-tmptu505](../literature.d/LIT-tmptu505.md))
+  - substructure counts as features ([LIT-tmpo8g4p](../literature.d/LIT-tmpo8g4p.md))
+  - bags of subgraphs ([LIT-tmp6ppm0](../literature.d/LIT-tmp6ppm0.md))
+  - random-walk or sign-invariant spectral encodings ([LIT-tmpmiegg](../literature.d/LIT-tmpmiegg.md),
+    [LIT-tmpafjtk](../literature.d/LIT-tmpafjtk.md); see [SOTA-tmpd2i1s](../practices.d/SOTA-tmpd2i1s.md))
+  - random node features ([LIT-tmp41jsc](../literature.d/LIT-tmp41jsc.md)), which reach universality only in
+    probability, by an impractically large construction

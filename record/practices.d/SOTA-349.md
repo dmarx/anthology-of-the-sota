@@ -7,6 +7,7 @@ title: 'Before crediting a graph transformer with long-range gains, retune the m
 version: 1
 tags:
 - analysis-and-evaluation
+- graphs-and-networks
 - model-architecture
 date: '2026-09-23'
 source:
@@ -50,6 +51,20 @@ gain. On PascalVOC-SP GPS still leads after tuning (F1 0.444 against
 GatedGCN's 0.388), and normalization is at least half of most models' gain
 there.
 
+The handicap started in the benchmark and travelled. The Long Range Graph
+Benchmark ([LIT-tmpynksg](../literature.d/LIT-tmpynksg.md)) sized each baseline to the budget at a fixed depth
+and describes no sweep; its Peptides gap (best transformer AP 0.644 against
+0.607, MAE 0.253 against 0.336) is the one [LIT-579](../literature.d/LIT-579.md) closed. GPS
+([LIT-tmpwijfh](../literature.d/LIT-tmpwijfh.md)) and Exphormer ([LIT-tmpf1ndc](../literature.d/LIT-tmpf1ndc.md)) then copied those baseline rows
+unchanged into their own LRGB tables while tuning their own models one
+hyperparameter at a time, so each paper's lead over message passing was
+measured against the same untuned configurations. Graphormer
+([LIT-tmpy7li2](../literature.d/LIT-tmpy7li2.md)), on other benchmarks, compared against leaderboard models
+tuned by their authors; its comparisons are confounded by model size and
+pre-training instead.
+
+- **Rerun the baselines; do not copy the benchmark's table.** A copied row
+  carries whatever configuration produced it into every later comparison
 - **Give the MPGNN an MLP readout.** A linear head on pooled node states was
   the largest single handicap on Peptides
 - **Treat positional or structural encodings** (none, LapPE, RWSE) as a
@@ -67,4 +82,8 @@ there.
 
 - **The gap closed on Peptides and did not close on PascalVOC-SP or COCO-SP.**
   Long-range benefits of attention are dataset-specific, not absent
-- **500k-parameter models**
+- **500k-parameter models**, the benchmark's budget. Whether the closure
+  holds for larger models is not tested
+- **Tuning the transformer too matters.** GPS gained 18% and 13% F1 on the
+  superpixel sets from the same sweep, so retuning only the baselines would
+  have understated it there

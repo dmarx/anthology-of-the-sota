@@ -1,0 +1,104 @@
+---
+status: Active
+title: 'Do Transformers Really Perform Bad for Graph Representation?'
+version: 1
+tags:
+- graphs-and-networks
+- model-architecture
+- representation-and-encoding
+- attention-techniques
+- biomolecular-modeling
+date: '2026-10-22'
+published: '2021-06-09'
+arxiv: '2106.05234'
+first_author: 'Ying'
+keywords:
+- 'graphormer'
+- 'graph-transformer'
+- 'spatial-encoding'
+- 'centrality-encoding'
+- 'shortest-path-distance'
+- 'attention-bias'
+- 'ogb-lsc'
+implementations: []
+compared_against:
+- LIT-580
+- LIT-582
+- LIT-tmpwijfh
+summary: >-
+  Ying, Cai, Luo, Zheng, Ke, He, Shen, Liu (NeurIPS 2021), [ARXIV-2106.05234](https://arxiv.org/abs/2106.05234).
+  A standard Transformer over all nodes, given node degree as an input
+  embedding and a learned attention bias per shortest-path distance and per
+  edge feature along the path. On PCQM4M-LSC it reaches validation MAE
+  0.1234 against GIN-VN's 0.1395, an 11.5% relative cut, with 7× the
+  parameters; an ensemble won the OGB-LSC graph track. In a shorter
+  ablation run the encodings take MAE from 0.2276 to 0.1304. At a matched
+  500k budget on ZINC it reaches MAE 0.122.
+---
+
+# LIT-tmpy7li2: Do Transformers Really Perform Bad for Graph Representation?
+
+Ying, Cai, Luo, Zheng, Ke, He, Shen, Liu, Dalian University of Technology,
+Princeton, Peking University and Microsoft Research Asia (NeurIPS 2021) —
+[ARXIV-2106.05234](https://arxiv.org/abs/2106.05234)
+
+## Key takeaways
+
+- **Three encodings** (§3.1): a learned embedding of each node's degree
+  added to its input features (centrality encoding); a learned scalar
+  attention bias for each shortest-path distance between two nodes, shared
+  across layers (spatial encoding); and a bias from the edge features along
+  the shortest path (edge encoding). A virtual node connected to every node
+  is the graph readout
+- **The encodings are most of the result** (Table 5, 12 layers, 100k steps
+  on PCQM4M-LSC): validation MAE 0.2276 with none, 0.1483 with Laplacian PE,
+  0.1427 with the spatial encoding, 0.1396 adding centrality and 0.1304
+  adding the edge encoding as attention bias. Adding edges to node features
+  or to aggregation instead gives 0.1328 and 0.1327
+- **Expressiveness** (§3.3, Appendix A): with the shortest-path bias, an
+  attention head can mask everything but the neighbors and so represent
+  mean, sum and max aggregation, which makes GCN, GIN and GraphSAGE layers
+  special cases (Fact 1). Shortest-path distances separate a pair of graphs
+  1-WL cannot (one example, Figure 2). Plain self-attention can represent a
+  mean readout (Fact 2)
+- **PCQM4M-LSC** (Table 1): Graphormer (47.1M parameters) 0.1234 and
+  Graphormer-Small (12.5M) 0.1264, against GIN-VN (6.7M) 0.1395 and
+  DeeperGCN-VN (25.5M) 0.1398. The earlier graph transformer GT does not
+  improve when widened to 83.2M parameters (0.1408)
+- **Smaller benchmarks** (Tables 2–4): MolPCBA AP 31.39 with a 119.5M model
+  pre-trained on PCQM4M-LSC and fine-tuned with FLAG augmentation, against
+  29.79 for the best leaderboard GNN at 6.1M. MolHIV AUC 80.51 ± 0.53,
+  against 79.70 ± 0.97 for DGN at 114k parameters. ZINC MAE 0.122 at 489k
+  parameters, against 0.139 for SAN and 0.142 for PNA
+
+## Standing in the anthology
+
+**Filed from the graph-coverage pass** (gap list from the record's own
+review, 2026-10-22). GPS ([LIT-tmpwijfh](LIT-tmpwijfh.md)) compares against it, and it is
+the attention-only design that [SOTA-tmpy8eal](../practices.d/SOTA-tmpy8eal.md)'s conditions set apart: its
+distance bias lets attention do what a local message-passing layer does.
+
+**What the baselines were.** It is `compared_against` GIN ([LIT-580](LIT-580.md)) and GCN
+([LIT-582](LIT-582.md)): on PCQM4M-LSC the authors retrained both, with and without a
+virtual node, using the OGB-LSC repository's official hyperparameters, and
+their numbers match the leaderboard's (GIN-VN 0.1395 against 0.1396
+reported). GIN-VN was the previous best. Graphormer cuts its validation MAE
+by 11.5% relative, with 47.1M parameters to GIN-VN's 6.7M, and the larger
+GNN tried, DeeperGCN-VN at 25.5M, does no better than GIN-VN. The OGB and
+ZINC baselines are leaderboard entries, tuned by their own authors. So
+these baselines do not carry LRGB's handicap of untuned, budget-sized
+configurations that [LIT-579](LIT-579.md) found; what they lack is parity of size and,
+on OGB, of pre-training. Graphormer was not evaluated on LRGB.
+
+**What the headline omits.** "Graphormer consistently and significantly
+outperforms previous state-of-the-art GNNs" rests on unmatched model sizes
+and, on MolPCBA and MolHIV, on pre-training with an extra 3.8M graphs. On
+MolHIV the gap to DGN is within a standard deviation, and Appendix C shows
+Morgan fingerprints with a random forest at 80.60, above Graphormer's
+80.51. The size-matched result is ZINC. Expressiveness is shown by
+construction and one example, not by a separation over a family of graphs.
+Attention over all node pairs with all-pairs shortest paths is quadratic,
+which the paper names as its first limitation; later graph transformers,
+GPS among them, go after exactly that.
+
+Read — [NOTE-tmp6bkgl](../notes.d/NOTE-tmp6bkgl.md).

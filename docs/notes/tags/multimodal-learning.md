@@ -4,7 +4,7 @@
 
 **multimodal-learning**.
 
-12 of 378 NOTE documents. Back to the [full index](../README.md).
+13 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -20,3 +20,4 @@
 | [NOTE-344](../../../record/notes.d/NOTE-344.md) | HunyuanVideo | A 13B open text-to-video model whose one quantitative design argument is a pair of compute-optimal fits on a proxy family: the image fit puts more of each added FLOP into parameters (0.5634 against 0.4325), and the video fit, initialized from the image envelope, reverses it (0.3618 against 0.6289). No architectural or data choice is ablated, and the proxy differs from the shipped model in objective, text encoder and conditioning. | Read |
 | [NOTE-349](../../../record/notes.d/NOTE-349.md) | Make-A-Video | Make-A-Video extends an unCLIP text-to-image model to video with identity-initialized pseudo-3D conv and attention layers trained on video with no captions. Text reaches the video decoder only through one CLIP image embedding, so text-only-in-video associations cannot be learned, and the discussion concedes this. System-level results are strong (zero-shot UCF-101 FVD 367.23, MSR-VTT CLIPSIM 0.3049), and there is no ablation of any design choice, image initialization included. | Read |
 | [NOTE-371](../../../record/notes.d/NOTE-371.md) | FLIP | Removing 50% of image patches in CLIP training halves the image encoder's cost and lets the contrastive batch double at the same memory; ViT-L/16 on LAION-400M then matches its unmasked reproduction more than 3× faster and beats it by about a point at equal epochs. At equal batch the masking gains nothing, and at ViT-B/16 the full-schedule model is 0.2 behind — the improvement is the batch and the extra samples that masking pays for. | Read |
+| [NOTE-392](../../../record/notes.d/NOTE-392.md) | GraphToken | A per-task GNN encoder that writes soft tokens for a frozen LLM solves GraphQA's counting and degree tasks almost perfectly. It is weak on listing a node's neighbours. Its prompting baselines come from a different model's averages over encodings. Read in full, with the appendix probe tables scanned. | Read |

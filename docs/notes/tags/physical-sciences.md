@@ -4,8 +4,15 @@
 
 **physical-sciences**.
 
-1 of 378 NOTE documents. Back to the [full index](../README.md).
+8 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
 | [NOTE-376](../../../record/notes.d/NOTE-376.md) | Surya: heliophysics foundation model | A 366M-parameter transformer pretrained on full-resolution (4096²) multi-instrument SDO imagery to forecast the next frame, then rollout-tuned, forecasts solar dynamics zero-shot. With LoRA fine-tuning it beats task-specific baselines on four downstream heliophysics tasks. | Skimmed |
+| [NOTE-384](../../../record/notes.d/NOTE-384.md) | MPNN | Eight earlier graph networks are one form: summed messages, a node update, an invariant readout. Searching that space on QM9 gives a model at chemical accuracy on 11 of 13 targets, relative to DFT labels and on one random split. Long-range mechanisms, a master node or set2set, help most when geometry is withheld. Main text read in full, supplement skimmed. | Read |
+| [NOTE-387](../../../record/notes.d/NOTE-387.md) | EGNN | Equivariance without spherical harmonics: messages see squared distances, coordinates move along relative position vectors. Clear gains on a synthetic N-body task and graph autoencoding; on QM9 it runs as an invariant model. Main text and appendices read, the proofs skimmed. | Read |
+| [NOTE-389](../../../record/notes.d/NOTE-389.md) | NequIP | Tensor-valued equivariant features in a message-passing interatomic potential, with large accuracy gains over invariant models at 1,000 configurations and a learning curve that looks steeper. The attribution of that slope to equivariance is the weak point. Main text, methods and appendices read. | Read |
+| [NOTE-393](../../../record/notes.d/NOTE-393.md) | MACE | Many-body messages from tensor products of a pooled two-body basis, so two layers suffice and evaluation is fast. Its learning-curve experiment separates body order from equivariance and finds body order sets the slope. Main text read; appendix implementation details skimmed. | Read |
+| [NOTE-401](../../../record/notes.d/NOTE-401.md) | MeshGraphNets | A graph network over the simulation mesh, plus world-space edges for contact, learns cloth, elastic and fluid dynamics stably over long rollouts, and can learn where to refine the mesh. Main text and the appendix sections on training, noise and timing read. | Read |
+| [NOTE-411](../../../record/notes.d/NOTE-411.md) | SchNet | Convolution filters generated from interatomic distances give a smooth, invariant energy whose gradient is an energy-conserving force field. Training on forces as well as energies is the largest effect in the paper. Read in full; the supplement was not read. | Read |
+| [NOTE-422](../../../record/notes.d/NOTE-422.md) | GraphCast | A graph-network weather model on an icosahedral multi-mesh beats ECMWF's deterministic HRES on 90% of 1,380 targets at 0.25°. Main text read in full; of the 100-page supplement, the graph construction (3.3, 3.5), training (4) and ablations (7.3) were read and the rest skimmed. | Skimmed |

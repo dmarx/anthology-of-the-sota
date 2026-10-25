@@ -9,10 +9,10 @@ history:
 - version: 2
   date: '2026-10-22'
   note: >-
-    Two sources added from the graph-coverage pass. LIT-tmprm7bo carries
+    Two sources added from the graph-coverage pass. LIT-838 carries
     the practice to graph classification, with hyperparameters selected
     inside each training fold and a graph-agnostic baseline, and finds the
-    baseline unbeaten on three of four chemical datasets. LIT-tmp8wx7k shows
+    baseline unbeaten on three of four chemical datasets. LIT-817 shows
     a second seed reordering models on fixed folds. The recommendation is
     unchanged, with one bullet added on keeping selection inside the
     training data, and consensus moves from unassessed to emerging.
@@ -23,8 +23,8 @@ tags:
 date: '2026-09-23'
 source:
 - LIT-581
-- LIT-tmprm7bo
-- LIT-tmp8wx7k
+- LIT-838
+- LIT-817
 introduced_by:
 - LIT-581
 consensus: emerging
@@ -33,7 +33,7 @@ consensus_note: >-
   node classification, Errica et al. for graph classification, following
   Shchur's advice, and Dwivedi et al. on TU datasets, citing Errica. They
   build on each other rather than replicating blind. LIT-579 repeats the
-  finding for graph transformers. OGB (LIT-tmp3qfj0) builds multiple seeds and one
+  finding for graph transformers. OGB (LIT-808) builds multiple seeds and one
   evaluator into its leaderboard. Many node-classification papers still
   report the Planetoid split, and how common multi-split reporting has
   become has not been counted here.
@@ -44,7 +44,7 @@ summary: >-
   On another random split of the same size GCN wins, and averaged over 100
   splits × 20 seeds with identical training and tuning, GCN ranks first of
   four GNNs. A single split selects the model that overfits it, and
-  per-model recipes measure the recipe. Errica et al. (2020), LIT-tmprm7bo,
+  per-model recipes measure the recipe. Errica et al. (2020), LIT-838,
   find the same for graph classification, where a graph-agnostic baseline
   beats every GNN on three of four chemical datasets. Report mean and
   spread over many splits and seeds, with the same tuning budget for
@@ -56,8 +56,8 @@ summary: >-
 ## Source
 
 Shchur et al. (2018), [LIT-581](../literature.d/LIT-581.md). Read as [NOTE-318](../notes.d/NOTE-318.md). Errica et al.
-(2020), [LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md). Read as [NOTE-tmpdyx5w](../notes.d/NOTE-tmpdyx5w.md). Dwivedi et al. (2020),
-[LIT-tmp8wx7k](../literature.d/LIT-tmp8wx7k.md). Read as [NOTE-tmpjnifj](../notes.d/NOTE-tmpjnifj.md).
+(2020), [LIT-838](../literature.d/LIT-838.md). Read as [NOTE-398](../notes.d/NOTE-398.md). Dwivedi et al. (2020),
+[LIT-817](../literature.d/LIT-817.md). Read as [NOTE-405](../notes.d/NOTE-405.md).
 
 ## The practice
 
@@ -69,7 +69,7 @@ and GraphSAGE-mean and 3.6 for GAT), with the four non-graph baselines at
 7.4–8.8. GAT fell below 40% in 138 of 2,000 runs on Amazon Photo, which is
 the third bullet.
 
-Errica et al. ([LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md)) found the same failure in graph
+Errica et al. ([LIT-838](../literature.d/LIT-838.md)) found the same failure in graph
 classification and ran the protocol at scale: more than 47,000 training
 runs, five GNNs, nine datasets, stratified 10-fold CV with hyperparameters
 selected on a holdout inside each training fold, three retrainings per
@@ -80,7 +80,7 @@ structure-agnostic baseline beats every GNN on D&D, PROTEINS and ENZYMES
 (78.4, 75.8 and 65.2% against at most 76.6, 73.7 and 59.6%), and every GNN
 beats it on NCI1.
 
-Dwivedi et al. ([LIT-tmp8wx7k](../literature.d/LIT-tmp8wx7k.md)) isolate the seed. On ENZYMES, DD and
+Dwivedi et al. ([LIT-817](../literature.d/LIT-817.md)) isolate the seed. On ENZYMES, DD and
 PROTEINS they reran every model with the same 10 folds and the same
 hyperparameters and only a new random seed, and the ranking changed. On
 DD and PROTEINS an MLP matched the GNNs.
@@ -107,7 +107,7 @@ DD and PROTEINS an MLP matched the GNNs.
 - **Node and graph classification on small benchmarks**, where seed and
   split variance is of the same size as the differences between models.
   Benchmarks with official splits (OGB) fix the split for comparability,
-  and [SOTA-tmp2qn9u](SOTA-tmp2qn9u.md) says which split to fix. Multiple seeds and a shared
+  and [SOTA-450](SOTA-450.md) says which split to fix. Multiple seeds and a shared
   protocol still apply there
 - **Select hyperparameters per dataset if you can.** The source selected
   on two datasets and reused the result

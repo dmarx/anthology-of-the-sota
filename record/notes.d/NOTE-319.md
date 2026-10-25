@@ -48,7 +48,7 @@ keeps the set. Only sum, followed by an MLP, keeps the multiset.
 - **Table 1 is validation accuracy.** §6 reports "the average and standard
   deviation of validation accuracies across the 10 folds", with the epoch
   chosen on the same folds. This reading first called them test accuracy.
-  Errica et al. ([LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md)), scoring held-out folds, get 87.0 and 53.8 on
+  Errica et al. ([LIT-838](../literature.d/LIT-838.md)), scoring held-out folds, get 87.0 and 53.8 on
   the two Reddit sets, against 92.4 and 57.5
 - **Node features blunt the difference.** Where features are informative,
   the aggregator matters much less

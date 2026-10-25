@@ -6,7 +6,7 @@
 
 **Attention techniques** — attention variants and alternative mechanisms, implementation optimizations, context length.
 
-29 of 449 SOTA documents. Back to the [full index](../README.md).
+30 of 457 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -39,3 +39,4 @@
 | [SOTA-390](../../../record/practices.d/SOTA-390.md) v3 | In a video diffusion transformer, attend over space and time jointly rather than factorizing, and budget for the cost |  | Proposed |
 | [SOTA-391](../../../record/practices.d/SOTA-391.md) | Estimate attention resolution before training when choosing a position encoding, and measure it across the extrapolation boundary | Sun et al. (2022), [LIT-638](../../../record/literature.d/LIT-638.md) — attention resolution scores how well an attention pattern distinguishes token distance, and is estimable from the encoding **before a run**. Measured at the training length and twice it: **RoPE 0.91 → 0.08, ALiBi 0.81 → 0.88.** The record has four practices about rotary encoding and held no measure of this. | Proposed |
 | [SOTA-436](../../../record/practices.d/SOTA-436.md) | Route a very large or non-grid input through cross-attention into a small learned latent array, so that depth no longer scales with input size | Jaegle et al. (2021), [LIT-747](../../../record/literature.d/LIT-747.md) — the Perceiver. A learned array of 512 latents cross-attends to all 50,176 ImageNet pixels, at a cost of O(MN) rather than O(M²), and a 48-block latent transformer then runs at a cost independent of input size. It matched ResNet-50 and ViT-B/16 at 78.0% top-1 without convolutions, did not beat them, and ran unchanged on audio, video and point clouds. The case for doing it is cost and modality-independence, not accuracy, and the cost advantage is argued from complexity, not measured against a baseline. | Proposed |
+| [SOTA-456](../../../record/practices.d/SOTA-456.md) | In a graph transformer, keep a local message-passing layer beside global attention in every block, rather than relying on attention and positional encodings alone | Rampášek et al. (2022), [LIT-842](../../../record/literature.d/LIT-842.md) — in GPS ablations on six datasets, removing the message-passing layer from each block costs more than removing global attention: ZINC MAE 0.070 to 0.217 without it, unchanged without attention. Exphormer ([LIT-821](../../../record/literature.d/LIT-821.md)) finds the same with sparse attention on five more. Shown at benchmark scale, up to 6M parameters; whether it holds with much more data, or against attention biased by graph distance, is open. | Active |

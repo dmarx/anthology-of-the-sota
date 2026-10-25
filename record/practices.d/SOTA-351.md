@@ -53,7 +53,7 @@ message passing is bounded by 1-WL and that sum followed by an MLP reaches the
 bound where mean and max do not. On REDDIT-BINARY and REDDIT-MULTI-5K with no
 node features, GIN-0 scores 92.4 and 57.5 and the mean variants sit at
 chance (50.0 and 20.0). Those are the fold-averaged validation accuracies
-the paper reports. Errica et al. ([LIT-tmprm7bo](../literature.d/LIT-tmprm7bo.md)) rerun GIN with selection
+the paper reports. Errica et al. ([LIT-838](../literature.d/LIT-838.md)) rerun GIN with selection
 inside each training fold and score the held-out fold: 87.0 and 53.8,
 against 72.1 and 35.1 for a baseline that ignores the graph. They do not
 rerun the mean variants. On the other seven datasets GIN is best or tied,

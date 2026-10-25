@@ -6,8 +6,8 @@
 
 **Physical sciences** — models whose data is the physical world — learned surrogates for simulation in fluids, PDEs, molecular dynamics and cosmology, foundation models for weather, climate and solar observation — what they are trusted to replace, what their benchmarks can show, and which of their methods travel to other domains.
 
-0 of 449 SOTA documents. Back to the [full index](../README.md).
+1 of 457 SOTA documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [SOTA-451](../../../record/practices.d/SOTA-451.md) | Fit a machine-learned interatomic potential to forces as well as energies, taking forces as the negative gradient of the predicted energy | Schütt et al. (2017), [LIT-825](../../../record/literature.d/LIT-825.md) — on MD17 with 1,000 configurations, adding force labels cut SchNet's force MAE 17–46× (benzene 14.12 → 0.31 kcal/mol/Å) and also lowered energy error, and beat energy-only training on 50,000 configurations on forces. Make the energy model smooth, take forces as −∂E/∂r so they conserve energy, and weight the force term heavily; NequIP ([LIT-832](../../../record/literature.d/LIT-832.md)) defaults to 1 : N_atoms². | Active |

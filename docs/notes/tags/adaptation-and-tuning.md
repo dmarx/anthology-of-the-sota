@@ -4,7 +4,7 @@
 
 **adaptation-and-tuning**.
 
-44 of 378 NOTE documents. Back to the [full index](../README.md).
+48 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -52,3 +52,7 @@
 | [NOTE-341](../../../record/notes.d/NOTE-341.md) | Video LDM (Align your Latents) | Video LDM makes a latent image diffusion model into a video model by inserting temporal layers and fine-tuning the decoder and upsampler on video. On driving scenes, an image-pretrained LDM with frozen spatial layers reaches FVD 534.17 against 1155.10 for the same design trained from scratch. The "images" are 1 fps frames of the same driving videos, and the pretrained arm gets 73K image steps the other does not. Decoder video fine-tuning cuts reconstruction FVD 390.88 → 32.94. | Read |
 | [NOTE-360](../../../record/notes.d/NOTE-360.md) | MDLM | Masked diffusion's ELBO is a schedule-weighted average of masked-LM losses, and with a modern recipe it is the best discrete diffusion language model at 110M parameters. It does not beat autoregression in-domain, even with the AR baseline given half the optimizer steps; the paper's own checklist names that as its limitation. | Read |
 | [NOTE-376](../../../record/notes.d/NOTE-376.md) | Surya: heliophysics foundation model | A 366M-parameter transformer pretrained on full-resolution (4096²) multi-instrument SDO imagery to forecast the next frame, then rollout-tuned, forecasts solar dynamics zero-shot. With LoRA fine-tuning it beats task-specific baselines on four downstream heliophysics tasks. | Skimmed |
+| [NOTE-383](../../../record/notes.d/NOTE-383.md) | One for All (OFA) | Text-embedded features and a prompt graph with class nodes let one GNN train on citation, knowledge-graph and molecule datasets together. It matches or beats per-dataset GNNs on most supervised tasks. Zero-shot transfer to unseen graphs is weak, and joint training hurts link tasks. Read in full, with the dataset-construction appendix skimmed. | Read |
+| [NOTE-392](../../../record/notes.d/NOTE-392.md) | GraphToken | A per-task GNN encoder that writes soft tokens for a frozen LLM solves GraphQA's counting and degree tasks almost perfectly. It is weak on listing a node's neighbours. Its prompting baselines come from a different model's averages over encodings. Read in full, with the appendix probe tables scanned. | Read |
+| [NOTE-395](../../../record/notes.d/NOTE-395.md) | Graph foundation models are already here | A position paper: graph foundation models transfer when they share a "graph vocabulary" of structural units, and the paper organizes existing principles and models under that idea. No experiments. Main text read. Appendices A–E (dataset and model lists, feature alignment, further discussion) not read. | Skimmed |
+| [NOTE-404](../../../record/notes.d/NOTE-404.md) | GraphCL | SimCLR-style contrastive pre-training for graph-level GNNs with four graph augmentations. Augmentation is necessary and its best choice depends on the domain; gains are modest and mixed in transfer. Main text and all tables read; Appendices A–G, including the mutual-information derivation and node-classification results, not read. | Skimmed |

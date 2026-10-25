@@ -52,14 +52,14 @@ GatedGCN's 0.388), and normalization is at least half of most models' gain
 there.
 
 The handicap started in the benchmark and travelled. The Long Range Graph
-Benchmark ([LIT-tmpynksg](../literature.d/LIT-tmpynksg.md)) sized each baseline to the budget at a fixed depth
+Benchmark ([LIT-844](../literature.d/LIT-844.md)) sized each baseline to the budget at a fixed depth
 and describes no sweep; its Peptides gap (best transformer AP 0.644 against
 0.607, MAE 0.253 against 0.336) is the one [LIT-579](../literature.d/LIT-579.md) closed. GPS
-([LIT-tmpwijfh](../literature.d/LIT-tmpwijfh.md)) and Exphormer ([LIT-tmpf1ndc](../literature.d/LIT-tmpf1ndc.md)) then copied those baseline rows
+([LIT-842](../literature.d/LIT-842.md)) and Exphormer ([LIT-821](../literature.d/LIT-821.md)) then copied those baseline rows
 unchanged into their own LRGB tables while tuning their own models one
 hyperparameter at a time, so each paper's lead over message passing was
 measured against the same untuned configurations. Graphormer
-([LIT-tmpy7li2](../literature.d/LIT-tmpy7li2.md)), on other benchmarks, compared against leaderboard models
+([LIT-843](../literature.d/LIT-843.md)), on other benchmarks, compared against leaderboard models
 tuned by their authors; its comparisons are confounded by model size and
 pre-training instead.
 

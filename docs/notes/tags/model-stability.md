@@ -4,7 +4,7 @@
 
 **model-stability**.
 
-37 of 378 NOTE documents. Back to the [full index](../README.md).
+39 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -45,3 +45,5 @@
 | [NOTE-368](../../../record/notes.d/NOTE-368.md) | Attention-only transformers | A necessity test of the feed-forward layer with three matchings. Deleting it in place costs 0.47 nats. At matched FLOPs the cost is 0.26 nats. At matched parameters, with the budget moved into attention depth, the cost is 0.0055 nats, and it shrinks with tokens. What remains is concentrated on low-context tokens, where recall has to come from the weights. QK-norm is what keeps the attention-only stack trainable. At or below 87M parameters, on a synthetic reasoning corpus. | Read |
 | [NOTE-370](../../../record/notes.d/NOTE-370.md) | EDM2 | Magnitude-preserving layers plus forced weight normalization take the ADM U-Net from FID 8.00 to 2.56 on ImageNet-512 at equal compute, in a cumulative single-model ladder whose steps are all far larger than FID's noise. Post-hoc EMA reconstructs any averaging length from two stored power-function averages, and what it shows is that the best length depends on architecture, learning rate, guidance weight and the metric — the last by 2% against 14% under guidance. | Read |
 | [NOTE-372](../../../record/notes.d/NOTE-372.md) | Dropout as a Bayesian approximation | Dropout before every weight layer, with L2, is shown to optimize (up to an approximated KL term) a variational objective for a deep Gaussian process, so running T stochastic forward passes at test time yields a predictive mean and variance for free. The evidence is qualitative figures, a UCI regression table on 50-unit one-layer networks, and one RL run; the MC-versus-weight-scaling comparison is stated without numbers. | Read |
+| [NOTE-385](../../../record/notes.d/NOTE-385.md) | GNNs exponentially lose expressive power | A ReLU GCN's features approach the component-and-degree subspace at rate (sλ)^l. The condition sλ < 1 bites on dense graphs and barely at all on sparse citation graphs, which the experiments densify. Main text and the experimental appendix read, proofs skimmed. | Read |
+| [NOTE-402](../../../record/notes.d/NOTE-402.md) | Survey on oversmoothing | Over-smoothing defined as exponential decay of a node-similarity measure, with Dirichlet energy as the canonical one and Mean Average Distance ruled out. A deep GCN with a bias keeps its Dirichlet energy and still loses accuracy with depth, so avoiding over-smoothing is necessary and not sufficient. Read in full. | Read |

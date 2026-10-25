@@ -2,7 +2,7 @@
 
 # Lines of work
 
-54 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
+59 lines, walked from `extends:` and `corrects:` on LIT documents. Each step explains itself; this page is the order they came in.
 
 Grouped by `tags`, which every line holds in common — a line about two things is listed under both.
 
@@ -100,6 +100,12 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-728](../record/literature.d/LIT-728.md) — Visualizing and Understanding Convolutional Networks *(Active)*
 - alongside: [LIT-732](../record/literature.d/LIT-732.md) — Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization *(Active)*
 
+### From On the Bottleneck of Graph Neural Networks and its Practical Implications
+
+- [LIT-839](../record/literature.d/LIT-839.md) — On the Bottleneck of Graph Neural Networks and its Practical Implications *(Active)*
+  - [LIT-803](../record/literature.d/LIT-803.md) — Understanding over-squashing and bottlenecks on graphs via curvature *(Active)*
+    - [LIT-823](../record/literature.d/LIT-823.md) — On Over-Squashing in Message Passing Neural Networks: The Impact of Width, Depth, and Topology *(Active)*
+
 ## attention-techniques
 
 ### From Longformer: The Long-Document Transformer
@@ -187,12 +193,38 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 ## graphs-and-networks
 
-### From Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark
+### From On the Bottleneck of Graph Neural Networks and its Practical Implications
 
-- alongside: [LIT-579](../record/literature.d/LIT-579.md) — Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark *(Active)*
-- alongside: [LIT-580](../record/literature.d/LIT-580.md) — How Powerful are Graph Neural Networks? *(Active)*
-- alongside: [LIT-581](../record/literature.d/LIT-581.md) — Pitfalls of Graph Neural Network Evaluation *(Active)*
-- alongside: [LIT-582](../record/literature.d/LIT-582.md) — Semi-Supervised Classification with Graph Convolutional Networks *(Active)*
+- [LIT-839](../record/literature.d/LIT-839.md) — On the Bottleneck of Graph Neural Networks and its Practical Implications *(Active)*
+  - [LIT-803](../record/literature.d/LIT-803.md) — Understanding over-squashing and bottlenecks on graphs via curvature *(Active)*
+    - [LIT-823](../record/literature.d/LIT-823.md) — On Over-Squashing in Message Passing Neural Networks: The Impact of Width, Depth, and Topology *(Active)*
+
+### From Neural Message Passing for Quantum Chemistry
+
+- [LIT-829](../record/literature.d/LIT-829.md) — Neural Message Passing for Quantum Chemistry *(Active)*
+  - [LIT-804](../record/literature.d/LIT-804.md) — Relational inductive biases, deep learning, and graph networks *(Active)*
+
+### From Talk like a Graph: Encoding Graphs for Large Language Models
+
+- alongside: [LIT-807](../record/literature.d/LIT-807.md) — Talk like a Graph: Encoding Graphs for Large Language Models *(Active)*
+- alongside: [LIT-820](../record/literature.d/LIT-820.md) — Let Your Graph Do the Talking: Encoding Structured Data for LLMs *(Active)*
+
+### From E(n) Equivariant Graph Neural Networks
+
+- alongside: [LIT-812](../record/literature.d/LIT-812.md) — E(n) Equivariant Graph Neural Networks *(Active)*
+- alongside: [LIT-825](../record/literature.d/LIT-825.md) — SchNet: A continuous-filter convolutional neural network for modeling quantum interactions *(Active)*
+- alongside: [LIT-828](../record/literature.d/LIT-828.md) — MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields *(Active)*
+- alongside: [LIT-832](../record/literature.d/LIT-832.md) — E(3)-Equivariant Graph Neural Networks for Data-Efficient and Accurate Interatomic Potentials *(Active)*
+
+### From Learning Mesh-Based Simulation with Graph Networks
+
+- [LIT-822](../record/literature.d/LIT-822.md) — Learning Mesh-Based Simulation with Graph Networks *(Active)*
+  - [LIT-815](../record/literature.d/LIT-815.md) — GraphCast: Learning skillful medium-range global weather forecasting *(Active)*
+
+### From Translating Embeddings for Modeling Multi-relational Data
+
+- [LIT-834](../record/literature.d/LIT-834.md) — Translating Embeddings for Modeling Multi-relational Data *(Active)*
+  - [LIT-819](../record/literature.d/LIT-819.md) — RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space *(Active)*
 
 ## in-context-learning
 
@@ -261,13 +293,6 @@ Grouped by `tags`, which every line holds in common — a line about two things 
       - [LIT-173](../record/literature.d/LIT-173.md) — RWKV-7 "Goose" with Expressive Dynamic State Evolution *(Active)*
 - alongside: [LIT-428](../record/literature.d/LIT-428.md) — Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention *(Active)*
 
-### From Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark
-
-- alongside: [LIT-579](../record/literature.d/LIT-579.md) — Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark *(Active)*
-- alongside: [LIT-580](../record/literature.d/LIT-580.md) — How Powerful are Graph Neural Networks? *(Active)*
-- alongside: [LIT-581](../record/literature.d/LIT-581.md) — Pitfalls of Graph Neural Network Evaluation *(Active)*
-- alongside: [LIT-582](../record/literature.d/LIT-582.md) — Semi-Supervised Classification with Graph Convolutional Networks *(Active)*
-
 ### From Highly accurate protein structure prediction with AlphaFold
 
 - [LIT-583](../record/literature.d/LIT-583.md) — Highly accurate protein structure prediction with AlphaFold *(Active)*
@@ -278,6 +303,18 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 
 - [LIT-723](../record/literature.d/LIT-723.md) — Swin Transformer: Hierarchical Vision Transformer using Shifted Windows *(Active)*
   - [LIT-763](../record/literature.d/LIT-763.md) — Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems *(Active)*
+
+### From Neural Message Passing for Quantum Chemistry
+
+- [LIT-829](../record/literature.d/LIT-829.md) — Neural Message Passing for Quantum Chemistry *(Active)*
+  - [LIT-804](../record/literature.d/LIT-804.md) — Relational inductive biases, deep learning, and graph networks *(Active)*
+
+### From E(n) Equivariant Graph Neural Networks
+
+- alongside: [LIT-812](../record/literature.d/LIT-812.md) — E(n) Equivariant Graph Neural Networks *(Active)*
+- alongside: [LIT-825](../record/literature.d/LIT-825.md) — SchNet: A continuous-filter convolutional neural network for modeling quantum interactions *(Active)*
+- alongside: [LIT-828](../record/literature.d/LIT-828.md) — MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields *(Active)*
+- alongside: [LIT-832](../record/literature.d/LIT-832.md) — E(3)-Equivariant Graph Neural Networks for Data-Efficient and Accurate Interatomic Potentials *(Active)*
 
 ## model-stability
 
@@ -331,6 +368,20 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-586](../record/literature.d/LIT-586.md) — LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale *(Active)*
 - alongside: [LIT-656](../record/literature.d/LIT-656.md) — Intriguing Properties of Quantization at Scale *(Active)*
 
+## physical-sciences
+
+### From E(n) Equivariant Graph Neural Networks
+
+- alongside: [LIT-812](../record/literature.d/LIT-812.md) — E(n) Equivariant Graph Neural Networks *(Active)*
+- alongside: [LIT-825](../record/literature.d/LIT-825.md) — SchNet: A continuous-filter convolutional neural network for modeling quantum interactions *(Active)*
+- alongside: [LIT-828](../record/literature.d/LIT-828.md) — MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields *(Active)*
+- alongside: [LIT-832](../record/literature.d/LIT-832.md) — E(3)-Equivariant Graph Neural Networks for Data-Efficient and Accurate Interatomic Potentials *(Active)*
+
+### From Learning Mesh-Based Simulation with Graph Networks
+
+- [LIT-822](../record/literature.d/LIT-822.md) — Learning Mesh-Based Simulation with Graph Networks *(Active)*
+  - [LIT-815](../record/literature.d/LIT-815.md) — GraphCast: Learning skillful medium-range global weather forecasting *(Active)*
+
 ## representation-and-encoding
 
 ### From Neural Machine Translation of Rare Words with Subword Units
@@ -378,20 +429,20 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-663](../record/literature.d/LIT-663.md) — DINOv3 *(Active)*
 - alongside: [LIT-664](../record/literature.d/LIT-664.md) — Emerging Properties in Self-Supervised Vision Transformers *(Active)*
 
-### From GloVe: Global Vectors for Word Representation
-
-- [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
-  - [LIT-607](../record/literature.d/LIT-607.md) — Improving Distributional Similarity with Lessons Learned from Word Embeddings *(Active)* — also extends LIT-608, LIT-612
-- [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
-  - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
-- [LIT-608](../record/literature.d/LIT-608.md) — Don't count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors *(Active)*
-- [LIT-612](../record/literature.d/LIT-612.md) — Neural Word Embedding as Implicit Matrix Factorization *(Active)*
-- alongside: [LIT-613](../record/literature.d/LIT-613.md) — A Latent Variable Model Approach to PMI-based Word Embeddings *(Active)*
-
 ### From Efficient Estimation of Word Representations in Vector Space
 
 - [LIT-610](../record/literature.d/LIT-610.md) — Efficient Estimation of Word Representations in Vector Space *(Superseded)*
   - [LIT-609](../record/literature.d/LIT-609.md) — Distributed Representations of Words and Phrases and their Compositionality *(Superseded)*
+
+### From Talk like a Graph: Encoding Graphs for Large Language Models
+
+- alongside: [LIT-807](../record/literature.d/LIT-807.md) — Talk like a Graph: Encoding Graphs for Large Language Models *(Active)*
+- alongside: [LIT-820](../record/literature.d/LIT-820.md) — Let Your Graph Do the Talking: Encoding Structured Data for LLMs *(Active)*
+
+### From Translating Embeddings for Modeling Multi-relational Data
+
+- [LIT-834](../record/literature.d/LIT-834.md) — Translating Embeddings for Modeling Multi-relational Data *(Active)*
+  - [LIT-819](../record/literature.d/LIT-819.md) — RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space *(Active)*
 
 ## signal-structure
 
@@ -698,3 +749,38 @@ Grouped by `tags`, which every line holds in common — a line about two things 
 - alongside: [LIT-183](../record/literature.d/LIT-183.md) — Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning *(Active)*
 - alongside: [LIT-665](../record/literature.d/LIT-665.md) — Transformer Language Models without Positional Encodings Still Learn Positional Information *(Active)*
 - alongside: [LIT-801](../record/literature.d/LIT-801.md) — Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension *(Active)*
+
+### From How Powerful are Graph Neural Networks?
+
+- [LIT-580](../record/literature.d/LIT-580.md) — How Powerful are Graph Neural Networks? *(Active)*
+  - [LIT-838](../record/literature.d/LIT-838.md) — A Fair Comparison of Graph Neural Networks for Graph Classification *(Active)*
+- [LIT-602](../record/literature.d/LIT-602.md) — GloVe: Global Vectors for Word Representation *(Active)*
+  - [LIT-607](../record/literature.d/LIT-607.md) — Improving Distributional Similarity with Lessons Learned from Word Embeddings *(Active)* — also extends LIT-608, LIT-612
+- [LIT-604](../record/literature.d/LIT-604.md) — Efficient Estimation of Word Representations in Vector Space *(Active)*
+  - [LIT-603](../record/literature.d/LIT-603.md) — Distributed Representations of Words and Phrases and their Compositionality *(Active)*
+- [LIT-608](../record/literature.d/LIT-608.md) — Don't count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors *(Active)*
+- [LIT-612](../record/literature.d/LIT-612.md) — Neural Word Embedding as Implicit Matrix Factorization *(Active)*
+  - [LIT-824](../record/literature.d/LIT-824.md) — Network Embedding as Matrix Factorization: Unifying DeepWalk, LINE, PTE, and node2vec *(Active)*
+- [LIT-816](../record/literature.d/LIT-816.md) — Deeper Insights into Graph Convolutional Networks for Semi-Supervised Learning *(Active)*
+  - [LIT-827](../record/literature.d/LIT-827.md) — Graph Neural Networks Exponentially Lose Expressive Power for Node Classification *(Active)*
+- [LIT-837](../record/literature.d/LIT-837.md) — DeepWalk: Online Learning of Social Representations *(Active)*
+  - [LIT-809](../record/literature.d/LIT-809.md) — node2vec: Scalable Feature Learning for Networks *(Active)*
+- alongside: [LIT-579](../record/literature.d/LIT-579.md) — Where Did the Gap Go? Reassessing the Long-Range Graph Benchmark *(Active)*
+- alongside: [LIT-581](../record/literature.d/LIT-581.md) — Pitfalls of Graph Neural Network Evaluation *(Active)*
+- alongside: [LIT-582](../record/literature.d/LIT-582.md) — Semi-Supervised Classification with Graph Convolutional Networks *(Active)*
+- alongside: [LIT-613](../record/literature.d/LIT-613.md) — A Latent Variable Model Approach to PMI-based Word Embeddings *(Active)*
+- alongside: [LIT-806](../record/literature.d/LIT-806.md) — Deep Graph Infomax *(Active)*
+- alongside: [LIT-810](../record/literature.d/LIT-810.md) — The Surprising Power of Graph Neural Networks with Random Node Initialization *(Active)*
+- alongside: [LIT-813](../record/literature.d/LIT-813.md) — Equivariant Subgraph Aggregation Networks *(Active)*
+- alongside: [LIT-814](../record/literature.d/LIT-814.md) — Inductive Representation Learning on Large Graphs *(Active)*
+- alongside: [LIT-818](../record/literature.d/LIT-818.md) — Sign and Basis Invariant Networks for Spectral Graph Representation Learning *(Active)*
+- alongside: [LIT-821](../record/literature.d/LIT-821.md) — Exphormer: Sparse Transformers for Graphs *(Active)*
+- alongside: [LIT-826](../record/literature.d/LIT-826.md) — Graph Attention Networks *(Active)*
+- alongside: [LIT-831](../record/literature.d/LIT-831.md) — LINE: Large-scale Information Network Embedding *(Active)*
+- alongside: [LIT-833](../record/literature.d/LIT-833.md) — Graph Neural Networks with Learnable Structural and Positional Representations *(Active)*
+- alongside: [LIT-835](../record/literature.d/LIT-835.md) — Improving Graph Neural Network Expressivity via Subgraph Isomorphism Counting *(Active)*
+- alongside: [LIT-840](../record/literature.d/LIT-840.md) — Weisfeiler and Leman Go Neural: Higher-order Graph Neural Networks *(Active)*
+- alongside: [LIT-841](../record/literature.d/LIT-841.md) — One for All: Towards Training One Graph Model for All Classification Tasks *(Active)*
+- alongside: [LIT-842](../record/literature.d/LIT-842.md) — Recipe for a General, Powerful, Scalable Graph Transformer *(Active)*
+- alongside: [LIT-843](../record/literature.d/LIT-843.md) — Do Transformers Really Perform Bad for Graph Representation? *(Active)*
+- alongside: [LIT-844](../record/literature.d/LIT-844.md) — Long Range Graph Benchmark *(Active)*

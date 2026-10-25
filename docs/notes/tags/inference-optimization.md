@@ -4,7 +4,7 @@
 
 **inference-optimization**.
 
-28 of 378 NOTE documents. Back to the [full index](../README.md).
+28 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|

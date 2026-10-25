@@ -4,7 +4,7 @@
 
 **in-context-learning**.
 
-18 of 378 NOTE documents. Back to the [full index](../README.md).
+21 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -26,3 +26,6 @@
 | [NOTE-280](../../../record/notes.d/NOTE-280.md) | The construction is exact, and the trained model it describes is one layer deep | Read as the trunk of the mesa-optimization line. Proposition 1's weight construction is exact and a single trained linear-self-attention layer approximately finds it. The result that matters most for what came after is four pages later and rarely quoted: deeper trained models do not match gradient descent, they match GD++ — gradient descent on data transformed by `I − γXXᵀ` — which is the paper's own evidence that plain GD is the wrong description beyond one layer. | Read |
 | [NOTE-287](../../../record/notes.d/NOTE-287.md) | Stage boundaries found without knowing in advance what to look for | Read as the application that makes the LLC matter to this record. Critical points of the LLC curve divide two transformers into five stages each, and the boundaries land on bigrams, n-grams, previous-token heads and the induction circuit — found without a mechanistic hypothesis in hand, which is what `LIT-085`'s progress measures require. Its in-context regression model acquires in-context learning and then loses it. | Read |
 | [NOTE-314](../../../record/notes.d/NOTE-314.md) | RippleEdits | Knowledge-editing benchmarks test the edited fact and leave its consequences untested. On six ripple criteria, weight editors average 38–66, and prompting with the new fact beats them. Main text read. | Read |
+| [NOTE-383](../../../record/notes.d/NOTE-383.md) | One for All (OFA) | Text-embedded features and a prompt graph with class nodes let one GNN train on citation, knowledge-graph and molecule datasets together. It matches or beats per-dataset GNNs on most supervised tasks. Zero-shot transfer to unseen graphs is weak, and joint training hurts link tasks. Read in full, with the dataset-construction appendix skimmed. | Read |
+| [NOTE-407](../../../record/notes.d/NOTE-407.md) | NLGraph | An instruction-tuned GPT-3 solves simple graph problems stated in prose well above chance. On harder ones, exemplars and chain of thought stop helping, and on chain graphs whose endpoints are rarely mentioned the model loses about half its accuracy. Main text and appendices read. The GPT-3.5/GPT-4 case tables were skimmed. | Read |
+| [NOTE-409](../../../record/notes.d/NOTE-409.md) | Talk like a graph | How a graph is written as text changes a frozen LLM's accuracy on basic graph questions by tens of points. Listing each node's neighbours helps most on neighbourhood and degree questions. The structure of the graph also moves results, through strong priors such as "graphs have cycles". Read in full, v1. | Read |

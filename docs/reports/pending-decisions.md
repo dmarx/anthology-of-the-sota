@@ -5,11 +5,11 @@
 
 `Proposed` and `Deferred` both describe an open question. Neither says *since when*, and that is the signal: a decision proposed last week is pending; the same one a year later was either overdue or settled in code and never written back.
 
-**275 document(s) awaiting a decision.**
+**282 document(s) awaiting a decision.**
 
 ## SOTAs
 
-181 of the 275.
+186 of the 282.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -194,10 +194,15 @@
 | 2026-10-03 | Proposed | [SOTA-445](../../record/practices.d/SOTA-445.md) | 2 | 0 | When the base text-to-image diffusion model is better than the models that generated the preference pairs, train on the pairs with Diffusion-DPO rather than fine-tuning on the preferred images |
 | 2026-10-03 | Proposed | [SOTA-448](../../record/practices.d/SOTA-448.md) | 2 | 0 | Without a pretrained teacher, train a one-step generator as a MeanFlow average-velocity model rather than by consistency training or a shortcut model |
 | 2026-10-03 | Proposed | [SOTA-449](../../record/practices.d/SOTA-449.md) | 2 | 0 | When reward-tuning a classifier-free-guided diffusion model over several rounds of sampling, train the guided prediction at the fixed sampling guidance weight, not the conditional prediction alone |
+| 2026-10-22 | Proposed | [SOTA-452](../../record/practices.d/SOTA-452.md) | 4 | 0 | Give a message-passing GNN random-walk positional encodings, or Laplacian eigenvectors through a sign-invariant encoder, rather than raw Laplacian eigenvectors with random sign flips |
+| 2026-10-22 | Proposed | [SOTA-455](../../record/practices.d/SOTA-455.md) | 3 | 0 | On a graph-level task that depends on interactions between distant nodes, make the last message-passing layer fully adjacent before reaching for a wider model |
+| 2026-10-22 | Proposed | [SOTA-457](../../record/practices.d/SOTA-457.md) | 3 | 0 | In a message-passing GNN for graph-level prediction, try a virtual node connected to every node, and keep it only if validation favors it |
+| 2026-10-22 | Proposed | [SOTA-453](../../record/practices.d/SOTA-453.md) | 2 | 0 | Before crediting a knowledge-graph embedding score function, train the baselines with the same loss, negative sampling and embedding size |
+| 2026-10-22 | Proposed | [SOTA-454](../../record/practices.d/SOTA-454.md) | 1 | 1 | When putting a graph into a frozen LLM prompt to ask about a node's neighbours or degree, write each node followed by its neighbours, with integer ids, not a flat edge list or named-entity relations |
 
 ## THEORYs
 
-80 of the 275.
+82 of the 282.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
@@ -281,20 +286,22 @@
 | 2026-10-06 | Proposed | [THEORY-127](../../record/theory.d/THEORY-127.md) | 0 | 0 | QK normalization costs long-context extension because bounding the logits raises attention entropy and removes the sink a head uses to discard mass |
 | 2026-10-06 | Proposed | [THEORY-128](../../record/theory.d/THEORY-128.md) | 0 | 0 | A delta-rule recurrence does not accumulate small per-step perturbations, because each write overwrites the state along the current key, so injected error plateaus and an impulse fades far faster than the forget gate implies |
 | 2026-10-06 | Proposed | [THEORY-129](../../record/theory.d/THEORY-129.md) | 0 | 0 | Interleaving attention with a negative-eigenvalue delta-rule recurrence expresses problems neither layer type can express alone, because state tracking and recall come from different layers and one alternation composes them |
+| 2026-10-22 | Proposed | [THEORY-133](../../record/theory.d/THEORY-133.md) | 3 | 0 | Raw Laplacian eigenvector encodings underperform because the network must learn invariance to an arbitrary sign on every eigenvector, and building that invariance into the encoder recovers most of what they carry |
+| 2026-10-22 | Proposed | [THEORY-131](../../record/theory.d/THEORY-131.md) | 2 | 0 | The steeper learning curves of equivariant interatomic potentials come from the higher body order of their local features, not from equivariance as such |
 
 ## LITs
 
-11 of the 275.
+11 of the 282.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|
 | 2026-08-24 | Proposed | [LIT-101](../../record/literature.d/LIT-101.md) | 3 | 0 | AdaNorm: Adaptive Gradient Norm Correction based Optimizer for CNNs |
 | 2026-09-15 | Deferred | [LIT-364](../../record/literature.d/LIT-364.md) | 2 | 0 | Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succeed |
+| 2026-09-25 | Deferred | [LIT-715](../../record/literature.d/LIT-715.md) | 3 | 0 | Surya: Foundation Model for Heliophysics |
 | 2026-09-25 | Deferred | [LIT-717](../../record/literature.d/LIT-717.md) | 3 | 0 | Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task |
 | 2026-09-25 | Deferred | [LIT-694](../../record/literature.d/LIT-694.md) | 2 | 0 | Rigor with Machine Learning from Field Theory to the Poincaré Conjecture |
 | 2026-09-25 | Deferred | [LIT-695](../../record/literature.d/LIT-695.md) | 2 | 0 | Language Design as Information Renormalization |
 | 2026-09-25 | Deferred | [LIT-697](../../record/literature.d/LIT-697.md) | 2 | 0 | AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society |
-| 2026-09-25 | Deferred | [LIT-715](../../record/literature.d/LIT-715.md) | 2 | 0 | Surya: Foundation Model for Heliophysics |
 | 2026-09-25 | Deferred | [LIT-698](../../record/literature.d/LIT-698.md) | 1 | 0 | Topos and Stacks of Deep Neural Networks |
 | 2026-09-25 | Deferred | [LIT-716](../../record/literature.d/LIT-716.md) | 1 | 0 | The Impact of Generative AI on Social Media: An Experimental Study |
 | 2026-09-25 | Deferred | [LIT-718](../../record/literature.d/LIT-718.md) | 1 | 0 | Automated decision-making as domination |
@@ -302,7 +309,7 @@
 
 ## ADRs
 
-3 of the 275.
+3 of the 282.
 
 | Open since | Status | Code | Cited | Unack. | Title |
 |---|---|---|--:|--:|---|

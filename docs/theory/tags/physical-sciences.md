@@ -6,8 +6,8 @@
 
 **Physical sciences** — models whose data is the physical world — learned surrogates for simulation in fluids, PDEs, molecular dynamics and cosmology, foundation models for weather, climate and solar observation — what they are trusted to replace, what their benchmarks can show, and which of their methods travel to other domains.
 
-0 of 129 THEORY documents. Back to the [full index](../README.md).
+1 of 134 THEORY documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
-
+| [THEORY-131](../../../record/theory.d/THEORY-131.md) | The steeper learning curves of equivariant interatomic potentials come from the higher body order of their local features, not from equivariance as such | Batatia et al. (2022), [LIT-828](../../../record/literature.d/LIT-828.md) — NequIP ([LIT-832](../../../record/literature.d/LIT-832.md)) found that turning on l ≥ 1 features steepened the log-log learning curve and credited equivariance. MACE re-ran the aspirin experiment: invariant models with body order 2, 3 and 4 have slopes −0.33, −0.51 and −0.64, and at body order 4 adding equivariant features leaves the slope at −0.63 to −0.64 and only shifts the curve. Equivariance is one route to higher body order, and body order is what sets the slope. | Proposed |

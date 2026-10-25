@@ -4,7 +4,7 @@
 
 **biomolecular-modeling**.
 
-4 of 378 NOTE documents. Back to the [full index](../README.md).
+8 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -12,3 +12,7 @@
 | [NOTE-320](../../../record/notes.d/NOTE-320.md) | AlphaFold 3 | AlphaFold generalized to all biomolecular complexes, with a diffusion head over atom coordinates. It gains on ligands, nucleic acids and antibodies, and inherits generative failure modes (hallucination, chirality) that it patches with distillation and ranking. Main text read. Extended Data and supplementary methods not read. | Read |
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
 | [NOTE-360](../../../record/notes.d/NOTE-360.md) | MDLM | Masked diffusion's ELBO is a schedule-weighted average of masked-LM losses, and with a modern recipe it is the best discrete diffusion language model at 110M parameters. It does not beat autoregression in-domain, even with the AR baseline given half the optimizer steps; the paper's own checklist names that as its limitation. | Read |
+| [NOTE-384](../../../record/notes.d/NOTE-384.md) | MPNN | Eight earlier graph networks are one form: summed messages, a node update, an invariant readout. Searching that space on QM9 gives a model at chemical accuracy on 11 of 13 targets, relative to DFT labels and on one random split. Long-range mechanisms, a master node or set2set, help most when geometry is withheld. Main text read in full, supplement skimmed. | Read |
+| [NOTE-388](../../../record/notes.d/NOTE-388.md) | Graphormer | A plain Transformer becomes a strong graph model once attention is biased by shortest-path distance and edge features and inputs carry node degree. The encodings cut PCQM4M-LSC error from 0.228 to 0.130 in the ablation. Read in full, appendices included. | Read |
+| [NOTE-411](../../../record/notes.d/NOTE-411.md) | SchNet | Convolution filters generated from interatomic distances give a smooth, invariant energy whose gradient is an energy-conserving force field. Training on forces as well as energies is the largest effect in the paper. Read in full; the supplement was not read. | Read |
+| [NOTE-419](../../../record/notes.d/NOTE-419.md) | Open Graph Benchmark | Fifteen larger graph datasets with application-driven splits and fixed evaluators. Wherever the authors re-ran a model on a random split of the same proportions, it scored higher, by 1.8 to 27 points, and its train–test gap almost closed. Read in full, including Appendix A. | Read |

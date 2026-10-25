@@ -4,7 +4,7 @@
 
 **data-pipeline**.
 
-20 of 378 NOTE documents. Back to the [full index](../README.md).
+21 of 422 NOTE documents. Back to the [full index](../README.md).
 
 | # | Title | Summary | Status |
 |---|---|---|---|
@@ -28,3 +28,4 @@
 | [NOTE-321](../../../record/notes.d/NOTE-321.md) | AlphaFold 2 | Near-experimental protein structure accuracy at CASP14, a calibrated confidence head, self-distillation on confident predictions, and a hard dependence on alignment depth below about 30 sequences. Main text and Methods read. The supplementary methods (architecture details, ablation descriptions) were not read. | Read |
 | [NOTE-333](../../../record/notes.d/NOTE-333.md) v2 | Wan | An open 14B text-to-video recipe whose evidence is mostly systems measurement: 2D context parallelism cuts communication overhead from over 10% to under 1%, and caching and 8-bit kernels give 1.62× and 1.27×. Its three modelling ablations run on 1.3B text-to-image. Two are read from training loss, and on FID one of them favours the rejected option. The applications in §5 are demonstrated almost entirely by figures. | Read |
 | [NOTE-336](../../../record/notes.d/NOTE-336.md) | Stable Video Diffusion | At fixed architecture and a fixed step count, a video model pretrained on a curated quarter of a 9.8M-clip pool is preferred by human raters to one trained on the whole pool, and the lead survives high-quality fine-tuning (Elo +127 against +89 over an image-only start at 10k steps). Almost every result is a preference bar from 64 prompts with no numbers in the text, and two of the curation choices the paper shipped lost its own ablation. | Read |
+| [NOTE-419](../../../record/notes.d/NOTE-419.md) | Open Graph Benchmark | Fifteen larger graph datasets with application-driven splits and fixed evaluators. Wherever the authors re-ran a model on a random split of the same proportions, it scored higher, by 1.8 to 27 points, and its train–test gap almost closed. Read in full, including Appendix A. | Read |

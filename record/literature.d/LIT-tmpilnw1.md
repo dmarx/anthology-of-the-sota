@@ -33,6 +33,8 @@ summary: >-
   [SOTA-310](../practices.d/SOTA-310.md) and [SOTA-345](../practices.d/SOTA-345.md) and adds no new evidence for either.
 ---
 
+<!-- inactive-ok-file: SOTA-tmprih86 — Proposed, named as the practice filed from the primary paper this survey cites -->
+
 # LIT-tmpilnw1: Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety
 
 Barez, Wu, Batra, Dominici, Draye, Elazar, Fornasiere, García, Harrasse,
@@ -119,10 +121,10 @@ not Kantamneni et al.; its probing claim rests on Wu et al. (2025b).
 Agreement from a survey is adoption, not a second test ([DP-005](../principles.d/DP-005.md)), and neither
 practice's sources or consensus change.
 
-**Candidate follow-ups.** The cross-seed instability of SAE features
-("Sparse autoencoders trained on the same data learn different features",
-Paulo & Belrose, ICLR 2026) supports a reporting practice the record lacks.
-That paper, not this survey, is what to file first.
+**The follow-up is filed.** The survey's evidence for cross-seed
+instability of SAE features (§6.5.4) is Paulo and Belrose ([LIT-tmplifgh](LIT-tmplifgh.md)).
+That paper is now the source of [SOTA-tmprih86](../practices.d/SOTA-tmprih86.md), the reporting check the
+survey recommends. The survey is not a source for it.
 
 <!-- inactive-ok: NOTE-tmpovz7x — Skimmed, and cited to say so: the method chapters of this survey have no reading in force -->
 Skimmed — [NOTE-tmpovz7x](../notes.d/NOTE-tmpovz7x.md).

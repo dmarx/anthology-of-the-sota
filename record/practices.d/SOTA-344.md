@@ -35,6 +35,8 @@ summary: >-
   residual from dead latents: 7% dead at 16M latents, against up to 90%.
 ---
 
+<!-- inactive-ok-file: SOTA-tmprih86 — Proposed, cited as the check to run when a result depends on particular latents, not as an established practice -->
+
 # SOTA-344: Train sparse autoencoders with a TopK activation instead of an L1 penalty, and prevent dead latents with transposed-decoder initialization and an auxiliary loss
 
 ## Source
@@ -66,5 +68,12 @@ latents died; with the transposed initialization and the auxiliary loss,
 
 - **This says how to train an SAE, not whether to use one.** On probing,
   SAE latents do not beat raw activations ([LIT-568](../literature.d/LIT-568.md), [SOTA-345](SOTA-345.md))
+- **TopK latents recur across seeds less often than L1-ReLU latents.**
+  Paulo and Belrose ([LIT-tmplifgh](../literature.d/LIT-tmplifgh.md)) trained SAEs that differed only in
+  seed. They found that L1-trained ReLU and Gated SAEs share more latents
+  between seeds than TopK on GPT-2, and only 42% of TopK-configuration
+  latents recur at 32K on Pythia 160M. The reconstruction frontier above is
+  not in dispute. If a result depends on particular latents, check them on
+  a second seed ([SOTA-tmprih86](SOTA-tmprih86.md))
 - **Fixed per-token L0 is a known weakness.** The authors suggest
   constraining the expected L0 instead, which BatchTopK does
